@@ -10,6 +10,10 @@ Global Go stack conventions (dependency gate, allowlist, decision table, htmx ti
 
 **The dependency gate in that doc applies to this project.** Do not add Go modules or vendored JS without explicit approval per session.
 
+## Ingestion roadmap
+
+Per-CSV-family progress, remaining work, and pre-staged batch plans → [docs/ROADMAP.md](docs/ROADMAP.md). The next batch's specifics (currently SoundTeMP) live in a sibling plan file referenced from the roadmap.
+
 ## Commands
 
 | Command | Purpose |
