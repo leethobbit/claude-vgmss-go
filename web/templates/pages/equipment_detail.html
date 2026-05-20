@@ -1,0 +1,46 @@
+{{define "title"}}{{.Product.Manufacturer}} {{.Product.Name}} — vgmss{{end}}
+{{define "content"}}
+<article class="detail">
+  <h1>{{.Product.Manufacturer}} <span class="subtle">/</span> {{.Product.Name}}</h1>
+  <dl class="meta">
+    {{if .Product.Type}}<dt>Type</dt><dd>{{.Product.Type}}</dd>{{end}}
+    {{if .Product.SourceProof}}<dt>Source / proof</dt><dd>{{.Product.SourceProof}}</dd>{{end}}
+    {{if .Product.FirstRecordedUsage}}<dt>First recorded usage</dt><dd>{{.Product.FirstRecordedUsage}}</dd>{{end}}
+    {{if .Product.LastRecordedUsage}}<dt>Last recorded usage</dt><dd>{{.Product.LastRecordedUsage}}</dd>{{end}}
+    {{if .Product.Notes}}<dt>Notes</dt><dd>{{.Product.Notes}}</dd>{{end}}
+  </dl>
+  <div class="actions">
+    <a class="btn" href="/equipment/{{.Product.ID}}/edit">Edit</a>
+    <a class="btn" href="/equipment/{{.Product.ID}}/usages/new">+ Add usage</a>
+    <form method="post" action="/equipment/{{.Product.ID}}/delete" onsubmit="return confirm('Delete this equipment? (Blocked if usages reference it.)');">
+      <button type="submit" class="btn danger">Delete</button>
+    </form>
+  </div>
+</article>
+
+<section>
+  <h2>Games that used this</h2>
+  {{if .Usages}}
+  <table class="data wide">
+    <thead><tr>
+      <th>Game</th><th>Category</th><th>Path/Bank</th><th>Preset</th><th>Examples</th><th>Notes</th><th></th>
+    </tr></thead>
+    <tbody>
+    {{range .Usages}}
+      <tr class="cat-{{.Category}}">
+        <td><a href="/games/{{.GameID}}">{{.GameTitle}}</a></td>
+        <td>{{.Category}}</td>
+        <td>{{.PathBank}}</td>
+        <td>{{.Preset}}</td>
+        <td>{{.Examples}}</td>
+        <td>{{.Notes}}</td>
+        <td class="row-actions"><a href="/usages/{{.ID}}/edit">edit</a></td>
+      </tr>
+    {{end}}
+    </tbody>
+  </table>
+  {{else}}
+  <p class="empty">No games recorded as using this yet.</p>
+  {{end}}
+</section>
+{{end}}

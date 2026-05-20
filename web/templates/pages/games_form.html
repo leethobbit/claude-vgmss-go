@@ -1,0 +1,15 @@
+{{define "title"}}{{if .Game.ID}}Edit {{.Game.Title}}{{else}}New game{{end}} — vgmss{{end}}
+{{define "content"}}
+<h1>{{if .Game.ID}}Edit game{{else}}New game{{end}}</h1>
+<form method="post" action="{{.Action}}" class="stacked">
+  <label>Title<input name="title" required value="{{.Game.Title}}"></label>
+  <label>Platform<input name="platform" value="{{.Game.Platform}}" placeholder="GBA, SNES, PC, ..."></label>
+  <label>Released<input name="released" value="{{.Game.Released}}" placeholder="2002, 2002-11-21, etc."></label>
+  <label>Composers<input name="composers" value="{{.Game.Composers}}" placeholder="Comma-separated"></label>
+  <label>Notes<textarea name="notes" rows="4">{{.Game.Notes}}</textarea></label>
+  <div class="actions">
+    <button type="submit" class="btn primary">Save</button>
+    {{if .Game.ID}}<a class="btn" href="/games/{{.Game.ID}}">Cancel</a>{{else}}<a class="btn" href="/games">Cancel</a>{{end}}
+  </div>
+</form>
+{{end}}

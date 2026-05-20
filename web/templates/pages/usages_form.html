@@ -1,0 +1,63 @@
+{{define "title"}}{{if .Usage.ID}}Edit usage{{else}}New usage{{end}} — vgmss{{end}}
+{{define "content"}}
+<h1>{{if .Usage.ID}}Edit usage{{else}}New usage{{end}}</h1>
+<form method="post" action="{{.Action}}" class="stacked">
+  {{if .LockGame}}
+    <input type="hidden" name="game_id" value="{{.Usage.GameID}}">
+    <p class="locked">For game: <strong>{{.PrefilledGameTitle}}</strong></p>
+  {{else}}
+    <label>Game ID
+      <input name="game_id" required value="{{if .Usage.GameID}}{{.Usage.GameID}}{{end}}" placeholder="e.g. 42">
+      {{if .PrefilledGameTitle}}<small>current: {{.PrefilledGameTitle}}</small>{{end}}
+    </label>
+  {{end}}
+
+  {{if .LockProduct}}
+    <input type="hidden" name="product_id" value="{{.Usage.ProductID.Int64}}">
+    <p class="locked">For equipment: <strong>{{.PrefilledProductLabel}}</strong></p>
+  {{else}}
+    <label>Product
+      <input id="product-input" name="product_id_label" placeholder="Type to search equipment..."
+             value="{{.PrefilledProductLabel}}"
+             hx-get="/products/suggest" hx-trigger="input changed delay:200ms"
+             hx-target="#product-suggestions" hx-include="this" hx-params="q:product_id_label"
+             autocomplete="off">
+      <input type="hidden" name="product_id" id="product-id" value="{{if .Usage.ProductID.Valid}}{{.Usage.ProductID.Int64}}{{end}}">
+      <ul id="product-suggestions" class="suggestions"></ul>
+      <small>Leave blank if source is unknown; fill <em>Raw source</em> instead.</small>
+    </label>
+  {{end}}
+
+  <label>Raw source (when product is unknown)
+    <input name="raw_source" value="{{.Usage.RawSource}}">
+  </label>
+  <label>Path / Bank<input name="path_bank" value="{{.Usage.PathBank}}"></label>
+  <label>Preset / Program<input name="preset" value="{{.Usage.Preset}}"></label>
+  <label>Sample label (FF Detailed)<input name="sample_label" value="{{.Usage.SampleLabel}}"></label>
+  <label>Sample ref (FF Detailed)<input name="sample_ref" value="{{.Usage.SampleRef}}" placeholder="$01, $02, ..."></label>
+  <label>Notes<textarea name="notes" rows="3">{{.Usage.Notes}}</textarea></label>
+  <label>Examples (comma-separated track names)<textarea name="examples" rows="3">{{.Usage.Examples}}</textarea></label>
+  <label>Demo URL<input name="demo_url" value="{{.Usage.DemoURL}}"></label>
+  <label>Category
+    <select name="category">
+      <option value="main"{{if eq .Usage.Category "main"}} selected{{end}}>main</option>
+      <option value="unused"{{if eq .Usage.Category "unused"}} selected{{end}}>unused</option>
+      <option value="bonus"{{if eq .Usage.Category "bonus"}} selected{{end}}>bonus</option>
+      <option value="stuff_to_find"{{if eq .Usage.Category "stuff_to_find"}} selected{{end}}>stuff to find</option>
+    </select>
+  </label>
+  <label>Source family
+    <select name="source_family">
+      <option value="newer_vgm"{{if eq .Usage.SourceFamily "newer_vgm"}} selected{{end}}>newer_vgm</option>
+      <option value="ff_detailed"{{if eq .Usage.SourceFamily "ff_detailed"}} selected{{end}}>ff_detailed</option>
+      <option value="hoyo_mix"{{if eq .Usage.SourceFamily "hoyo_mix"}} selected{{end}}>hoyo_mix</option>
+      <option value="g_boy_viss"{{if eq .Usage.SourceFamily "g_boy_viss"}} selected{{end}}>g_boy_viss</option>
+    </select>
+  </label>
+  <label>Position (display order)<input name="position" value="{{if .Usage.Position.Valid}}{{.Usage.Position.Int64}}{{end}}" type="number"></label>
+  <div class="actions">
+    <button type="submit" class="btn primary">Save</button>
+    {{if .Usage.ID}}<a class="btn" href="/games/{{.Usage.GameID}}">Cancel</a>{{else if .Usage.GameID}}<a class="btn" href="/games/{{.Usage.GameID}}">Cancel</a>{{else if .Usage.ProductID.Valid}}<a class="btn" href="/equipment/{{.Usage.ProductID.Int64}}">Cancel</a>{{end}}
+  </div>
+</form>
+{{end}}

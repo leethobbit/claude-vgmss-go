@@ -1,0 +1,15 @@
+{{define "title"}}Games — vgmss{{end}}
+{{define "content"}}
+<div class="index-header">
+  <h1>Games</h1>
+  <a class="btn" href="/games/new">+ New game</a>
+</div>
+
+<form class="search" hx-get="/games" hx-target="#games-list" hx-trigger="input changed delay:200ms, search">
+  <input type="search" name="q" value="{{.Query}}" placeholder="Search games, platforms, composers" autofocus>
+</form>
+
+<div id="games-list">
+  {{template "games_list" .}}
+</div>
+{{end}}

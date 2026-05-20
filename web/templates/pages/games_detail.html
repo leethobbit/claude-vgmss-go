@@ -1,0 +1,56 @@
+{{define "title"}}{{.Game.Title}} — vgmss{{end}}
+{{define "content"}}
+{{$gameID := .Game.ID}}
+<article class="detail">
+  <h1>{{.Game.Title}}</h1>
+  <dl class="meta">
+    {{if .Game.Platform}}<dt>Platform</dt><dd>{{.Game.Platform}}</dd>{{end}}
+    {{if .Game.Released}}<dt>Released</dt><dd>{{.Game.Released}}</dd>{{end}}
+    {{if .Game.Composers}}<dt>Composers</dt><dd>{{.Game.Composers}}</dd>{{end}}
+    {{if .Game.Notes}}<dt>Notes</dt><dd>{{.Game.Notes}}</dd>{{end}}
+  </dl>
+  <div class="actions">
+    <a class="btn" href="/games/{{.Game.ID}}/edit">Edit</a>
+    <a class="btn" href="/games/{{.Game.ID}}/usages/new">+ Add usage</a>
+    <form method="post" action="/games/{{.Game.ID}}/delete" onsubmit="return confirm('Delete this game and all its usages?');">
+      <button type="submit" class="btn danger">Delete</button>
+    </form>
+  </div>
+</article>
+
+<section>
+  <h2>Sound sources used</h2>
+  {{if .Usages}}
+  <table class="data wide">
+    <thead><tr>
+      <th>Category</th><th>Manufacturer</th><th>Product</th>
+      <th>Path/Bank</th><th>Preset</th><th>Examples</th><th>Notes</th><th></th>
+    </tr></thead>
+    <tbody>
+    {{range .Usages}}
+      <tr class="cat-{{.Category}}">
+        <td>{{.Category}}</td>
+        <td>{{.Manufacturer}}</td>
+        <td>
+          {{if .ProductID.Valid}}<a href="/equipment/{{.ProductID.Int64}}">{{.ProductName}}</a>
+          {{else}}<em>{{.RawSource}}</em>{{end}}
+        </td>
+        <td>{{.PathBank}}</td>
+        <td>{{.Preset}}</td>
+        <td>{{.Examples}}</td>
+        <td>{{.Notes}}</td>
+        <td class="row-actions">
+          <a href="/usages/{{.ID}}/edit">edit</a>
+          <form method="post" action="/usages/{{.ID}}/delete" onsubmit="return confirm('Delete this usage row?');">
+            <button type="submit" class="link-btn">delete</button>
+          </form>
+        </td>
+      </tr>
+    {{end}}
+    </tbody>
+  </table>
+  {{else}}
+  <p class="empty">No usages recorded yet. <a href="/games/{{$gameID}}/usages/new">Add one.</a></p>
+  {{end}}
+</section>
+{{end}}

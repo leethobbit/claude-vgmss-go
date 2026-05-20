@@ -1,0 +1,21 @@
+{{define "games_list"}}
+{{if .Games}}
+<table class="data">
+  <thead><tr><th>Title</th><th>Platform</th><th>Released</th><th>Composers</th></tr></thead>
+  <tbody>
+  {{range .Games}}
+    <tr>
+      <td><a href="/games/{{.ID}}">{{.Title}}</a></td>
+      <td>{{.Platform}}</td>
+      <td>{{.Released}}</td>
+      <td>{{.Composers}}</td>
+    </tr>
+  {{end}}
+  </tbody>
+</table>
+{{else}}
+<p class="empty">No games yet.</p>
+{{end}}
+{{end}}
+
+{{define "games_list.html"}}{{template "games_list" .}}{{end}}

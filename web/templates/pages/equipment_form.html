@@ -1,0 +1,27 @@
+{{define "title"}}{{if .Product.ID}}Edit {{.Product.Name}}{{else}}New equipment{{end}} — vgmss{{end}}
+{{define "content"}}
+<h1>{{if .Product.ID}}Edit equipment{{else}}New equipment{{end}}</h1>
+<form method="post" action="{{.Action}}" class="stacked">
+  <label>Manufacturer<input name="manufacturer" required value="{{.Product.Manufacturer}}" placeholder="Roland, Korg, Apple, ..."></label>
+  <label>Name<input name="name" required value="{{.Product.Name}}" placeholder="SC-88 Pro, M1, Logic Pro, ..."></label>
+  <label>Type
+    <select name="type">
+      <option value=""{{if eq .Product.Type ""}} selected{{end}}>—</option>
+      <option value="DAW"{{if eq .Product.Type "DAW"}} selected{{end}}>DAW</option>
+      <option value="Hardware"{{if eq .Product.Type "Hardware"}} selected{{end}}>Hardware</option>
+      <option value="Synth"{{if eq .Product.Type "Synth"}} selected{{end}}>Synth</option>
+      <option value="Effect"{{if eq .Product.Type "Effect"}} selected{{end}}>Effect</option>
+      <option value="Instrument"{{if eq .Product.Type "Instrument"}} selected{{end}}>Instrument</option>
+      <option value="Sample Library"{{if eq .Product.Type "Sample Library"}} selected{{end}}>Sample Library</option>
+    </select>
+  </label>
+  <label>Source / proof<input name="source_proof" value="{{.Product.SourceProof}}" placeholder="URL, doc, interview"></label>
+  <label>First recorded usage<input name="first_recorded_usage" value="{{.Product.FirstRecordedUsage}}"></label>
+  <label>Last recorded usage<input name="last_recorded_usage" value="{{.Product.LastRecordedUsage}}"></label>
+  <label>Notes<textarea name="notes" rows="4">{{.Product.Notes}}</textarea></label>
+  <div class="actions">
+    <button type="submit" class="btn primary">Save</button>
+    {{if .Product.ID}}<a class="btn" href="/equipment/{{.Product.ID}}">Cancel</a>{{else}}<a class="btn" href="/equipment">Cancel</a>{{end}}
+  </div>
+</form>
+{{end}}

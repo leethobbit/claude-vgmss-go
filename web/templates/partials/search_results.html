@@ -1,0 +1,19 @@
+{{define "search_results.html"}}
+{{if .Query}}
+  {{if .Hits}}
+  <ul class="hits">
+    {{range .Hits}}
+      <li class="hit hit-{{.Kind}}">
+        <span class="kind">{{.Kind}}</span>
+        {{if eq .Kind "game"}}<a href="/games/{{.ID}}">{{.Title}}</a>
+        {{else if eq .Kind "equipment"}}<a href="/equipment/{{.ID}}">{{.Title}}</a>
+        {{else}}<a href="/usages/{{.ID}}/edit">{{.Title}}</a>{{end}}
+        <small>{{.Snippet}}</small>
+      </li>
+    {{end}}
+  </ul>
+  {{else}}
+  <p class="empty">No hits for “{{.Query}}”.</p>
+  {{end}}
+{{end}}
+{{end}}

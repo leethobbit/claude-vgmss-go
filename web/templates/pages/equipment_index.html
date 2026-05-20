@@ -1,0 +1,15 @@
+{{define "title"}}Equipment — vgmss{{end}}
+{{define "content"}}
+<div class="index-header">
+  <h1>Equipment</h1>
+  <a class="btn" href="/equipment/new">+ New equipment</a>
+</div>
+
+<form class="search" hx-get="/equipment" hx-target="#equipment-list" hx-trigger="input changed delay:200ms, search">
+  <input type="search" name="q" value="{{.Query}}" placeholder="Search equipment, manufacturers" autofocus>
+</form>
+
+<div id="equipment-list">
+  {{template "equipment_list" .}}
+</div>
+{{end}}

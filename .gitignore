@@ -1,0 +1,13 @@
+/data/
+/vgmss
+/vgmss.exe
+*.db
+*.db-shm
+*.db-wal
+
+# Per-user Claude Code config — do not check in
+/.claude/
+
+# Python bytecode (occasionally created by helper scripts during seed conversion)
+__pycache__/
+*.pyc

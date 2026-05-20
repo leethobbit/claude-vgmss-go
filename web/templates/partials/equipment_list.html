@@ -1,0 +1,21 @@
+{{define "equipment_list"}}
+{{if .Products}}
+<table class="data">
+  <thead><tr><th>Manufacturer</th><th>Product</th><th>Type</th><th>Notes</th></tr></thead>
+  <tbody>
+  {{range .Products}}
+    <tr>
+      <td>{{.Manufacturer}}</td>
+      <td><a href="/equipment/{{.ID}}">{{.Name}}</a></td>
+      <td>{{.Type}}</td>
+      <td>{{.Notes}}</td>
+    </tr>
+  {{end}}
+  </tbody>
+</table>
+{{else}}
+<p class="empty">No equipment yet.</p>
+{{end}}
+{{end}}
+
+{{define "equipment_list.html"}}{{template "equipment_list" .}}{{end}}

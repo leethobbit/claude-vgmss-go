@@ -1,0 +1,792 @@
+Brand Name,Product,Path/Bank,Program / Sample,Notes,Examples
+"Research by: AstraProc, ababohi, Ben, calcobrena, Cameron, crissxcr0ss, dumperghost, eph, GarageBandPoke, gameonion, Hexagon12, Josh06, leethobbit, Nanita, thelostrune, Tori",,,,,Major / minor contributions
+"Note: Spreadsheet currently contains known inaccuracies and outdated information, and will be corrected in due time. AstraProc is a new co-maintainer for the spreadsheet. Rework in progress, please stay tuned.",,,,,
+"We request that you give credit when posting these findings. Notes are at the bottom regarding spreadsheet credit and composer credit. Please do not incorrectly spell out/extend patch names. 
+Permanent Discord invite link: https://discord.gg/VW85Ef5 | Youtube channel: https://www.youtube.com/channel/UCjtRHPfcg-Av7Vz1bu4ZgiA/     This spreadsheet is currently a Work In Progress.    ",,,,,
+,,,,,
+Section 1 - Live Service Games,,,,,
+" - Games with essential online elements that can and will expire, which can feature additional tracks beyond original release date.",,,,,
+"4LEAF (2000) - Jinbae Park, Goomin Nam, Sungwoon Jang",,,,,
+Access,Virus Indigo,,C49 HongKongBC,,Seaside Sunset
+EastWest,Funky Ass Loops,Partition D -> VOLUME 01 7M,32 Mannequin Party 110 A,Might be ProSamples 35,Readymade Funk
+Hollywood Edge,Premiere Edition Vol. 1,PE-01 Nature Ambiences,ForestAmbienceBird PE010101,,Green Grass
+KORG,TRITON-RACK,Programs -> INT-A,065 90's Piano,"Disable OSC2, disable MFX 1 (chorus)",Modern Cat Walk
+Roland,JV-2080,,,,Break Time
+Roland,SR-JV80-06 Dance,,140 Slide Fx x2,,Fortune Message
+Roland,SR-JV80-06 Dance,,141 Spooky,,Nihao Carden
+Spectrasonics,Bass Legends,Disc 2 -> PARTITION B -> ALL SLIDES,JP AC.UP-DWN,Regular bass should be the same one,Keltica Street R2
+Spectrasonics,Metamorphosis,Disc 2 -> PARTITION A -> 99-105 LPS,HAMSTRING,,Modern Cat Walk
+Spectrasonics,Metamorphosis,Disc 3 -> PARTITION B -> 125-135 LPS,MOVE ME C,Filter applied,Around This Place
+Yamaha,MOTIF 6,PRE1,F10 JazzGTmelo,,Seaside Sunset
+Yamaha,MOTIF 6,PRE2,D06 SweetFlute,,"Silky Feelin', Readymade Funk, Happy New Year"
+Yamaha,MOTIF 6,PRE2,G01 SAKURA,,"Nihao Carden, Happy New Year"
+Yamaha,MOTIF 6,PRE2,G14 EthncFlute,,Nihao Carden
+Yamaha,MOTIF 6,USER,G08 Sine Lead,,Modern Cat Walk
+Stuff to find/Confirm or Deconfirm/Potential leads,,,,,
+Roland,XV-5080,,,Piano & Strings according to ESTi,Fortune Message
+"Ragnarok Online (2002) - SoundTeMP, Jinbae Park, Sungwoon Jang, Goo-Hee Kwon, Seock-Jin Lee, Soo-Il Park, Goomin Nam",,,,,
+Best Service,Advanced Mega Effects,Partition A -> VOLUME 006,DANGEROUS,Sample: TRIN#03.1,Backattack!!
+Best Service,Black Box,Vol.1 welcome fantasy,the_rack,,"Good Night, Dancing Christmas in the 13th Month"
+Best Service,Orchestral Colors,,WSG_D#,"If in EXB-PCM06, it's that instead",Curse'n Pain
+Best Service,Orchestral Colors,,WSG_F#,"If in EXB-PCM06, it's that instead",Curse'n Pain
+Best Service,Vocal Elements - Diamond Vocals,,Dv_trk15,Timestamp: 0:09.2,"Through The Tower, Dreamer's Dream"
+Best Service,Vocal Elements - Diamond Vocals,,Dv_trk54,Timestamp: 0:03.7,Dreamer's Dream
+Best Service,Vocal Elements - Diamond Vocals,,Dv_trk56,Timestamp: 0:51.8,Dreamer's Dream
+Best Service,Vocal Elements - Diamond Vocals,,Dv_trk75,Timestamp: 0:05.6,Dreamer's Dream
+Best Service,Vocal Elements - Diamond Vocals,,Dv_trk82,Timestamp: 0:15.3,Dreamer's Dream
+Best Service,Voice Spectral,,Track 24,Timestamp 0:00,Dreamer's Dream
+Best Service,Voice Spectral,,Track 86,Timestamp: 0:15.3,One Step Closer
+Discovery Firm,Sound Effects CD Series - 6 - Nature,,Wind-1,Timestamp: 0:00.0,Outer Breath
+Discovery Firm,Sound Effects CD Series - 6 - Nature,,Wind-2,Timestamp: 0:00.0,Outer Breath
+EastWest,BT Breakz from the Nu Skool ,,073 Coat Hanger Live,,TeMP it Up
+EastWest,BT Breakz from the Nu Skool ,,090 Graveyard Shift,,TeMPoison
+EastWest,Percussive Adventures,,,Hihats (PA1 Coll. -> LoopPulses > 068),Peaceful Forest
+EastWest,Percussive Adventures,,,Trail (PA1 Coll. > Hits/Holds > TRAILS),Risk Your Life
+EastWest,Steve Stevens Guitar,Partition A -> SPECIAL EFX,EFX #1 3,,Time UP!
+EastWest,Symphonic Orchestra,,,,"Steel Me, Noblesse Oblige, CheongChoon"
+EastWest,Quantum Leap Brass,Alto Sax -> AS Long,AS Sustain,,Out of Curiosity
+E-MU Systems,Proteus 2000,Bank 2,044 hit: Brass Hits 3,Could be ROM version?,CheongChoon
+Ensoniq,EXP-3 Urban Dance Project,EXP030,066 Inharmonica,,Purity of your smile
+eLAB,X-Static Goldmine 3,,Trance Sweeps 1,Timestamp: 0:50.1,Dreamer's Dream
+Ensoniq,MR-Rack,RAM001,001 AmazonRiver,,"Theme of Geffen, Plateau"
+Ensoniq,MR-Rack,ROM005,076 Harmonica,,Plateau
+Ensoniq,MR-Rack,ROM005,091 Shamisen,,Theme of Payon
+Ensoniq,MR-Rack,ROM005,004 Dbl 6-Strng,See notes about Ethical Aspiration,"Streamside, Ethical Aspiration"
+Future Music,FM62 - The Future Loops Collection,,Track 33,,Travel
+InVision,Lightware - Stratus Sound Sampler,Partition A -> KYOTO GARDEN,KYOTO GARDEN,Possibly another library entirely,Risk Your Life
+KORG,TR-Rack,Prog > A,A101 Finger Cymbal,,Nano East
+KORG,TR-Rack,Prog > C,C01 Clear Mallet,,Yuna Song
+KORG,TR-Rack,Combi > C,C79 Serengeti,,"Jingle Bell on Ragnarok, Theme of Lutie / Snow In My Heart"
+KORG,TR-Rack,Combi > C,C82 Relaxation,,Watery Grave
+KORG,TRITON-RACK,,,"Bell tree, look into this",Streamside
+KORG,TRITON-RACK,Combis -> INT-A,014 Leading Lady,,Yuna Song
+KORG,TRITON-RACK,Programs -> INT-A,031 VS Bell Boy,,Theme of Geffen
+KORG,TRITON-RACK,Programs -> INT-A,114 Jungle Melody,,Watery Grave
+KORG,TRITON-RACK,Programs -> INT-B,045 Gliding Squares,Turn off portamento,You're in Ruins
+KORG,TRITON-RACK,Programs -> INT-C,028 A Leadlead,,Everlasting Wanderers
+KORG,EXB-PCM06 Orchestral Collection,,001 Maestro Strings,,"I miss you, Ready"
+Masterbits,Peter Siedlaczek's Orchestra,Partition D -> STRING SPIC,SPIC C1-A#3,,Stranger Aeons
+Sonic Foundry,Voices of Native America,Single Shot Loops & Hits -> Flutes,Echo Flute 9.1,,Through The Tower
+Roland,JV-2080,,,,"Title, Brassy Road"
+Roland,JV-2080,,,"Music box, look into this",Streamside
+Roland,JV-2080,PR-A,023 PsychoRhodes,,"Ancient Groover, Brassy Road"
+Roland,JV-2080,PR-A,105 Dulcimer,,"Theme of Payon, Through The Tower, Nano East, Into the Abyss, Muay Thai King"
+Roland,JV-2080,PR-A,114 Jungle Melody,,Watery Grave
+Roland,JV-2080,PR-B,098 Air Lead,,Streamside
+Roland,JV-2080,PR-C,099 Flying Waltz,,One Fine Day
+Roland,JV-2080,PR-D (GM Bank),065 Civilization,,Plateau
+Roland,JV-2080,PR-D (GM Bank),078 Shakuhachi,,"Theme of Payon, Ancient Groover, Through The Tower"
+Roland,SR-JV80-04 Vintage Synth,,128 Mini Lead,Not sure about this in retrospect,"Theme of Prontera, Plateau, Morning Gloomy, Don't cry, baby"
+Roland,SR-JV80-06 Dance,,0117 Aaaah!,Waveform,CheongChoon
+Roland,SR-JV80-06 Dance,,0216 Rewind,Waveform,Hamatan
+Spectrasonics,Bass Legends,Partition A -> ALL THUMBS,EM SLP POP A,Additional bass is layered,TeMPoison
+Spectrasonics,Distorted Reality II,Partition A -> 02 70-79 BPM,BLASTCAPS 73,,Treasure Hunter
+Spectrasonics,Heart of Africa,Partition B -> 10 GRP CHANT,AF.CHANTMENU,,Top Hoppy
+Spectrasonics,Heart of Asia,Disc 1 -> Partition B -> BAN-DI FLUTE,BAN-DI -V,"this is chinaflt most likely, check that","Welcome Mr. Hwang, Dream of a Whale"
+Spectrasonics,Liquid Grooves,Disc 1 -> Partition D -> 78 ICE BRUSH,ICE BRUSHES,Original track from 2000 (See notes),Ethical Aspiration
+Spectrasonics,Liquid Grooves,,095-Aboriginal Wavedrum wet 1,Temporary Stylus name,Treasure Hunter
+Spectrasonics,Metamorphosis,Disc 1 -> Partition A -> 53-70 LOOPS,MOHAVE C,,Theme of Al de Baran
+Spectrasonics,Metamorphosis,,,,Good Morning
+Spectrasonics,Stylus RMX,Sound Menus,Cinematic Ambient Metals,C3,Fissure Eruption
+Spectrasonics,Stylus RMX,,52-Alice's Dream Combo,,Twilight Heaven
+Spectrasonics,Stylus RMX,,143-MindBender Half Metal,,Stranger Aeons
+Spectrasonics,Stylus RMX,,143-MindBender Shakers,,Stranger Aeons
+Spectrasonics,Stylus RMX,,145-Electric Flower AM Radio,,Stranger Aeons
+Spectrasonics,Stylus RMX,,160-Spheres DnB,,Away from Home
+Ueberschall,2 Step Garage,Disc 1,Track 19,"Timestamps: 0:59.3, 1:03.8, 1:08.2",Sleepless
+Ueberschall,2 Step Garage,Disc 1,Track 27,Timestamp: 0:00,Purity of your smile
+Ueberschall,2 Step Garage,Disc 1,Track 30,Timestamp: 0:00,Purity of your smile
+Ueberschall,2 Step Garage,Disc 1,Track 44,Timestamp: 1:10.6,Sleepless
+Ueberschall,2 Step Garage,Disc 1,Track 54,Timestamp: 0:45.7,Jazzy Funky Sweety
+Ueberschall,Brazil Electro,,Fx-#448,,"Can't go home again, baby"
+Ueberschall,Disco Deluxe,85-86 VOCALS -> 85 vocals I,voc-hirollers3_em,,High Roller Coaster
+Yamaha,MOTIF 6,PRE1,A01 PowerGrand,,Not so far away
+Yamaha,MOTIF 6,PRE2,D06 SweetFlute,,"Come in Peace, Lastman Dancing, Alpen Rose"
+Yamaha,MOTIF 6,PRE2,G01 SAKURA,,"Purity of your smile, Sleepless"
+Yamaha,MOTIF 6,GM,G12 Koto,,"Can't go home again, baby"
+Yamaha,MOTIF-RACK,PRE4,031 ScaryNight,,Wanna Be Free!!
+Yamaha,PLG150-VL,PLG1PRE1,001 Trumpet 1,,Jazzy Funkey Sweety
+Yamaha,PLG150-VL,PLG1PRE1,002 Trombone,Needs pitchbends that Trumpet 1 has,"Jingle Bell on Ragnarok, Theme of Lutie / Snow In My Heart"
+Yamaha,PLG150-VL,PLG1PRE1,032 Jazz Flute,,"Theme of Lutie / Snow In My Heart, Top Hoppy"
+Yamaha,PLG150-VL,PLG1PRE1,024 TenorSax 2,,"Welcome, my lord, Mucho Gusto, TeMPotato, Jazzy Funkey Sweety, Macaroni Express"
+Zero-G,Chemical Beats,Guitar Loops-120,120-Guitar Loop 02,Used ver. could be AKAI,Time UP!
+Zero-G,Cuckooland UNHINGED,Disc 2 -> Partition A -> FX SET 2,FX SET 2,Sample: RIP SHRIEK,TeMPoison
+Zero-G,Cuckooland UNHINGED,Disc 2 -> Partition C -> 096-BPM,096-BPM,Sample: CHIRPINESS,Watery Grave
+Zero-G,Datafile 3,,Track 72,Timestamp: 0:17.7,"Can't go home again, baby"
+Zero-G,Interface Dance,,SYNTHTRANS_OS_HER5_F_MA,Could be Total House instead,Through The Tower
+XLN Audio,Addictive Drums,,Startup,,"Arrival, Melt Down!"
+"Fortress 3 Paewang (2002) - SoundTeMP, Jinbae Park, Dong-Il Kwak, Seock-Jin Lee,",,,,,
+Best Service,Voice Spectral,,Track 86,Timestamp: 0:15.3,Gowon (The Sky)
+Ensoniq,MR-Rack,ROM004,097 Atomic Lead,,Chat Guild
+KORG,01/W,PROG,A63 Tin Flute,,Lake
+KORG,TRITON-RACK,Programs -> INT-A,015 Monkey Skulls,,Underthsea
+KORG,TRITON-RACK,Programs -> INT-A,031 VS Bell Boy,"Some altered parameters, TR-RACK?",Wait Guild
+KORG,TRITON-RACK,Programs -> INT-B,045 Gliding Squares,,"Sever, Wait Exam"
+Spectrasonics,Metamorphosis,Disc 1 -> Partition A -> 53-70 LOOPS,SONAR,,Lake
+Yamaha,MOTIF 6,GM,G12 Koto,,Temple
+"Talesweaver (2003) - Jinbae Park, Goomin Nam, Jee-Hoon Park, Sungwoon Jang, Chan-Suk Kim, Ga-Hae Kim",,,,,
+Access,Virus Indigo,,C49 HongKongBC,,Four Thousand Years
+Access,Virus Indigo,,101 Bass,,"Four Thousand Years, Fortune Message"
+Best Service,Brass Super Section,Partition E -> TRPHARMUTE44,TRP HARMUTE,,Magnolia
+Best Service,Brass Super Section,Partition G -> BARITONSAX,SAXOVERBLOWN,,Magnolia
+Best Service,Voice Spectral,,Track 8,Timestamp 0:00,jungle jungle
+Best Service,World Colours,Partition F -> FLUTE GROOVE,FLUTE GROOVE,FLUTEGRV06 ,jungle jungle
+Best Service,World Colours,Partition F -> FLUTE+VOCAL,FLUTE+VOCAL,FLU.+VOC01,jungle jungle
+Best Service,World Colours,Partition F -> SNG+PRAYER 1,SNG+PRAYER 1,SING+PRAY1,jungle jungle
+Big Fish Audio,Kitch 70's,Partition B -> 08-94.5LP #2,94.5-02LOOPS,Waveform: SHAKE IT,Fight Master
+EastWest,Ra,Americas -> Wind -> Pan Flute,Pan Flute KS C0-D#0,,And Don't forget 
+EastWest,Stormdrum,Large Percussion,Big Hits,A5,Tower
+EastWest,Symphonic Orchestra,Perc -> Drums,Timp Hits LR,,Your Mejesty
+Ensoniq,EXP-3 Urban Dance Project,EXP030,066 Inharmonica,,"The Takes (ESTi's Fairytale remix), Steppers on line"
+Ensoniq,MR-Rack,RAM001,049 MR Coffee,Seems to be modified?,The Takes (ESTi's Fairytale remix)
+Hollywood Edge,Premiere Edition Vol. 1,PE-01 Nature Ambiences,ForestAmbienceMix PE010201,,Till the End of Infinity
+Hollywood Edge,Premiere Edition Vol. 1,PE-04 Water,DripsSlowSmallWate PE040201,Probably some other clip from HEPE,무(無)
+Hollywood Edge,Premiere Edition Vol. 1,"PE-17 Telephones, Cameras, Clocks",FutzedthroughLineB PE172001,Chopped,Reminiscence [radiomorphose edit]
+Hollywood Edge,Premiere Edition Vol. 1,"PE-17 Telephones, Cameras, Clocks",FutzedPhoneOffHook PE172601 ,,What Exists In Order to Forget the Dreams of Yesterday
+Hollywood Edge,Premiere Edition Vol. 1,"PE-17 Telephones, Cameras, Clocks",FutzedOperatorMess PE173001,,Reminiscence [radiomorphose edit]
+Hollywood Edge,Premiere Edition Vol. 1,"PE-17 Telephones, Cameras, Clocks",35mmStillCameraSho PE179001,More camera sfx are used throughout,What Exists In Order to Forget the Dreams of Yesterday
+Hollywood Edge,Premiere Edition Vol. 1,"PE-20 Electronic, Sci-Fi",SynthRadio1Oscilla PE202001,Edited in some fashion to extend it,Reminiscence [radiomorphose edit]
+Hollywood Edge,Premiere Edition Vol. 4,PE-50 Designed Events,PickupPhoneFrom PE504101,Chopped,What Exists In Order to Forget the Dreams of Yesterday
+ILIO,Classical Wild Takes,Partition A -> VOLUME 004,WILD TAKE 80,Could be Hollywood Edge's release?,Christmas in the 13th Month
+ILIO,Stark Raving Beats,EXP Libraries > Stark Raving Beats,150-All That Perc Loop,,Tower
+ILIO,Stark Raving Beats,EXP Libraries > Stark Raving Beats,150-All That Full Mix,,Tower
+ILIO,World Winds,Partition A -> BANSURI,BANSUR.MENU1,,Shadow Claws
+KORG,TR-Rack,Prog > A,A101 Finger Cymbal,,古代文明の扉
+KORG,TRITON-RACK,Programs -> INT-A,065 90's Piano,,delight
+KORG,TRITON-RACK,Programs -> INT-A,079 Ensemble Bell,,"So Cool, One Day, Dark Knight, Get Over"
+KORG,TRITON-RACK,Programs -> INT-B,017 Dyno Tine EP,,Brand new spring is coming
+KORG,TRITON-RACK,Programs -> INT-B,060 Musette,,Steppers on line
+KORG,TRITON-RACK,Programs -> INT-C,028 A Leadlead,,Aqua Pura
+KORG,TRITON-RACK,,,"Triton combi strings, not sure which",La redoute
+KORG,EXB-PCM04 Dance Extreme,,005 Gospel Voice Set,,The Place Forbidden to Visit by Adults
+KORG,EXB-PCM06 Orchestral Collection,,001 Maestro Strings,,Life in Keltica
+Native Instruments,FM7,,,"""Stringbell"" pathing will come soon","The Takes (ESTi's Fairytale remix), Four Thousand Years, F.M.7, EarCatcher - Wishing"
+Nightingale Music,The Premier Collection Vol. 2,,Track 50,Timestamp: 0:00,Fight Master
+Roland,Fantom X7,,,Used by D.A. Undocumented usage.,
+Roland,JV-2080,PR-A,099 Steel Drums,,autumn leaves
+Roland,JV-2080,PR-A,108 Nylon Gtr,,"Daybreak, Song of Beach"
+Roland,JV-2080,PR-B,014 Nylon Bass,,The Place Forbidden to Visit by Adults
+Roland,JV-2080,PR-B,119 Harmonica,,Steppers on line
+Roland,JV-2080,PR-C,050 Harp,,Aquabelle
+Roland,JV-2080,PR-D,019 HolidayCheer,,Ice candy tree
+Roland,XV-3080,PR-F,033 XV SteelGt 1,,Past
+Roland,XV-3080,PR-F,081 The Ganges,,City of Trade
+Roland,XV-5080,PR-F,037 Folk Guitar,,Four Thousand Years
+Roland,SC-8820,SC-8820 Map,024 019 Rotary Org.F,,yeah!
+Roland,SC-8820,SC-8820 Map,000 037 Slap Bass 1,,Magnolia
+Roland,SR-JV80-06 Dance,,139 Loopbits x2,,Make A Break To This
+Roland,SR-JV80-06 Dance,,140 Slide Fx x2,,"A Cloudy World, Take A Step Forward"
+Roland,SR-JV80-06 Dance,,141 Spooky,,Orange Garage
+Roland,SR-JV80-06 Dance,,0216 Rewind,Waveform,The Takes (ESTi's Fairytale remix)
+Roland,SR-JV80-16 Orchestral II,,,Harp patch,A Tiny Chest Which Cannot Be Opened
+Spectrasonics,Liquid Grooves,Disc 1 -> Partition G -> 94 SOUL BOB,SLB LO-FIDRM,Has a chance of being Stylus RMX LG,Reminiscence
+Spectrasonics,Distorted Reality II,Partition A -> 02 70-79 BPM,BLASTCAPS 73,,dark
+Spectrasonics,Distorted Reality II,Partition B -> 01 110-119 BPM,SPACEPHUNK,,Take a step forward
+Spectrasonics,Heart of Asia,Disc 1 -> Partition B -> BAN-DI FLUTE,BAN-DI -V,,"Till the End of Infinity, Four Thousand Years, Walking on your own, jungle jungle, Tomb of Honor"
+Spectrasonics,Heart of Asia,Disc 1 -> Partition B -> BAN-DI FLUTE,,Check later,Bambooming
+Spectrasonics,Metamorphosis,Disc 1 -> Partition A -> 53-70 LOOPS,SONAR,Effects applied,keep yourself
+Spectrasonics,Metamorphosis,Disc 1 -> Partition A -> 53-70 LOOPS,MOHAVE B,,Feliz Navidad
+Spectrasonics,Metamorphosis,Disc 1 -> Partition A -> 53-70 LOOPS,MOHAVE C,,The Good Old Days
+Spectrasonics,Omnisphere,Atmosphere Library -> Bells and Vibes,Chime City,Could be Atmosphere itself,Philaion
+Spectrasonics,Stylus,,55-Phew and Phar d,,Hotel Inside
+Spectrasonics,Stylus RMX,Bonus Spectrasonics -> Distorted Reality 090-127,92-Ring Hop,"Probably AKAI, path will come later",just climbing
+Spectrasonics,Stylus RMX,Sound Menus -> Cinematic,MENU - Ambient Metals,G4,Gate to an Ancient Civilization
+Spectrasonics,Stylus RMX,RMX Grooves,51-Scuba Duba Hi-fi,,Sea star
+Spectrasonics,Stylus RMX,RMX Grooves,52-Alice's Dream,,East Green wind
+Spectrasonics,Stylus RMX,RMX Grooves,60-Volcano Combo,,Aqua Pura
+Spectrasonics,Stylus RMX,RMX Grooves -> 70-Datalife,70-Datalife Vibro,,Defeat
+Spectrasonics,Stylus RMX,RMX Grooves,,,abandoned..
+Spectrasonics,Stylus RMX,RMX Grooves,72-Half Moon No Kick a,,Shadow Claws
+Spectrasonics,Stylus RMX,RMX Grooves ->  97-Wax Wash,97-Wax Wash Vinyl Perc,,Life in Keltika
+Spectrasonics,Stylus RMX,RMX Grooves,105-Perilous Vocal Slider,,mondo E-house
+Spectrasonics,Stylus RMX,RMX Grooves,160-Spheres DnB,Custom loop,출발자(出發子)
+Spectrasonics,Stylus RMX,RMX Grooves,160-The Call,Custom loop,Final Killer
+Spectrasonics,Stylus RMX,RMX Grooves,174-World Hunt,Custom loop,Lucky Guy
+Spectrasonics,Vocal Planet,Disc 3 -> Partition B -> 2 DOOEEOT,DOOEEOT B,Stretched/chopped to match rhythm,Walking on your own
+Spectrasonics,Vocal Planet,Disc 3 -> Partition H -> 2 VOCAL WIND,A TO O SWEEP,,Hotel Inside
+Spectrasonics,Vocal Planet,Disc 3 -> Partition H -> 2 VOCAL WIND,O-NOISE BED,,Hotel Inside
+Spectrasonics,Vocal Planet,Disc 4 -> Partition H -> 1 COUNTING,EH COUNTING,"E5, F5, F#5, G5 (one, two, three, four)",Park's Life(Paku's ver.)
+Steinberg,Virtual Guitarist,Virtual Electric Guitar -> Wah Wah,8. Pedal 2,,Orange Garage
+UVI,Plugsound Volume 2 (Fretted Instruments),,018 Spanish Guitar -Full,,Aquabelle
+Ueberschall,Brazil Electro,,Fx-#448,,Tropical Tripper
+Ueberschall,Disco Deluxe,,str120strings_classic,Tune 200 cents up. Low-end EQ?,Sentence
+UltimateSoundBank,Soundscan 19: Hip Hop R'n B,Partition A -> 06-2TIMBA 98,2TI98PHFXLP,,Hotel Inside
+UltimateSoundBank,Soundscan 19: Hip Hop R'n B,Partition A -> 06-2TIMBA 98,2TI98PERLP,,Hotel Inside
+Yamaha,MOTIF 6,PRE1,A01 PowerGrand,,MOTIVITY
+Yamaha,MOTIF 6,PRE1,A03 Dark Grand,,Aquabelle
+Yamaha,MOTIF 6,PRE1,A07 BalladKeys,,Second Run
+Yamaha,MOTIF 6,PRE1,B06 Early 70's,,Not Ended Fantasy
+Yamaha,MOTIF 6,PRE1,G15 MetalMute,,dis-apparition
+Yamaha,MOTIF 6,PRE2,D06 SweetFlute,,"MOTIVITY, Song of Beach, Feliz Navidad"
+Yamaha,MOTIF 6,PRE2,F15 Tamburax,,Hotel Inside
+Yamaha,MOTIF 6,GM,F01 Square Ld,Mute 2nd voicing. Increase attack ms?,dis-apparition
+Yamaha,MOTIF-RACK,PRE5,071 RezSinePad,Confirms rack usage,Hotel Inside
+Yamaha,MOTIF-RACK,GM,,Accordion,"And,Don't Forget"
+Yamaha,MOTIF XF8,,,Used by D.A. Undocumented usage.,
+Yamaha,MOTIF XS8,,,Used by D.A. Undocumented usage.,
+Zero-G,Monster Beats,Beat Loops,Book em a 155 4,,Final Killer
+Zero-G,Monster Beats,Beat Loops,Book em b 155 8,Fx variants might be used as well,Final Killer
+Zero-G,Monster Beats,Beat Loops,Book em c 155 4,,Final Killer
+"Seal Online (2003) - SoundTeMP, Jinbae Park, Seock-Jin Lee, Goomin Nam, 'Chihiro'",,,,,
+E-MU Systems,Proteus 2000,Instruments,0203 gtr:Sad Guitar,Could be ROM version?,낭만상인(浪漫商人)
+EastWest,Symphonic Orchestra,,,,Hunter
+Ensoniq,EXP-1 The Real World,EXP024,033 Sikus PT,,Sakara
+Ensoniq,MR-Rack,,,"Surdos, possibly other kit pieces",Elim Maturi
+Ensoniq,MR-Rack,ROM005,055 Pop Brass,,Elim Maturi
+Hollywood Edge,Premiere Edition,,,,Across the Misty Forest
+KORG,01/W,PROG,A63 Tin Flute,Song originally from Narsillion,15.mp3
+KORG,TRITON-RACK,Combis -> INT-A,014 Leading Lady,,"By your Side, Island Dream"
+KORG,TRITON-RACK,Combis -> INT-A,062 DreamingForMiles,Enable SW1. Might be Trinity?,Streamy Saga
+KORG,EXB-PCM06 Orchestral Collection,,001 Maestro Strings,,Macho Bravo
+reFX,Nexus 2,Fantasy And Dream,SY Decadebell,,01.mp3
+Roland,SR-JV80-06 Dance,,141 Spooky,,Island Dream
+Roland,XV-3080,PR-F,075 Andreas Cave,Disable tone 3,Lakeside Mystery
+Roland,,,,,Sakara
+Sonic Foundry,Voices of Native America,Single Shot Loops & Hits -> Flutes,,Some other flute samples maybe this?,Sakara
+Sonic Foundry,Voices of Native America,Single Shot Loops & Hits -> Flutes,Echo Flute 9.6,,Sakara
+Sonic Foundry,Voices of Native America,Single Shot Loops & Hits -> Flutes,Echo Flute 10.8,,Sakara
+Spectrasonics,Bass Legends,Disc 2 -> PARTITION B -> ALL SLIDES,JP AC.UP-DWN,Regular bass should be the same one,La Vie en Rose
+Spectrasonics,Metamorphosis,Disc 3 -> PARTITION B -> 125-135 LPS,MOVE ME C,,Dilly Hilly Valley
+Spectrasonics,Stylus,,,Phew and Phar,48.mp3
+Spectrasonics,Stylus RMX,,160-Spheres,Trashed? Custom loop?,58.mp3
+Spectrasonics,Symphony of Voices,,,28.mp3,
+UVI,Plugsound Volume 2 (Fretted Instruments),,018 Spanish Guitar -Full,,This is My Story
+Ueberschall,House Musique Disco and French House,21-25 frenchbrass 130 e -> 24 licks+samples,pne130chords01_frenchbrass,,Dilly Hilly Valley
+Yamaha,MOTIF 6,PRE2,D06 SweetFlute,,"Discoholic, July Delight"
+Yamaha,PLG100-VL,,,, 
+Corum Online (2003) - SoundTeMP,,,,,
+EastWest,Ra,Americas -> Wind -> Pan Flute,Pan Flute KS C0-D#0,,Almansia
+EastWest,Symphonic Orchestra,,,,"Intro, Lamonta Ruins, Irnote, Day in Ludiros, Event Dungeon, Lighthouse, Tower/Guild Battle"
+Roland,JV-2080,,,Timpani,Ending
+Spectrasonics,Vocal Planet,Disc 5 -> Partition E -> 3 WELSH FEM.,WELSH FEM.1,,Lamonta
+Yamaha,MOTIF 6,PRE2,D06 SweetFlute,,"Santa Claus Is Coming to Town, NPC 1"
+"Flyff (2004) - SoundTeMP, Jinbae Park, Dong-Il Kwak, Seung Yeol Kim,",,,,,
+Access,Virus,,A4 Impact MS,Program name based on Virus C,"Crisis Battle, Darkon 1"
+Access,Virus,,C99 Sawz 2 SV,Program name based on Virus C,Flaris Battle
+Best Service,Total Piano,,30 Piano FX Menue,"AKAI used, program name is from CCC",Darkon 1
+EastWest,BT Breakz from the Nu Skool ,,090 Filth and Funk,,Darkon 3
+EastWest,BT Breakz from the Nu Skool ,,090 Graveyard Shift,,Darkon 3
+EastWest,BT Breakz from the Nu Skool ,,117 Fruitalicious Break,,Crisis Battle
+EastWest,BT Twisted Textures,,Can it be true,,Darkon 1
+EastWest,Stormdrum,Large Percussion,Big Hits,Original track from 2005 (See notes),Kalgas Cave
+EastWest,Symphonic Orchestra,,,,Flyff World Championship
+EastWest,Symphonic Orchestra,,,"Snare, glock, etc.",Flyff World Championship
+Ensoniq,MR-Rack,RAM001,049 MR Coffee,,Lachrymose
+Ensoniq,MR-Rack,ROM004,050 Pipe Organ,Parameters seem edited,Lachrymose
+E-MU Systems,Mo' Phatt,Bank 0,018 key:SOOTCaSE’000,Could be ROM version?,Sain City
+E-MU Systems,Proteus 2000,Instruments,0203 gtr:Sad Guitar,Could be ROM version?,Playground
+KORG,TRITON-Rack,Programs -> INT-C,C127 Bottle-Bell,Turn off OSC2,Traseia
+KORG,TRITON-Rack,Programs -> INT-D,D031 Finger Cymbal,,"Soaring Broom, Frostbelt"
+KORG,TRITON-Rack,Programs -> INT-D,D042 Vanishing Planet,"Patch seems random, look into this",Mars Mine Dungeon
+Native Instruments,FM8,FM7 Legacy,Far East,,Flyff World Championship
+Roland,SR-JV80-12 Hip Hop Collection,,245 EarlyEvening,Maybe not this? Patch doesn't pitch,Darkon 3
+Roland,SR-JV80-16 Orchestral II,,113 Dyno Celt,,Darkon 2
+Spectrasonics,Bass Legends,Partition A -> ALL THUMBS,EM SLP POP A,Additional bass is layered(?),Darkon 1
+Spectrasonics,Metamorphosis,,,,Good Morning
+Spectrasonics,Metamorphosis,Disc 1 -> PARTITION A -> 53-70 LOOPS,SONAR,AKAI/WAV/Stylus tossup,Flarine
+Spectrasonics,Metamorphosis,Disc 2 -> PARTITION A -> 99-105 LPS,ASTERIODS,AKAI/WAV/Stylus tossup,Flarine
+Spectrasonics,Metamorphosis,Disc 2 -> PARTITION A -> 99-105 LPS,HAMSTRING,AKAI/WAV/Stylus tossup,Frostbelt
+Spectrasonics,Metamorphosis,Disc 2 -> PARTITION A -> 99-105 LPS,SID KID,AKAI/WAV/Stylus tossup,Flarine
+Spectrasonics,Omnisphere,ARP + BPM,Dynamic Crystal Gamelan Arp,Different preset w/same source?,Traseia
+Spectrasonics,Stylus,,55-Phew and Phar d,,Sain City
+Spectrasonics,Stylus,Congas,118-Congas,,Sain City
+Spectrasonics,Stylus,Shakers,83-Shaker,Absolutely could be something else,Saint Morning Field
+Spectrasonics,Stylus RMX,Groove Elements -> Congas,99-Congas,Layered with something else,Kaillun Grassland
+Spectrasonics,Symphony of Voices,Disc 2 -> Partition G -> 01 SOP OHS,SOP OHS AS,,"Frostbelt, Guardiane"
+Spectrasonics,Symphony of Voices,Disc 2 -> Partition G -> 02 SOP-EH-OH,SOP EH-OH AS,,"Darkon 2, Guardiane"
+Spectrasonics,Symphony of Voices,Disc 3 -> Partition D -> 02 SOLO BOY,ONE BOY AH,"A, B or C. Sample used is   BC 1-AH 08",Invisible
+Spectrasonics,Symphony of Voices,Disc 3 -> Partition D -> 03 BOY PHRAS,BOY PHR MONO,,"Invisible, Darkon Battle, Solemn 2"
+Spectrasonics,Symphony of Voices,Disc 5 -> Partition C -> 01 OPERATIC,OPERATIC,,Sad
+Spectrasonics,Symphony of Voices,Disc 5 -> Partition C -> 02 SERENE,SERENE 18,Second instance cuts the Ooo intro,Flaris Field
+Spectrasonics,?,,,,
+Sonic Foundry,Voices of Native America,Single Shot Loops & Hits -> Flutes,Echo Flute 9.2,,"Saint Morning Battle, Sad"
+Sonic Foundry,Voices of Native America,Single Shot Loops & Hits -> Flutes,Echo Flute 9.3,,Saint Morning Battle
+Sonic Foundry,Voices of Native America,Single Shot Loops & Hits -> Flutes,Echo Flute 10.8,,"Saint Morning Battle, Sad"
+Sonic Foundry,Voices of Native America,Single Shot Loops & Hits -> Flutes,Echo Flute 11.4,,Saint Morning Battle
+Sonic Foundry,Voices of Native America,Single Shot Loops & Hits -> Flutes,Echo Flute 11.5,,Saint Morning Battle
+Ueberschall,Techno Trance Essentials,72-96 VOX -> TE72.VOXa-SPECIAL,voxTTE72010special-A,Pitch up 400 cents,Flying
+Yamaha,MOTIF 6,DRUM,,First two kits? Some elements only?,Lachrymose
+Yamaha,MOTIF 6,,,Accordion,Sain City
+Yamaha,MOTIF 6,PRE2,D06 SweetFlute,,"Flaris Field, Saint Morning Field, New Flarine, Euphresia, Eillun, Kaillun Grassland"
+Yamaha,MOTIF 6,PRE2,G14 EthncFlute,Mute 2nd voicing,Flarine
+Zero-G,Cuckooland UNHINGED,Disc 2 -> Partition A -> FX SET 2,SNAKE LICK,Used ver. could be CDDA/WAV,Darkon 1
+RF Online (2004) - SoundTeMP,,,,,
+EastWest,Symphonic Orchestra,,,Soundtrack is mostly EWQL,"Accretia Base, Cora Base, Cauldron Field"
+"Silkroad Online (2005) - SoundTeMP, Park Jung-Ah",,,,,
+AudioNerdz,Delay Lama,,,,Donwhang Dungeon
+,,,,Goliath music box,event_festival
+EastWest,Symphonic Orchestra,,,Soundtrack is mostly EWQL,Eastern Europe Field
+Spectrasonics,Metamorphosis,Disc 1 -> Partition A -> 53-70 LOOPS,ABCESS B,,event_ghost
+Yamaha,MOTIF 6,PRE2,D06 SweetFlute,,"Feliz Navidad, Hotan Field"
+Yellow Tools,Pure Drums,,Funk Kit,Might be ProSamples 43,Feliz Navidad
+"Yogurting (2005) - Sungwoon Jang, Goomin Nam, Kazuo Sato",,,,,
+,,,,"Check this sfx, is it JV80 SFX?",Visions
+ILIO,Stark Raving Beats,EXP Libraries > Stark Raving Beats,150-All That Perc Loop,,The Night Before the Fierce Contest
+KORG,TRITON-Rack,Programs -> INT-A,079 Ensemble Bell,,A New Encounter
+KORG,TRITON-Rack,Programs -> INT-A,127 Krystal Bells,"Disable reverb. Not matching, recheck",Homeroom
+Roland,,,,SC Shakuhachi,The Memory of that Day
+Roland,JV-2080,PR-B,098 Air Lead,,A New Encounter
+Spectrasonics,Liquid Grooves,Disc 1 -> Partition C -> 73 MYSTERIOUS,MYS TRIPPY 1,,Silence
+Spectrasonics,Liquid Grooves,Disc 1 -> Partition D -> 78 ICE BRUSH,ICE BRUSHES,,Visions
+Spectrasonics,Stylus RMX,,52-Alice's Dream Combo,,Beyond the Mist
+Spectrasonics,Stylus RMX,,60-Volcano Kabuki Wood,,Beyond the Mist
+Spectrasonics,Stylus RMX,,68-Tower Zero Groove,,Forgotten Scenery
+Spectrasonics,Stylus RMX,,,,Let's Make Some Memories!
+Spectrasonics,Stylus RMX,,,,Let's Make Some Memories!
+Spectrasonics,Stylus RMX,,84-Small Blocks Beat,,Bygone Days
+Spectrasonics,Stylus RMX,,84-Small Blocks Combo,,Bygone Days
+Spectrasonics,Stylus RMX,,135-Iron Boy,,Let's Make Some Memories!
+Spectrasonics,Stylus RMX,,160-Find The Exit Combo,,The Thousand Year Lament
+Yamaha,MOTIF 6,PRE2,D06 SweetFlute,,"Memories of Yggdrasil, Let's Make Some Memories!, Welcome to Yoitsuki Institute"
+Yamaha,MOTIF 6,GM,E12 Panflute,,Beyond the Mist
+"Granado Espada (2006) - SoundTeMP, Dong-Il Kwak, Osamu Kubota, Junsung Kim ",,,,,
+Access,Virus,,A4 Impact MS,Program name based on Virus C,Toccata and Fugue in D-
+Best Service,World Colours,,,One other sample as well,Dark Temple
+Best Service,World Colours,Partition F -> FLUTE GROOVE,FLUTE GROOVE,FLUTEGRV06 ,Dark Temple
+Best Service,World Colours,Partition F -> FLUTE+VOCAL,FLUTE+VOCAL,FLU.+VOC01,Dark Temple
+EastWest,Symphonic Orchestra,,,Most orchestral tracks,Fatal
+E-MU Systems,Proteus 2000,Instruments,0203 gtr:Sad Guitar,Could be ROM version?,Tempician
+KORG,TRITON-Rack,Programs -> INT-A,A001 Acoustic Piano,,"Dancing the Moon, Honor Winds, Sol de la Centro"
+KORG,TRITON-Rack,Programs -> INT-D,D042 Vanishing Planet,,Dark Temple
+Roland,JV-2080,PR-C,048 Real Pizz,,"Dark Temple, Paradiso"
+Roland,SR-JV80-04 Vintage Synth,,255 RSS Spinner,,Red Shores
+Sonic Foundry,Voices of Native America,,,,Noche de la Selva
+Sonic Foundry,Voices of Native America,,,,Paradiso
+Spectrasonics,Metamorphosis,Disc 1 -> Partition A -> 53-70 LOOPS,MOHAVE C,,Ghetto Amoretto
+Spectrasonics,Metamorphosis,Disc 2 -> PARTITION A -> 99-105 LPS,HAMSTRING,,The Last of Chaos
+Spectrasonics,Stylus RMX,Bonus Spectrasonics -> Distorted Reality 130-171,137-Cat Woman,,Khi-Fi
+Spectrasonics,Stylus RMX,RMX Grooves,52-Alice's Dream Wood Hits,Pitched down,Succubus
+Spectrasonics,Stylus RMX,RMX Grooves,73-Caravan Perc,,Nino Zorro Vio
+Spectrasonics,Stylus RMX,RMX Grooves,125-Evil Echo Evilness,,"Deatholic, Matar Fiesta"
+Spectrasonics,Stylus RMX,RMX Grooves,143-MindBender Half Metal,,Whispering
+Spectrasonics,Stylus RMX,RMX Grooves,160-Spheres DnB,Custom loop,Tempestuous
+Spectrasonics,Stylus RMX,RMX Grooves,174-World Hunt,,"Espada Nigero, Agujero inmundo"
+Spectrasonics,Stylus RMX,RMX Grooves,174-World Hunt Snares 1,One-shot with reverb,Dark Temple
+Spectrasonics,Stylus RMX,RMX Grooves,174-World Hunt Snares 2,One-shot with reverb,Dark Temple
+Spectrasonics,Symphony of Voices,Disc 2 -> Partition G -> 01 SOP OHS,SOP OHS AS,,Illusion
+Ueberschall,2 Step Garage,Disc 1,Track 07,Timestamp: 0:00,2step blue
+Ueberschall,2 Step Garage,Disc 1,Track 09,Timestamp: 1:44.8,2step blue
+Ueberschall,2 Step Garage,Disc 1,Track 10,Timestamp: 0:00,2step blue
+XLN Audio,Addictive Drums 2,,,Custom or metal ADpak preset,Initium Rush Hour
+Yamaha,MOTIF 6,PRE2,D06 SweetFlute,,"Sunnyside, Cancion Amor, Watersky"
+"La Tale (2006) - Jinbae Park, Hyuntaek Yun, Hwang Joo-eun, Goohyun Jung, Shin Dong Hwi",,,,,
+Best Service,Voice Spectral,Track 8,Timestamp 0:00,,Saurus Field
+Big Fish Audio,Funk City,14 090 E,scratch fx,,"Coal Mine, Van Giwoo"
+EastWest,Ministry of Rock,,,,colosseum
+EastWest,Ra,Mid East -> Plucked -> Santoor,Santoor KS C0-G0,,"Iris's Theme, Save The Saboten Princess"
+EastWest,Symphonic Orchestra,Woodwinds -> Solo Oboe -> 5 Keysw,SOB KS Master,,Iris's Theme  
+EastWest,Symphonic Orchestra,,Harp,,Fragrance of Forest
+EastWest,Symphonic Orchestra,,3 Snares,D.Z rocks this,"Ackee City, Hammer of Dwarf, Evening Sun, Abracadabra"
+EastWest,Symphonic Orchestra,,Large Snare Ensemble,,Dragon Castle
+EastWest,Stormdrum,Large Percussion,Big Hits,E5,Smile of Sunshine
+EDIROL,Orchestral,String Sections -> Full Strings,P-0 033 FullStrings Spicatto,,Prologue Part 2
+EDIROL,Orchestral,Woodwinds -> Clarinet,P-4 017 Clarinet 2,,"OX QUIZ, Snowfield"
+Ensoniq,MR-Rack,RAM001,000 Steel Pad,Disable effects,Earth Unlimited
+Ensoniq,MR-Rack,RAM001,049 MR Coffee,,용기있는 한걸음
+Heavyocity,Damage,,,,
+Hollywood Edge,Premiere Edition Vol. 1,"PE-20 Electronic, Sci-Fi",MultipitchedHighFr PE208201,,"Genepe Orgel, Siam"
+Native Instruments,FM7,,Far East,,akai ito
+Roland,JV-2080,,,,"Dear. HyeJin, Toad island #1/#2/#4, "
+Roland,SR-JV80-06 Dance,,157 ScratchMenu2,"0215 Spooky, 0181 Scratch Hit",Gambling without Luck
+Spectrasonics,Metamorphosis,Disc 1 -> Partition A -> 53-70 LOOPS,MOHAVE B,,dance away
+Spectrasonics,Metamorphosis,Disc 1 -> Partition A -> 53-70 LOOPS,SONAR,Custom loop,"Elfa, 돌고래의 꿈"
+Spectrasonics,Stylus RMX,Classic Stylus -> 74-Crossroads,74-Crossroads,,Theme of Chunsik
+Spectrasonics,Stylus RMX,Classic Stylus -> 79-Shifted Jazz,79-Shifted Jazz,,Toad island #3 
+Spectrasonics,Stylus RMX,Classic Stylus -> 78-Perturbed,78-Perturbed,,Mystic
+Spectrasonics,Stylus RMX,Classic Stylus -> 133-Step out,133-Step out a,,Pyramid
+Spectrasonics,Stylus RMX,Classic Stylus -> Bongos,131-Bongos,,Pyramid
+Spectrasonics,Stylus RMX,Classic Stylus -> Congas,100-Congas Bend,,Welcome to the Jungle
+Spectrasonics,Stylus RMX,RMX Grooves -> 54-Eclipse,54-Eclipse Atoms,,Cookie Garden
+Spectrasonics,Stylus RMX,RMX Grooves -> 60-Volcano,60-Volcano  Combo,,"Dark Forest, Mysteries of the Forest, The Cradle of Stars"
+Spectrasonics,Stylus RMX,RMX Grooves -> 70-Eden,70-Eden  Combo,Custom Loop,Night Wish
+Spectrasonics,Stylus RMX,RMX Grooves -> 72-Liquid Frame,72-Liquid Frame  Combo,,"Lightning Strikes, Echoes, Dark Forest, Lost Temple (Xenadia), Chaotic Guild"
+Spectrasonics,Stylus RMX,RMX Grooves -> 73-Caravan,73-Caravan  Combo,,Sunshine Bar
+Spectrasonics,Stylus RMX,RMX Grooves -> 79-Bossa Love,79-BossaLuv  Combo a,,Vivo Reprise
+Spectrasonics,Stylus RMX,RMX Grooves -> 80-Space Ranger,80-Space Ranger S+H,,Don't Freeze
+Spectrasonics,Stylus RMX,RMX Grooves -> 84-Particles,84-Particles  Combo,,"Be Ruined, Mystery School, Night Flower"
+Spectrasonics,Stylus RMX,RMX Grooves -> 92-Lollipop,92-Lollipop Vinyl Piano,,"Mystery School, DB"
+Spectrasonics,Stylus RMX,RMX Grooves -> 125-Emperor,125-Emperor Top Dry,,Crossroad
+Spectrasonics,Stylus RMX,RMX Grooves -> 126-Transonica,126-Transonica  Combo,Spammed throughout soundtrack,"Blue Emotion, Western GunRun, Never Die, Dance Away, Chon Pam, Hangar, Genepe, Di Labo, El Anoir Jungle, Hot Blood, PvP Perfect Man, Analog Emotion, The Ocean"
+Spectrasonics,Stylus RMX,RMX Grooves -> 128-Mardy Mark,128-Mardy Mark Combo,,"Pyramid Treasure, Ghost House, White Chapel"
+Spectrasonics,Stylus RMX,RMX Grooves -> 135-Hysteria,135-Hysteria  Combo a,,Ringing Bells in December
+Spectrasonics,Stylus RMX,RMX Grooves -> 135-Hysteria,135-Hysteria Chemical a,,"Blue Emotion, Crystal Cave"
+Spectrasonics,Stylus RMX,RMX Grooves -> 140-Drill,140-Drill Basic Beat,,"Lightning Strikes, Sunshine Bar"
+Spectrasonics,Stylus RMX,RMX Grooves -> 140-Drill,140-Drill The Drill,,Freestyle Rush
+Spectrasonics,Stylus RMX,RMX Grooves -> 160-The Call,160-The Call Combo,,"Prologue Part 2, Bifrost, Volcano, Fragments of Memory"
+Spectrasonics,Stylus RMX,RMX Grooves -> 174-World Hunt,174-World Hunt ,Various elements,Spooky Village
+Spectrasonics,Stylus RMX,RMX Grooves -> 174-World Hunt,174-World Hunt,Custom Loop,Singing Fairy
+Spectrasonics,Stylus RMX,RMX Grooves,,,Chaos! Break! Manga!
+Spectrasonics,Stylus RMX,Sound Menus -> Guitar Bits,MENU - Guitar Drive Bits 1,,ban gioo
+Spectrasonics,Stylus RMX,Sound Menus -> Retro Hits,MENU - Big Band Electro Hits,"A#6, G#6",ban gioo
+Vengeance,Essential Club Sounds Vol. 1,VEC1 FX,VEC1 FX 004,,Don't Freeze!
+XLN Audio,Addictive Drums 2,,AD Classic Startup,,Abyss gate
+Yamaha,MOTIF Rack,PRE1,001 PowerGrand,,MAY be happy
+Yamaha,MOTIF 6,PRE2,D06 SweetFlute,Spammed throughout soundtrack,"Where am i? (arranged ver), Dear. HyeJin, Dark Forest, Welcome to the jungle, Owl Castle, Lonely Sailing, 少女心, Lilliput, My heart is 123 bpm, Toad island #5, Steel City, Genepe, Elias palace, Netural Guild Room, fish"
+Yamaha,MOTIF 6,PRE2,G01 SAKURA,,akai ito
+Yamaha,MOTIF 6,GM,G12 Koto,,"Owl Castle, black mooon princess, may be happy (winter ver), toad island #1"
+Yamaha,MOTIF 6,,,Acoustic bass,Thursday Is Chicken Mayo
+Yamaha,MOTIF 6,,,Vibraphone,Magical July
+Yamaha,?,,,Mondo Lead,Prologue Part 2
+Yellow Tools,Pure Drums,,Funk Kit,Might be ProSamples 43,Don't Freeze!
+"Xenepic Online (2007) - SoundTeMP, Dong-Il Kwak",,,,,
+Best Service,Ethno World,Woodwind and Brass -> Various Flute FX,Various Flute FX,,Desert 02
+EastWest,Symphonic Orchestra,,,,"BGM 47-55, BGM 57"
+Hollywood Edge,Premiere Edition Vol. 1,PE-04 Water,,"Various, will detail later",Senondorf
+KORG,TRITON-Rack,Programs -> INT-A,A001 Acoustic Piano,,Skull Hex
+Roland,SR-JV80-15 Special FX Collection,,006 Illusion,Turn off part 3,Walmer Empire 2
+Roland,SR-JV80-15 Special FX Collection,,026 Bad Dreamer,,Walmer Empire 2
+Spectrasonics,Distorted Reality,Partition C -> DISTORTORAMA,BAD DREAMS,,Walmer Empire 2
+Spectrasonics,Distorted Reality,Partition E -> BOWED METALS,RUSTY SPOKE,,Walmer Empire 2
+Spectrasonics,Stylus,,55-Phew and Phar ,"Might be custom loop, c based",Intro
+Spectrasonics,Stylus RMX,,68-Small Blocks Combo,,Swamp
+Spectrasonics,Stylus RMX,,68-Tower Zero Simple Drums,,Swamp
+Spectrasonics,Stylus RMX,,,Check later,Wasteland
+Spectrasonics,Stylus RMX,,135-Squashed Basic Break,,A Deadly Fountain Of Vitality
+Spectrasonics,Stylus RMX,,160-Find the Exit Combo,Custom loop?,Road of Rock Formation
+Spectrasonics,Stylus RMX,,160-Spheres,Trashed and Iced,Road of Rock Formation
+Spectrasonics,Stylus RMX,Sound Menus -> Cinematic,MENU - Ambient Metals,,Swamp
+Spectrasonics,Symphony of Voices,,,,Dragon's Heart
+Yamaha,MOTIF 6,PRE1,F10 JazzGTmelo,,Theme of Eir
+Yamaha,MOTIF 6,PRE2,D06 SweetFlute,,"Jotunnheim Forest, Lively Town, Esune"
+Yamaha,PLG150-VL,,,,Toyosu Village
+"Street Gears (2008) - Jinbae Park, Seung Yeol Kim,",,,,,
+KORG,TRITON-Rack,Programs -> INT-C,C028 A Leadlead,,Event 4
+Spectrasonics,Stylus RMX,,,Wax Wash,Event 5
+Spectrasonics,Vocal Planet,,,Assuming the beatboxing is this,"Title, Ranking"
+Yamaha,MOTIF 6,PRE2,D06 SweetFlute,,Event 4
+XLN Audio,Addictive Drums,,,Custom kit?,Lobby 5
+XLN Audio,Addictive Drums,,Startup,,Episode 1
+"G2 Guns Gunner (2009) - Jinbae Park, 'NieN', 'Electronic Boutique', 'makou'",,,,,
+EastWest,Symphonic Orchestra,,,,Feathers in the Cage
+Native Instruments,FM8,FM7 Legacy,Far East,Could be Airpad from FM8 Factory,Polar Excursion Train
+Spectrasonics,Stylus RMX,,143-Mind Bender Big Drums,,Narak
+Spectrasonics,Stylus RMX,,160-Spheres Iced,,Polar Excursion Train
+Neo Steam: The Shattered Continent (2009) - SoundTeMP,,,,,
+EastWest,Symphonic Orchestra,,,,"Being After, Mazy, Deeper than Blue, Forgotten Saga"
+Spectrasonics,Symphony of Voices,,,Check later,Lost Elf
+Spectrasonics,,,,"Loop, Pristine Age got Mohave?",Dream Down
+Yamaha,MOTIF 6,PRE2,D06 SweetFlute,,"New Age, Voyageurs"
+Deep Deep Dungeon (2010) - Jinbae Park,,,,,
+EastWest,BT Breakz from the Nu Skool ,,090 Graveyard Shift,,Last Dungeon
+Spectrasonics,Stylus RMX,RMX Grooves,160-Spheres Iced,,Last Dungeon
+XLN Audio,Addictive Drums,,Startup,,vs Common
+Monarch: Heroes of a New Age (2013) - Goomin Nam ,,,,,
+EastWest,Symphonic Orchestra,,,Everything in almost every track,
+Spectrasonics,Metamorphosis S.A.G.E. Xpander,050-059,055-Mohave c,,Wandering Woods
+Spectrasonics,Stylus RMX,,174-World Hunt Metalmix 1a,,Dawn of Cablas
+Spectrasonics,Stylus RMX,Sound Menus,Cinematic Ambient Metals,C3,"A Land Without a King, Red Gate, Bloodlust, Dawn of Cablas"
+"Qurare: Magic Library (2014) - Jinbae Park, Goomin Nam, 'TAK'",,,,,
+EastWest,Symphonic Orchestra,,,snares,Crisis of Collapse
+Native Instruments,FM8,,Far East,Could be Airpad from FM8 Factory,"Homework, Hark the Herald Angels Sing (Remix)"
+Spectrasonics,Stylus RMX,RMX Grooves,160-Spheres Glass,"Custom loop, sounds more like Iced",Vanishing Dimension
+Ueberschall,Caribbean Flavors Vol. 1,,10acc080_CF col cum uno_G_1,,Homework
+Ueberschall,Caribbean Flavors Vol. 1,,05shk080_CF col cum uno_2,,Homework
+"Mabinogi Duel (2015) - ESTIMATE, Jinbae Park, Goomin Nam",,,,,
+Spectrasonics,Liquid Grooves S.A.G.E. Xpander,050-059,055-Sand Castles Perc Mix,,Burnt
+"Tree of Savior (2016) - SoundTeMP, Jinbae Park, Dong-Il Kwak, Sungwoon Jang, Sungjae Lee, 'Chronos', 'Cinenote', '7Clouds', 'Drogo', 'Gaudium', 'Initium', 'Symphonix'",,,,,
+Best Service,Ethno World,Woodwind and Brass -> Various Flute FX,Various Flute FX,,etnica
+EastWest,Symphonic Orchestra,,,,
+Hollywood Edge,Premiere Edition Vol. 1,"PE-20 Electronic, Sci-Fi",MultipitchedHighFr PE208201,,Heavenly Hell
+Roland,JV-2080,PR-A (Preset A Bank),081 Childlike,,Boy's Anthem
+Steinberg,HALion,,Whistle Lead,"""Could be from Yamaha""",Cerulean Wind
+Spectrasonics,Metamorphosis S.A.G.E. Xpander,100-104,100-Hamstring,,"Constituency, Pas le Leste, Virtue and Vice"
+Spectrasonics,Stylus RMX,,,"0:48 ""slushie"" sounding one",Armageddon
+Spectrasonics,Stylus RMX,,52-Alice's Dream Combo,,Armageddon
+Spectrasonics,Stylus RMX,,52-Alice's Dream Illusion 2,,"Armageddon, Bodacious definition"
+Spectrasonics,Stylus RMX,,52-Alice's Dream Illusion 3,,Armageddon
+Spectrasonics,Stylus RMX,,68-Tower Zero,,Bodacious definition
+Spectrasonics,Stylus RMX,,72-Liquid Frame,,Armageddon
+Spectrasonics,Stylus RMX,,72-Liquid Frame Orbital,,"Bodacious definition, Eclipsed Road"
+Spectrasonics,Stylus RMX,,135-Squashed No Kick 3,,Tram is running
+Spectrasonics,Stylus RMX,,143-MindBender Big Drums,,"Dream of Gold, End of the Day"
+Spectrasonics,Stylus RMX,,143-MindBender Half Metal,,"Snowy Bloody, Carol of the Bells"
+Spectrasonics,Stylus RMX,,143-MindBender Shakers,,Snowy Bloody
+Spectrasonics,Stylus RMX,,160-Find The Exit,Combo + custom combo in Regla,"Battle will Begin, Renaissance, Regla, Renaissance"
+Spectrasonics,Stylus RMX,,160-Find The Exit No Thunder,,Synphonia
+Spectrasonics,Stylus RMX,,174-World Hunt,,Battle will Begin
+Spectrasonics,Stylus RMX,,174-World Hunt Metalmix 1b,,"Repetitive, Signs of Penance, Victor Quest"
+Spectrasonics,Symphony of Voices,Disc 2 -> Partition G -> 02 SOP-EH-OH,SOP EH-OH AS,,Armageddon
+Yamaha,MOTIF 6,PRE1,A01 PowerGrand,,Fearless Love
+Xfer Records,Serum,Seq,SQ Blade [LT],Arpeggiator changed + filter,Wrong Theory
+XLN Audio,Addictive Drums 2,,,Custom kitpieces,"Heaven on Earth, Man on Fire, Brilliant Rozee"
+"Destiny Child (2016) - Jinbae Park, 'seibin', 'Benicx', 'Muwen', 'ko.yo'",,,,,
+EastWest,Symphonic Orchestra,,,,
+Ensoniq,EXP-3 Urban Dance Project,EXP030,066 Inharmonica,,PLASTIC CITY (RAID Version)
+Native Instruments,FM8,FM7 Legacy,Far East,Could be Airpad from FM8 Factory,情念之心
+Native Instruments,Massive,,,Seen in a making-of video thumbnail ,Nostalgia
+Roland,SR-JV80-06 Dance,,141 Spooky,,She Loves Lump Sum
+Roland,SR-JV80-06 Dance,,0206 Mg Slide U/D,Waveform/menu,Pathos
+Roland,XV-5080,PR-C,099 Flying Waltz,,Lil Carta Soul pt.1
+Spectrasonics,Metamorphosis S.A.G.E. Xpander,090-094,090-Hop Trip,,bloom ~ Nothing's Gonna Change
+Spectrasonics,Omnisphere 2,Human Voices,Classical Soprano Eh-Oh,Could be Symphony of Voices,"A Flower of Revive, Fugue BWV 578 (Remix Version)"
+Spectrasonics,Omnisphere 3,Human Voices,Classical Soprano Ohs,Could be Symphony of Voices,Pathos:Replicant
+Spectrasonics,Omnisphere 2,Human Voices,Jazz Stacks Dah-Dat,Could be Vocal Planet,"Hello, Master!"
+Spectrasonics,Stylus RMX,,60-Volcano Combo,,Wounded Winner
+Spectrasonics,Stylus RMX,,62-Artificial Blue,,Le misérable pathos
+Spectrasonics,Stylus RMX,,68-Tower Zero Repeater,,Velocity of Light
+Spectrasonics,Stylus RMX,,125-EvilEcho Evilness,,Key of Moongate
+Spectrasonics,Stylus RMX,,160-Spheres Glass,,Descendants de Seth
+Spectrasonics,Stylus RMX,,175-World Hunt Metalmix 1a,Could be 1b. Set time to 3/4,Pathos:Replicant
+Spectrasonics,Vocal Planet,Disc 3 -> Partition H -> 2 VOCAL WIND,A TO O SWEEP,,Pathos Finally Vanished
+Spectrasonics,Vocal Planet,Disc 3 -> Partition H -> 2 VOCAL WIND,O-NOISE BED,,Pathos Finally Vanished
+Yamaha,MONTAGE 8,,,Piano,Pathos Refrain
+Yamaha,MONTAGE 8,,,Motif GM Koto/Sakura equivalent,"bloom ~ Nothing's Gonna Change, bloom (Remix), 月宮姮娥 (Instrumental Ver.), 一蘭姮娥"
+"Ragnarok M: Eternal Love (2017) - SoundTeMP, ESTIMATE, Goomin Nam,",,,,,
+,,,,"check this track out later, got stuff",odin_tem
+EastWest,Symphonic Orchestra,,,,"Adventure Prelude, Eternal Honor"
+Native Instruments,FM8,FM7 Legacy,Far East,Could be Airpad from FM8 Factory,"First Light of Day, Title"
+Native Instruments,FM8,FM7 Legacy,Stringbells,,"A promise of light and the future, Title, Rollercoaster Marriage, Theme of Prontera"
+Spectrasonics,Metamorphosis S.A.G.E. Xpander,050-059,55-Mohave c,,Soul Garden
+The Roll of Genesis (2018) - Goomin Nam,,,,,
+EastWest,Symphonic Orchestra,,,"Everything, scattered everywhere",
+EastWest,Symphonic Orchestra,Perc -> Drums,Snare Ens Large,,Ball
+Native Instruments,FM8,FM7 Legacy,Far East,Could be Airpad from FM8 Factory,Title
+Spectrasonics,Stylus RMX,RMX Gooves -> 70-Datalife,70-Datalife Vibro,,Defeat
+"Spiritwish (2019) - SoundTeMP, Corners Groove, QUESTRO SOUND, Goo-Hee Kwon, Goomin Nam, Sungwoon Jang,",,,,,
+EastWest,Symphonic Orchestra,,,,
+KORG,Minilogue,,,,
+Roland,SOUND Canvas SC-88 Pro,,,,
+Spectrasonics,Trilian,Bass - Electric Fingered,Clean Fender - Full Range,,Light
+Steinberg,Retrologue 2,,Saw Morph Arp,,Newtrolly
+Vengeance Sound,8 Bit Era,Sequences,SQ Filterfunk,Avenger's Bitcrusher added,Newtrolly
+Vengeance Sound,VPS Avenger,,,,
+"Exos Heroes (2019) - ESTIMATE, Jinbae Park, Goomin Nam,",,,,,
+EastWest,Symphonic Orchestra,,,,
+EastWest,Symphonic Orchestra,,,snares and string fx,Battle Special 04
+Heavyocity,Damage,,,,
+Hollywood Edge,Premiere Edition Vol. 1,PE-04 Water,DripSingleFallsLiq PE041401,"Might not be exact one, big reverb",Synergy
+Hollywood Edge,Premiere Edition Vol. 1,"PE-17 Telephones, Cameras, Clocks",DeskTopClockTicks PE179501,,Estoris Field
+Spectrasonics,Stylus RMX,,160-Find The Exit Combo,,Battle Special 06
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+Section 2 - Package Games,,,,,
+" - Games which you can buy physically or digitally with no online necessity to function.
+",,,,,
+"Genocide 2: Master of the Dark Communion (1995) - Goo-Hee Kwon, Dong-Il Kwak, Seock-Jin Lee",,,,,
+Roland,,,,"Everything, everywhere",
+"Astrocounter of Crescents (1996) - Goo-Hee Kwon, Dong-Il Kwak",,,,,
+Roland,JV-2080,,,"Everything, everywhere",
+Roland,JV-2080,PR-B,070 4 Hits 4 You,,KAIST Special Stage
+The Rhapsody of Zephyr (1998) - 4TUNE,,,,,
+Ensoniq,MR-Rack,ROM004,097 Atomic Lead,Could be RAM001:022 Chat Lead,Astray
+Ensoniq,MR-Rack,ROM005,004 Dbl 6-Strng,Possibly ROM005:001 Spruce Top?,"Town Part1, Town Part2, Force Field, PEACE"
+Ensoniq,EXP-1 The Real World,,,,Jungle 2 Jungle
+Roland,JV-2080,,,"Everything, everywhere",Precious Memories
+Roland,SC-88Pro,,,As per ESTi's statement,Precious Memories
+"Princess Maker 3: Fairy Tales Come True (1998) - Goo-Hee Kwon, Dong-Il Kwak",,,,,
+Ensoniq,MR-Rack,RAM001,049 MR Coffee,,Test
+Roland,JV-2080,,,"Everything, everywhere",
+Roland,SR-JV80-06 Dance,,0125 Here We Go,Waveform/menu,Arbeit I
+Roland,SR-JV80-06 Dance,,0144 Giggle,Waveform/menu,Arbeit I
+Roland,SR-JV80-06 Dance,,0205 Mg Slide Dwn,Waveform/menu,Arbeit I
+Roland,SR-JV80-06 Dance,,0206 Mg Slide U/D,Waveform/menu,Arbeit I
+Roland,SR-JV80-06 Dance,,028 Swingin' 110,,A Fairy Seen in a Dream (Final)
+Roland,SR-JV80-06 Dance,,42 Cruisin' 124,,Free Action
+Roland,SR-JV80-06 Dance,,141 Spooky,,Arbeit I
+Roland,SR-JV80-06 Dance,,160 Tape Spin,,Arbeit I
+Roland,SR-JV80-06 Dance,,,Reverse tape spin,A Fairy Seen in a Dream (Final)
+Ant Man 2 (1998) - SoundTeMP,,,,,
+Roland,JV-2080,,,"Everything, everywhere",
+Roland,SR-JV80-05 World,,,,Track 20
+Tempest (1998) - SoundTeMP,,,,,
+Ensoniq,MR-Rack,ROM005,004 Dbl 6-Strng,,"안타리아의 평화, 암운"
+Roland,JV-2080,,,"Everything, everywhere",
+Merturl Wizard (1998) - SoundTeMP,,,,,
+Roland,JV-2080,,,"Everything, everywhere",
+Roland,SR-JV80-04 Vintage Synth,,146 P5 Sync Lead,,최후의 결전
+Roland,SR-JV80-06 Dance,,015 Nite'Hood 94,,최후의 결전
+Roland,SR-JV80-06 Dance,,141 Spooky,,최후의 결전
+"Leithian: In the Abyss (1999) - SoundTeMP, A.Dam",,,,,
+Roland,JV-2080,PR-C,099 Flying Waltz,,Mattilene
+"The War of Genesis III (1999) - Sungwoon Jang, Jinbae Park",,,,,
+Best Service,Voice Spectral,,Track 05,Timestamp: 0:00,Alone in the Battle
+Best Service,Voice Spectral,,Track 15,Timestamp: 0:17.1,Alone in the Battle
+Best Service,Voice Spectral,,Track 76,Timestamp: 0:00,Silent Space
+KORG,EXB-PCM06 Orchestral Collection,,001 Maestro Strings,,"Let's Sweep, Epilogue"
+Ensoniq,MR-Rack,,,"Surdos, possibly other kit pieces",Rage of Lion
+Ensoniq,MR-Rack,ROM004,097 Atomic Lead,Could be RAM001:022 Chat Lead,End and
+Ensoniq,MR-Rack,ROM005,004 Dbl 6-Strng,Bypass effects,Lonely Wanderer
+Roland,JV-2080,PR-A,023 PsychoRhodes,,"Bards, Heart to Heart"
+Roland,JV-2080,INT-B (Internal B),052 Feedbackwave,,Far and away
+Roland,JV-2080,PR-D,043 Pilgrimage,,"To the Past, Theme of Demian, Far and away"
+Roland,JV-2080,,,Bottle blow,Pirates
+Roland,JV-2080,,,Guitar fret noise,"Break Through!, Shivan Scimitar, Heart to Heart, Bards, Theme of Sherazard"
+Roland,SR-JV80-02 Orchestral,,107 Trumpet 2,,The One
+Roland,SR-JV80-04 Vintage Synth,,253 H20 Asylum,,Far and away
+Roland,SR-JV80-06 Dance,,141 Spooky,Pitched down,End and Never End (CLUB-MIX)
+Spectrasonics,Symphony of Voices,,,Boys choir,Choir for the Faith
+Spectrasonics,Symphony of Voices,Disc 2 -> Partition G -> 02 SOP-EH-OH,SOP EH-OH AS,,Choir for the Faith
+Spectrasonics,Symphony of Voices,Disc 5 -> Partition C -> 02 SERENE,SERENE MENU,,"The Prophecy of Light, Infinity"
+"Arcturus: The Curse and Loss of Divinity (2000) - SoundTeMP, Kyeong Hwan No, Seong Gyu Yang, Wonsul Lee, Yeojin Jeong",,,,,
+Best Service,Orchestral Colours,Partition C -> EXPR. STRING,EXP. STRNGS,,Tension
+Best Service,Orchestral Colours,Partition C -> MAGIC LIGHT,MAGIC LIGHT,,던전夜
+Best Service,Orchestral Colours,Partition D -> BEETLE ESCAP,BEETLE ESC.,,Tension
+Best Service,Peter Siedlaczek's Advanced Orchestra,,,Violin. Could be alternate product,시련
+Best Service,XX-Large 1500 Classic Drumloops,Partition D -> 4,LOOP 105-2,Sample: L 105 031,Astennu Tjodalv
+Best Service,XX-Large 1500 Classic Drumloops,Partition I -> 3,LOOP 125-3,Sample: L 125 062,Astennu Tjodalv
+Big Fish Audio,Kitch 70's,Partition E -> 15112LOOP#3,112-03 LOOPS,Waveform: BEASTIE GIRL,Doom of dome
+Discovery Firm,Sound Effects CD Series - 6 - Nature,,Wind-1,Timestamp: 0:00.0,The abandoned mine
+EastWest,Dance/Industrial II,Partition A -> VOLUME 004,SAMPLES 004,,Machine head
+EastWest,Dance/Industrial II,Partition A -> VOLUME 010,LOOP 010,,Elhive hill
+EastWest,Dance/Industrial II,Partition D -> VOLUME 005,LOOP 057,,Machine head
+Ensoniq,MR-Rack,,,"Surdos, possibly other kit pieces","Venturer's world, Crisis, Glorious pain"
+Ensoniq,MR-Rack,,,GM Tubular at low pitch layered?,Theatre of tragedy
+Ensoniq,MR-Rack,,,"Some ""Tympani"" patch",The absolute ruins
+Ensoniq,MR-Rack,GM008,075 PanFlute-GM,,The Northern pure
+Ensoniq,MR-Rack,GM008,078 Whistle-GM,,Romance of the Seacoast
+Ensoniq,MR-Rack,GM008,079 Ocarina-GM,Modulation applied,The song of dethroned emperor
+Ensoniq,MR-Rack,RAM001,049 MR Coffee,,"밤을 잊은 그대에게…, Farewell to Sadness, Atomic Dance, Farewell to sadness [Club MIX]"
+Ensoniq,MR-Rack,ROM004,018 Tine-2-Love,Maybe something else. Apply reverb.,RX-7
+Ensoniq,MR-Rack,ROM004,097 Atomic Lead,Could be RAM001:022 Chat Lead,The Iron fortress
+Ensoniq,MR-Rack,ROM005,004 Dbl 6-Strng,,The Northern pure
+Ensoniq,MR-Rack,ROM005,066 Recorder,,Memories
+Ensoniq,MR-Rack,ROM005,076 Harmonica,,Memories
+Ensoniq,MR-Rack,ROM005,080 BreathyAlto,Chorus applied? External?,그녀의 아침
+Ensoniq,MR-Rack,ROM005,094 Harpsichord,,"The waltz, Theatre of tragedy, Emperor Karl Petrarca, The Constellarium"
+Ensoniq,MR-Rack,ROM005,109 Vibraphone,,그녀의 아침
+KORG,EXB-PCM04 Dance Extreme,,107 Rap Voice Set,Turn off OSC 2 and center OSC 1,아르바이트맨
+KORG,TRITON,Programs -> INT-B,B045 Gliding Squares,Decrease/turn off glide,Drug Freak
+KORG,TR-Rack,Prog > A,A11 *Tingly* E.Piano,,The Northern pure
+KORG,TR-Rack,Prog > B,B04 Steel String Gtr,,Dream of You
+KORG,TR-Rack,Prog > B,B31 Mandolin Trem,,시련
+KORG,TR-Rack,Prog > D,D86 Radio Piano(SW1),,Valley rally
+KORG,TR-Rack,Combi > A,A05 Maximum Impact,,Doom of dome
+KORG,TR-Rack,Combi > C,C08 Liquid Strings,,RX-7
+KORG,TR-Rack,Combi > C,C37 Tsunami Strikes!,,Magic is basics
+KORG,TR-Rack,Combi > C,C127 Chorus Bell,,Inn
+Masterbits,Climax Vol. 9 - RAPsody (Vocals II),,Track 35,Timestamp: 0:30.1,아르바이트맨
+Masterbits,Tekkno T.R.A.X.,Partition A -> 160TEKDRMLOP,160.2ZERO GR,,R.A.V.E.N.
+Masterbits,Tekkno T.R.A.X.,Partition A -> 160TEKDRMLOP,160 EYE HEAR,,R.A.V.E.N.
+Masterbits,Tekkno T.R.A.X.,Partition A -> 160TEKDRMLOP,160.4S PONJO,,R.A.V.E.N.
+Masterbits,Tekkno T.R.A.X.,Partition B -> 150TEKDRMLO3,150 MAY DAY,,Hit me
+Masterbits,Tekkno T.R.A.X.,Partition B -> 150TEKDRMLO5,150 LED ZEP,,Hit me
+Masterbits,Tekkno T.R.A.X.,Partition C -> 150TEKSQLOP1,150 FAKE LAB,,Hit me
+Masterbits,Tekkno T.R.A.X.,Partition D -> 150TEKSQLOP4,150 HI ANA,,Hit me
+Masterbits,Tekkno T.R.A.X.,Partition D -> 150TEKARP1,150 FUNKART,,Hit me
+Masterbits,Tekkno T.R.A.X.,Partition H -> TEKKNOTALK,DONKY KONGV2,"TT89VOX1, TT89VOX6 respectively","Astennu Tjodalv, Hit me"
+Roland,JV-2080,PR-A,023 PsychoRhodes,,"Strained heart, Drug Freak"
+Roland,JV-2080,PR-B,018 Slap Bass 1,Panning disabled,Curious
+Roland,JV-2080,PR-B,098 Air Lead,,Hopeless hamlet
+Roland,JV-2080,PR-B,120 Harmo Blues,,그녀의 아침
+Roland,JV-2080,PR-B,124 Majestic Tpt,Delay disabled,Curious
+Roland,JV-2080,PR-C,005 Trombone,,"그녀의 아침, Déjà vu"
+Roland,JV-2080,PR-C,047 Bass Pizz,,"Angel's walk, Hallway to Heaven, Farewell to sadness [Club MIX]"
+Roland,JV-2080,PR-D,031 DesertCrystl,,Amnesia
+Roland,JV-2080,PR-D,043 Pilgrimage,,Flee by night
+Roland,JV-2080,PR-D,120 Unearthly,Disable parts? Some other preset?,Paradise lost
+Roland,SR-JV80-04 Vintage Synth,,253 H20 Asylum,,Tranquility - Night arranged
+Roland,SR-JV80-06 Dance,XP-X,022 Breakdwn 100,,
+Roland,SR-JV80-06 Dance,XP-X,044 Human Bt 124,,
+Roland,SR-JV80-06 Dance,XP-X,141 Spooky,,Machine head
+Roland,SR-JV80-06 Dance,XP-X,143 Gtr Fx x4,,Farewell to sadness [Club MIX]
+Roland,SR-JV80-06 Dance,XP-X,195 Terminator,,"What's Going on here, Paradise lost"
+Roland,SR-JV80-16 Orchestral II,,225 Titan,Waveform '578 Rattles' only?,Elhive hill
+Sampleheads,New York City Drumworks,Disc 2 -> Frank Duncan -> Loops & Fills,46 FD Tom Rock,Timestamp: 0:00,What's Going on here
+Sampleheads,New York City Drumworks,Disc 2 -> Frank Duncan -> Loops & Fills,46 FD Tom Rock,Timestamp: 0:10.9,What's Going on here
+Sampleheads,New York City Drumworks,Disc 2 -> Frank Duncan -> Loops & Fills,51 FD Fills 108bpm,Timestamp: 0:11.7,What's Going on here
+Sampleheads,New York City Drumworks,Disc 2 -> Frank Duncan -> Loops & Fills,51 FD Fills 108bpm,Timestamp: 0:34.7,What's Going on here
+Sampleheads,New York City Drumworks,Disc 2 -> Frank Duncan -> Sounds,,Custom fills seem to have been made,What's Going on here
+Spectrasonics,Liquid Grooves,Disc 1 -> Partition A -> 55 SANDCASTL,SND MIX 1,,Age of the suffering
+Spectrasonics,Liquid Grooves,Disc 1 -> Partition A -> 55 SANDCASTL,SND PERC MIX,,Age of the suffering
+Spectrasonics,Liquid Grooves,Disc 1 -> Partition C -> 73 MYSTERIOUS,MYS TRIPPY 1,,The abandoned mine
+Spectrasonics,Symphony of Voices,Disc 2 -> Partition G -> 02 SOP-EH-OH,SOP EH-OH AS,,Hopeless hamlet
+Spectrasonics,Symphony of Voices,Disc 3 -> Partition A -> 03 BOYS EES,BC EES-V A,,The Innocents
+Ueberschall,F.A.S.T. Animation,Partition A -> FLYOBJECTS 1,BOOMERANG 1,,"Strained heart, N.O.A.H. - Name of Apocalyptic Hour"
+Ueberschall,F.A.S.T. Animation,Partition B -> FLYOBJECTS 6,AM SATELLITE,,N.O.A.H. - Name of Apocalyptic Hour
+Ueberschall,F.A.S.T. Animation,Partition E -> NATURE 3,J E T,,N.O.A.H. - Name of Apocalyptic Hour
+Ueberschall,F.A.S.T. Animation,Partition H -> C O M I C 1,PHONETIC C,"Samples: YO, CHAT FLY","Strained heart, N.O.A.H. - Name of Apocalyptic Hour"
+Zero-G,Datafile 2,,Track 02,Timestamp: 0:42,Farewell to sadness
+Zero-G,Datafile 2,,Track 23,Timestamp: 0:00,Ignite me
+Zero-G,Datafile 3,,Track 83,Timestamp: 0:26.5,Serenade in the rain
+"Magna Carta: The Phantom of Avalanche (2001) - Sungwoon Jang, Roh Hyoung Woo, Sang-Ho Lee, Jinbae Park",,,,,
+Access,Virus,,A4 Impact MS,Program name based on Virus C,Time passes By - CLUB MIX -
+Best Service,Voice Spectral,,Track 95,Timestamp: 0:25.5,Hell Bouncer
+Ensoniq,MR-Rack,ROM004,050 Pipe Organ,Not 100% match? Possibly exp patch?,Ancient Way
+KORG,TRITON-Rack,Programs -> INT-A,A001 Acoustic Piano,,Lovely Moon
+KORG,TRITON-RACK,Programs -> INT-A,065 90's Piano,,Time passes By - CLUB MIX -
+KORG,TRITON-Rack,,,Bell,In my Dream
+Roland,SR-JV80-06 Dance,,140 Slide Fx x2,,Time passes By - CLUB MIX -
+Roland,SR-JV80-06 Dance,,186 Vocamatic,,Time passes By - CLUB MIX -
+Spectrasonics,,,,Percussion loop,Mysterious Woods
+"Narsillion - Leithian Another Story  (2002) - SoundTeMP, Seock-Jin Lee, Dong-Il Kwak, Goo-Hee Kwon",,,,,
+eLAB,X-Static Goldmine 3,,"LEFT, RIGHT",Track 1 of the CDDA. Timestamp: 0:00,Shadow
+Ensoniq,MR-Rack,,,"Surdos, possibly other kit pieces",니 마음의 풍차
+Ensoniq,MR-Rack,RAM001,049 MR Coffee,,"To Be Without You, Shadow"
+Ensoniq,MR-Rack,ROM005,094 Harpsichord,,21.mp3
+KORG,01/W,PROG,A63 Tin Flute,,A Legendary Fever
+KORG,TR-Rack,Combi > C,C79 Serengeti,,Love Is Not 4 Sale
+KORG,TRITON-Rack,Programs -> INT-A,A079 Ensemble Bell,,To Be Without You
+KORG,TRITON-Rack,Programs -> INT-C,C127 Bottle-Bell,Turn off MFX1 (Multitap Cho/Delay),"The Road Not Taken, 니 마음의 풍차"
+Roland,JV-2080,,,Slap bass,Forest Pump
+Roland,JV-2080,PR-A,023 PsychoRhodes,,To Be Without You
+Roland,JV-2080,PR-C,047 Bass Pizz,,Waltz Me Sweet
+Roland,SR-JV80-06 Dance,,0216 Rewind,Uses some kind of effect,Shadow
+Spectrasonics,Distorted Reality 2,Disc 1 -> Partition A -> 02 70-79 BPM,TRANSFORM 78,,Frozen Beat
+Spectrasonics,Symphony of Voices,,,,"To Be Without You, 영원한 생명"
+Spectrasonics,Symphony of Voices,Disc 2 -> Partition G -> 02 SOP-EH-OH,SOP EH-OH AS,,To Be Without You
+"Crazy Arcade BnB Adventure (2002) - Jinbae Park, Goomin Nam, Sungwoon Jang",,,,,
+Ensoniq,EXP-1 The Real World,EXP025,082 Vox Phrases,,Floopy Forest
+KORG,TRITON-Rack,Programs -> INT-C,C127 Bottle-Bell,,Bomb Factory
+Ueberschall,2 Step Garage,Disc 1,Track 07,Timestamp: 0:00,Factorial 2Steps
+Ueberschall,2 Step Garage,Disc 1,Track 10,Timestamp: 0:00,Factorial 2Steps
+Yamaha,MOTIF 6,PRE2,G14 EthncFlute,,Beguy Desert
+"AceSaga: The Lament of a Raven (2002) - SoundTeMP, Dong-Il Kwak",,,,,
+Access,Virus,,A4 Impact MS,Program name based on Virus C,Quid Novi
+Hollywood Edge,Premiere Edition,,,Check later,Quid Novi
+Native Instruments,FM7,,,"Far East patch, path coming soon",Amigo
+Spectrasonics,Symphony of Voices,Disc 2 -> Partition G -> 01 SOP OHS,SOP OHS AS,,Cul de sac
+Spectrasonics,Symphony of Voices,Disc 2 -> Partition G -> 02 SOP-EH-OH,SOP EH-OH AS,,Quid Novi
+Spectrasonics,Symphony of Voices,Boys Choir & Gregorian Men -> BOY PHRAS,ALLELUBOY,,Retrospect
+Spectrasonics,Symphony of Voices,Boys Choir & Gregorian Men -> BOY PHRAS,LULU BOY,,Retrospect
+"War of Chunrang (2003) - SoundTeMP, Seock-Jin Lee",,,,,
+Ensoniq,MR-Rack,,,"Surdos, possibly other kit pieces",당나라 킹카
+InVision,Lightware - Stratus Sound Sampler,Partition A -> KYOTO GARDEN,KYOTO GARDEN,Possibly another library entirely,Bamboo Da Groove
+Masterbits,Climax Vol. 9 - RAPsody (Vocals II),,Track 04,Timestamp: 0:12.6,Love is
+Roland,JV-2080,PR-D (GM Bank),078 Shakuhachi,,쾌도난마
+Spectrasonics,Metamorphosis,Disc 1 -> Partition A -> 53-70 LOOPS,MOHAVE C,,월하연서
+Spectrasonics,Metamorphosis,Disc 2 -> PARTITION A -> 99-105 LPS,HAMSTRING,,For the Rest of My Life
+Sonic Foundry,Voices of Native America,Single Shot Loops & Hits -> Flutes,Echo Flute 9.2,,Moon Doon
+Yamaha,MOTIF 6,PRE1,,piano,월하연서
+Yamaha,MOTIF 6,,,strings,배신하면 칼맞는다
+Yamaha,MOTIF 6,,,guitar slide,선자불래 내자불선
+Yamaha,MOTIF 6,PRE1,F10 JazzGTmelo,,남가일몽 
+Yamaha,MOTIF 6,PRE2,D06 SweetFlute,,"Mirage 4 you, 당나라 킹카"
+Yamaha,MOTIF 6,GM,G12 Koto,,남경반점
+Zero-G,Orchestral Flavours,,Orch stab,Could be from JV80-02/PS's,배신하면 칼맞는다
+"Magna Carta: Crimson Stigmata / Tears of Blood (2004) - Sungwoon Jang, ",,,,,
+EastWest,Steve Stevens Guitar,Partition A -> SPECIAL EFX,EFX #1 3,,Four Guardian Kings
+Ensoniq,MR-Rack,ROM004,050 Pipe Organ,Not 100% match? Possibly exp patch?,Cave Theme III
+Spectrasonics,Symphony of Voices,,,,
+Spectrasonics,Vocal Planet,Disc 3 -> Partition H -> 2 VOCAL WIND,A TO O SWEEP,,Moment of Fear
+Yamaha,MOTIF 6,PRE2,D06 SweetFlute,,The Town of Notia
+"Magna Carta II (2009) - Sungwoon Jang, Roh Hyoung Woo (See note for live performers)",,,,,
+Best Service,Ethno World,Woodwind and Brass -> Various Flute FX,Various Flute FX,,Phong
+EastWest,Stormdrum,Large Percussion,Big Hits,A5,"Danger, Sentiel, Last Scene"
+EastWest,Symphonic Orchestra,,,,
+EastWest,Symphonic Orchestra,,,String FX,Dreadful Sight
+EastWest,Symphonic Orchestra,Perc -> Drums,Timp Hits LR,,The Rival
+EastWest,Symphonic Orchestra,,,Snares,"The Rival, The Team"
+Spectrasonics,Stylus RMX,,,Custom loops?,The Rival
+Spectrasonics,Stylus RMX,,160-World Hunt Combo,,Escape
+Spectrasonics,Stylus RMX,Sound Menus,Cinematic Ambient Metals,C3,"The Rival, Oldfox Canyon, Escape"
+MapleStory Cave Crawlers (2011) - Jinbae Park,,,,,
+Native Instruments,FM8,,Far East,Could be Airpad from FM8 Factory,Frozen Mountain
+Roland,SR-JV80-06 Dance,,015 Nite'Hood 94,,Town
+Spectrasonics,Stylus RMX,,160-Spheres Iced,,Frozen Mountain
+Spectrasonics,Stylus RMX,,,,Howling Mine (ver.2)
+Spectrasonics,Stylus RMX,,,,Last Boss
+XLN Audio,Addictive Drums,,Startup,,Battle
+"RUNE the First Wanderer (2020) - Goomin Nam, 'SPIKE', 'E.Q.P', 'DoubleTO' (See note for live performers)",,,,,
+EastWest,Symphonic Orchestra,,,a lot of it in a lot of tracks,
+Native Instruments,FM8,,Far East,Could be Airpad from FM8 Factory,"Mark, The Tree"
+"Stellar Blade (2024) - ESTIMATE, Jinbae Park, 'seibin', 'Benicx', Youngji Lee, Oliver Good,",,,,,
+XLN Audio,Addictive Drums 2,,AD Classic Startup,Could possibly be AD1 Startup,First Trailer
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+Base layout and concept taken from the NEWER VGM Sound Sources spreadsheet.,,,,,
+"If a game (only) lists ""SoundTeMP"" as one of its composers, the tracks are credited to the band name as a whole, and/or belong to one or more uncredited authors.",,,,,
+"If a credits listing ends with a comma, it is assumed to be an incomplete credits listing and follows the same logic as in the sentence above. Credits will be updated with new known artist additions accordingly.",,,,,

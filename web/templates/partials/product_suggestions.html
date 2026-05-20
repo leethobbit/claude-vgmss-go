@@ -1,0 +1,12 @@
+{{define "product_suggestions.html"}}
+{{if .}}
+{{range .}}
+<li>
+  <button type="button" class="suggest-pick"
+          onclick="document.getElementById('product-id').value='{{.ID}}'; document.getElementById('product-input').value='{{.Label}}'; document.getElementById('product-suggestions').innerHTML='';">
+    {{.Label}}
+  </button>
+</li>
+{{end}}
+{{end}}
+{{end}}
