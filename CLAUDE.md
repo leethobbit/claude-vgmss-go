@@ -4,11 +4,13 @@
 
 vgmss (Video Game Music Sound Source) — single-user web app for browsing video games and the commercial sounds / hardware / sample libraries used to compose their soundtracks. Source data is the community-curated CSVs under `reference/`. 
 
-## Stack reference
+## Stack
 
-Global Go stack conventions (dependency gate, allowlist, decision table, htmx tier model) → `~/.claude/docs/go-stack.md`
+Go 1.22+ stdlib for everything except the SQLite driver. No ORM, no query builder, no DI framework. Migrations are hand-written numbered `.sql` files; templating is `html/template`; routing is `net/http` with Go 1.22 method+pattern matching.
 
-**The dependency gate in that doc applies to this project.** Do not add Go modules or vendored JS without explicit approval per session.
+**Dependency gate.** Do not add Go modules or vendored JS without explicit approval. Pre-approved: `modernc.org/sqlite` (pure-Go SQLite driver), `golang.org/x/*` (Go-team curated). Anything else routes through the user.
+
+**Frontend.** Tier-1 server-rendered HTML + htmx. Vendored in `web/static/vendor/` with a `.sha256` sidecar. No npm, no build step.
 
 ## Ingestion roadmap
 
@@ -45,7 +47,7 @@ Per-CSV-family progress, remaining work, and pre-staged batch plans → [docs/RO
 |---|---|
 | Add a new route | New method on `*App` in `internal/app/<resource>.go`, register in `internal/app/app.go` `Routes()` |
 | Add a new DB query | Hand-written SQL function in `internal/queries/<resource>.go`, no ORM |
-| Add a vendored JS asset | Follow "Doing Y" workflow in `~/.claude/docs/go-stack.md` |
+| Add a vendored JS asset | Download pinned version → save to `web/static/vendor/<name>-<version>.min.js` → compute SHA-256 sidecar → reference with versioned path |
 | Add a new migration | Next-numbered `.sql` file in `internal/migrate/sql/` (e.g. `0002_*.sql`) |
 | Bootstrap data from a CSV | One-time manual agent pass writing a seed migration like `0002_seed_newer_vgm_pokemon.sql` |
 | Commit after a seed batch | At the end of every ingestion batch, commit the new seed files. One commit per batch. No scripting in subagents — hand-converted SQL only. |
