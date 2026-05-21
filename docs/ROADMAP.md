@@ -2,10 +2,10 @@
 
 What's in the database, what's pending, and where to look for batch plans.
 
-## Status snapshot (as of 2026-05-20)
+## Status snapshot (as of 2026-05-21)
 
-- **66 games loaded, 5112 usages, 414 equipment items, 60+ manufacturers**
-- 8 git commits on `main` (initial + 7 batches + 1 planning commit)
+- **67 games loaded, 5218 usages, ~436 equipment items, ~75 manufacturers**
+- FF Detailed family kicked off with FF7 pilot (commit pending, batch 10)
 - Container deploys via `docker compose up --build`; binds host 127.0.0.1:8080 by default (override `$env:VGMSS_PORT`)
 
 ## CSV families — ingestion progress
@@ -14,8 +14,8 @@ What's in the database, what's pending, and where to look for batch plans.
 |---|---|---|---|
 | NEWER VGM | 13 game tabs + 2 catalog | Pokémon partial (20/26 mainline; 5 mainline + Sections 2-4 left) | Most-covered family. Schema designed against this shape first. |
 | SoundTeMP | 1 file (WIP-flagged source) | **Complete (46/46 games)** | Full Section 1 + Section 2 ingested. |
-| Final Fantasy Detailed | 31 files | Not started | Per-sample granularity with `Sample #` — exercises reserved `sample_label`/`sample_ref` columns. Will be the next family. |
-| HOYO-MiX | 11 files | Not started | Sparse, modern games (Genshin, HSR, ZZZ). |
+| Final Fantasy Detailed | 31 files | **Pilot landed (FF7)** — 30 files left | Per-sample granularity with `Sample #`. First family to populate `usages.sample_label` and `usages.sample_ref`. Conventions: [docs/ff-detailed-batch-plan.md](ff-detailed-batch-plan.md). |
+| HOYO-MiX | 11 files | Genshin + HSR ingested (4 part-files for Genshin, 1 for HSR) | ZZZ, Honkai Impact 3rd, and 7 other titles remaining. |
 | G-Boy's V.I.S.S. | 1 file | Not started | Supplementary; can supplement existing Pokémon entries. |
 
 ## NEWER VGM Pokémon — what's done and what's left
@@ -75,10 +75,26 @@ All 46 games ingested across batches 6, 7, 8. Plan doc at [soundtemp-batch-plan.
 - **Agents must not script.** Subagents converting CSV-to-SQL use only Read/Write/Edit tools — no Python, awk, sed, jq, etc.
 - **Verification per batch**: rebuild docker compose stack, hit a few game detail pages, confirm category counts match agent reports.
 
+## Final Fantasy Detailed — pilot complete, family roadmap
+
+FF7 pilot landed in `0037_seed_ff_detailed_ff7.sql` (106 usages from 93 main + 13 demo samples; 15 new manufacturers, 22 new products). Batch plan and column-mapping rules live in [ff-detailed-batch-plan.md](ff-detailed-batch-plan.md).
+
+**Known UX gap surfaced by the pilot:** the games detail template doesn't yet render the `sample_label` / `sample_ref` columns. FF7's per-sample data is queryable via SQL but not visible per-sample on the game detail page — every row currently shows blank Path/Bank/Preset columns where they were unknown, and the Sample # / Sample Description aren't surfaced at all. Fixing this is a separate small change to `games_detail.html` (and possibly a conditional render keyed off `source_family = 'ff_detailed'`).
+
+### Remaining FF Detailed work
+
+1. **Ivalice Alliance** (FFT, FFTA, FFTA2) — single CSV with 3 sections, 522 lines. Likely 1-3 sub-batches.
+2. **FF7 Remake Trilogy** — 859 lines; largest file in the family. Probable part1/part2 split.
+3. **SNES era** (FF4, FF5, FF6) — small files; candidate grouping.
+4. **PS1 era** (FF8, FF9, plus Chocobo spinoffs) — pair with FF7 conventions.
+5. **PS2 era** (FF10, FF10-2, FF11) — own conventions per Rules.csv ("List by OST placement, then sample").
+6. **PS3+ streamed** (FF12, FF13 family, FF14, FF15, FF16) — different style ("List ALL instruments heard in track"), more sourced rows.
+
 ## Next likely move
 
-Choice point — pick the next family or wrap up Pokémon first:
+Pick one:
 
-1. **Finish Pokémon mainline Section 1** (~5 small games left, ~465 source rows). One small batch.
-2. **Start Final Fantasy Detailed.** Different schema shape — uses `Sample #` and per-sample granularity that the schema's `sample_label` / `sample_ref` columns were reserved for. 31 files; would need its own batch plan doc.
-3. **Pause ingestion, work on data quality** — the SC-88 Pro duplication problem will only get worse as more families land. Could write a one-shot SQL cleanup migration that renames products to canonical names.
+1. **Continue FF Detailed** — Ivalice Alliance is the natural next batch (the original three-CSV ask). Mapping rules are now locked in.
+2. **Patch the UI gap first** — surface `sample_label` / `sample_ref` on `games_detail.html` before more FF Detailed data lands, so the data we ingested is actually visible.
+3. **Finish Pokémon mainline Section 1** (~5 small games left, ~465 source rows). One small batch.
+4. **Pause ingestion, work on data quality** — the SC-88 Pro duplication problem will only get worse as more families land. Could write a one-shot SQL cleanup migration that renames products to canonical names.
