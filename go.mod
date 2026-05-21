@@ -1,4 +1,4 @@
-module github.com/itpie/vgmss
+module github.com/leethobbit/vgmss
 
 go 1.25.5
 

@@ -5,7 +5,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/itpie/vgmss/internal/db"
+	"github.com/leethobbit/vgmss/internal/db"
 )
 
 func TestRunIdempotent(t *testing.T) {

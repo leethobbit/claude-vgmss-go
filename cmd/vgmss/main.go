@@ -10,10 +10,10 @@ import (
 	"syscall"
 	"time"
 
-	vgmss "github.com/itpie/vgmss"
-	"github.com/itpie/vgmss/internal/app"
-	"github.com/itpie/vgmss/internal/db"
-	"github.com/itpie/vgmss/internal/migrate"
+	vgmss "github.com/leethobbit/vgmss"
+	"github.com/leethobbit/vgmss/internal/app"
+	"github.com/leethobbit/vgmss/internal/db"
+	"github.com/leethobbit/vgmss/internal/migrate"
 )
 
 func main() {

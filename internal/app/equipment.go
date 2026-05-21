@@ -4,7 +4,7 @@ import (
 	"net/http"
 	"strconv"
 
-	"github.com/itpie/vgmss/internal/queries"
+	"github.com/leethobbit/vgmss/internal/queries"
 )
 
 func (a *App) listEquipment(w http.ResponseWriter, r *http.Request) {

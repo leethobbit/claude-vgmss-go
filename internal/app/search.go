@@ -3,7 +3,7 @@ package app
 import (
 	"net/http"
 
-	"github.com/itpie/vgmss/internal/queries"
+	"github.com/leethobbit/vgmss/internal/queries"
 )
 
 func (a *App) search(w http.ResponseWriter, r *http.Request) {

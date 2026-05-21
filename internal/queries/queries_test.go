@@ -7,8 +7,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/itpie/vgmss/internal/db"
-	"github.com/itpie/vgmss/internal/migrate"
+	"github.com/leethobbit/vgmss/internal/db"
+	"github.com/leethobbit/vgmss/internal/migrate"
 )
 
 func setupDB(t *testing.T) *sql.DB {

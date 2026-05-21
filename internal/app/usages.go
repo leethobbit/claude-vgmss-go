@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"strconv"
 
-	"github.com/itpie/vgmss/internal/queries"
+	"github.com/leethobbit/vgmss/internal/queries"
 )
 
 func (a *App) newUsageFromGameForm(w http.ResponseWriter, r *http.Request) {
