@@ -42,9 +42,10 @@ func (a *App) showEquipment(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	data := struct {
-		Product queries.Product
-		Usages  []queries.Usage
-	}{Product: p, Usages: usages}
+		Product    queries.Product
+		Usages     []queries.Usage
+		HasSamples bool
+	}{Product: p, Usages: usages, HasSamples: anyUsageHasSample(usages)}
 	a.render(w, r, http.StatusOK, "equipment_detail.html", data)
 }
 

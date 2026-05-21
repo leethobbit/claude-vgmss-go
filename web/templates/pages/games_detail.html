@@ -53,13 +53,16 @@
   {{if .Usages}}
   <table class="data wide">
     <thead><tr>
-      <th>Category</th><th>Manufacturer</th><th>Product</th>
+      <th>Category</th>
+      {{if .HasSamples}}<th>Sample #</th><th>Sample description</th>{{end}}
+      <th>Manufacturer</th><th>Product</th>
       <th>Path/Bank</th><th>Preset</th><th>Examples</th><th>Notes</th><th></th>
     </tr></thead>
     <tbody>
     {{range .Usages}}
       <tr class="cat-{{.Category}}">
         <td>{{.Category}}</td>
+        {{if $.HasSamples}}<td class="sample-ref">{{.SampleRef}}</td><td>{{.SampleLabel}}</td>{{end}}
         <td>{{if .ManufacturerID.Valid}}<a href="/manufacturers/{{.ManufacturerID.Int64}}">{{.Manufacturer}}</a>{{else}}{{.Manufacturer}}{{end}}</td>
         <td>
           {{if .ProductID.Valid}}<a href="/equipment/{{.ProductID.Int64}}">{{.ProductName}}</a>

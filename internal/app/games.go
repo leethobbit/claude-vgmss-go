@@ -50,7 +50,8 @@ func (a *App) showGame(w http.ResponseWriter, r *http.Request) {
 		Game        queries.Game
 		Usages      []queries.Usage
 		ProductFreq []queries.ProductFrequency
-	}{Game: g, Usages: usages, ProductFreq: freq}
+		HasSamples  bool
+	}{Game: g, Usages: usages, ProductFreq: freq, HasSamples: anyUsageHasSample(usages)}
 	a.render(w, r, http.StatusOK, "games_detail.html", data)
 }
 
@@ -144,4 +145,13 @@ func gameFromForm(r *http.Request) queries.Game {
 
 func gamePath(id int64) string {
 	return "/games/" + intStr(id)
+}
+
+func anyUsageHasSample(usages []queries.Usage) bool {
+	for i := range usages {
+		if usages[i].SampleLabel != "" || usages[i].SampleRef != "" {
+			return true
+		}
+	}
+	return false
 }

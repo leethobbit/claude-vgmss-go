@@ -23,13 +23,16 @@
   {{if .Usages}}
   <table class="data wide">
     <thead><tr>
-      <th>Game</th><th>Category</th><th>Path/Bank</th><th>Preset</th><th>Examples</th><th>Notes</th><th></th>
+      <th>Game</th><th>Category</th>
+      {{if .HasSamples}}<th>Sample #</th><th>Sample description</th>{{end}}
+      <th>Path/Bank</th><th>Preset</th><th>Examples</th><th>Notes</th><th></th>
     </tr></thead>
     <tbody>
     {{range .Usages}}
       <tr class="cat-{{.Category}}">
         <td><a href="/games/{{.GameID}}">{{.GameTitle}}</a></td>
         <td>{{.Category}}</td>
+        {{if $.HasSamples}}<td class="sample-ref">{{.SampleRef}}</td><td>{{.SampleLabel}}</td>{{end}}
         <td>{{.PathBank}}</td>
         <td>{{.Preset}}</td>
         <td>{{.Examples}}</td>
