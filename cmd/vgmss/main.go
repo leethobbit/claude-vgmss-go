@@ -17,7 +17,7 @@ import (
 )
 
 func main() {
-	addr := flag.String("addr", "127.0.0.1:8080", "listen address (default 127.0.0.1:8080)")
+	addr := flag.String("addr", "127.0.0.1:8220", "listen address (default 127.0.0.1:8220)")
 	dbPath := flag.String("db", envOr("VGMSS_DB", "data/vgmss.db"), "sqlite database path")
 	flag.Parse()
 

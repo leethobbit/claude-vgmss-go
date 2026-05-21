@@ -39,7 +39,7 @@ Per-CSV-family progress, remaining work, and pre-staged batch plans → [docs/RO
 | `internal/migrate/` | Forward-only embed.FS migrator; numbered `.sql` files in `sql/` |
 | `web/templates/layout.html` | Single layout; pages live under `pages/`, partials under `partials/` |
 | `web/static/vendor/` | Vendored htmx with `.sha256` sidecar |
-| `Dockerfile`, `docker-compose.yml` | Two-stage scratch image; host port bound to `127.0.0.1:8080` |
+| `Dockerfile`, `docker-compose.yml` | Two-stage scratch image; host port bound to `127.0.0.1:8220` (override via `VGMSS_PORT`) |
 
 ## Common operations
 

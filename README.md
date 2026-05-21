@@ -28,7 +28,7 @@ There is no JavaScript build step, no ORM, no migration tool dependency, and no 
 docker compose up --build
 ```
 
-Binds `127.0.0.1:8080` on the host. Override with `VGMSS_PORT`. The SQLite file is persisted under `./data/`.
+Binds `127.0.0.1:8220` on the host. Override with `VGMSS_PORT`. The SQLite file is persisted under `./data/`.
 
 ### Local Go
 
@@ -36,7 +36,7 @@ Binds `127.0.0.1:8080` on the host. Override with `VGMSS_PORT`. The SQLite file 
 go run ./cmd/vgmss
 ```
 
-Listens on `127.0.0.1:8080`; writes the database to `./data/vgmss.db`. Flags: `-addr` (listen address), `-db` (database path). `VGMSS_DB` env var overrides the default.
+Listens on `127.0.0.1:8220`; writes the database to `./data/vgmss.db`. Flags: `-addr` (listen address), `-db` (database path). `VGMSS_DB` env var overrides the default.
 
 ## Project layout
 

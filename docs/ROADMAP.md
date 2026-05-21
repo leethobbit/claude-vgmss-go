@@ -6,7 +6,7 @@ What's in the database, what's pending, and where to look for batch plans.
 
 - **67 games loaded, 5218 usages, ~436 equipment items, ~75 manufacturers**
 - FF Detailed family kicked off with FF7 pilot (commit pending, batch 10)
-- Container deploys via `docker compose up --build`; binds host 127.0.0.1:8080 by default (override `$env:VGMSS_PORT`)
+- Container deploys via `docker compose up --build`; binds host 127.0.0.1:8220 by default (override `$env:VGMSS_PORT`)
 
 ## CSV families — ingestion progress
 
