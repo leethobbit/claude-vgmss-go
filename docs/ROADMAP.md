@@ -4,8 +4,8 @@ What's in the database, what's pending, and where to look for batch plans.
 
 ## Status snapshot (as of 2026-05-21)
 
-- **67 games loaded, 5218 usages, ~436 equipment items, ~75 manufacturers**
-- FF Detailed family kicked off with FF7 pilot (commit pending, batch 10)
+- **71 games loaded, ~5573 usages, ~450 equipment items, ~80 manufacturers**
+- FF Detailed family: FF7 pilot + Ivalice batch (FFT, FFTA, FFXII:RW, FFTA2) landed; Vagrant Story skipped from the Ivalice CSV pending contributor cleanup
 - Container deploys via `docker compose up --build`; binds host 127.0.0.1:8220 by default (override `$env:VGMSS_PORT`)
 
 ## CSV families — ingestion progress
@@ -14,7 +14,7 @@ What's in the database, what's pending, and where to look for batch plans.
 |---|---|---|---|
 | NEWER VGM | 13 game tabs + 2 catalog | Pokémon partial (20/26 mainline; 5 mainline + Sections 2-4 left) | Most-covered family. Schema designed against this shape first. |
 | SoundTeMP | 1 file (WIP-flagged source) | **Complete (46/46 games)** | Full Section 1 + Section 2 ingested. |
-| Final Fantasy Detailed | 31 files | **Pilot landed (FF7)** — 30 files left | Per-sample granularity with `Sample #`. First family to populate `usages.sample_label` and `usages.sample_ref`. Conventions: [docs/ff-detailed-batch-plan.md](ff-detailed-batch-plan.md). |
+| Final Fantasy Detailed | 31 files | **5 games landed (FF7, FFT, FFTA, FFXII:RW, FFTA2)** — 26 files / 1 deferred game (Vagrant Story) left | Per-sample granularity with `Sample #`. First family to populate `usages.sample_label` and `usages.sample_ref`. Conventions: [docs/ff-detailed-batch-plan.md](ff-detailed-batch-plan.md). |
 | HOYO-MiX | 11 files | Genshin + HSR ingested (4 part-files for Genshin, 1 for HSR) | ZZZ, Honkai Impact 3rd, and 7 other titles remaining. |
 | G-Boy's V.I.S.S. | 1 file | Not started | Supplementary; can supplement existing Pokémon entries. |
 
@@ -83,7 +83,7 @@ FF7 pilot landed in `0037_seed_ff_detailed_ff7.sql` (106 usages from 93 main + 1
 
 ### Remaining FF Detailed work
 
-1. **Ivalice Alliance** (FFT, FFTA, FFTA2) — single CSV with 3 sections, 522 lines. Likely 1-3 sub-batches.
+1. ~~**Ivalice Alliance**~~ — done (FFT, FFTA, FFXII:RW, FFTA2 landed; Vagrant Story deferred to a future batch once contributor fills in more than one track and the date-corrupted Sample # cells are repaired upstream).
 2. **FF7 Remake Trilogy** — 859 lines; largest file in the family. Probable part1/part2 split.
 3. **SNES era** (FF4, FF5, FF6) — small files; candidate grouping.
 4. **PS1 era** (FF8, FF9, plus Chocobo spinoffs) — pair with FF7 conventions.

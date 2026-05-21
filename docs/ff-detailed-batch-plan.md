@@ -60,13 +60,22 @@ pass — never inline during a seed batch.
 Same applies to product-name typos like `Synclaiver Strings` (sic). Do not
 "fix" them.
 
-## UNKNOWN handling
+## Source value handling
 
-| Source value | Treatment |
+Five cases, in order of contributor intent:
+
+| Source column value | Treatment |
 |---|---|
-| `UNKNOWN` exactly | `product_id = NULL`, `raw_source = 'UNKNOWN'` |
-| `UNKNOWN, SAME SOURCE AS SAMPLES 14, 15, 23, 24, 25` | `product_id = NULL`, `raw_source = ` full string verbatim |
-| Free-form non-mappable text (e.g. `Warner Bros. Sound Effects Library` with no separator) | `product_id = NULL`, `raw_source = ` full string verbatim |
+| `Brand - Product` | Normal split + product lookup. `product_id` linked. |
+| `UNKNOWN` exactly | `product_id = NULL`, `raw_source = 'UNKNOWN'`. Contributor checked and could not find. |
+| `UNKNOWN, SAME SOURCE AS SAMPLES …` | `product_id = NULL`, `raw_source` = full string verbatim. |
+| `CHECK` exactly | `product_id = NULL`, `raw_source = 'CHECK'`. Contributor is unsure of the source — semantically distinct from UNKNOWN, preserved. |
+| `Possible source` or other free-form | `product_id = NULL`, `raw_source` = full value verbatim. |
+| Empty (no value) | `product_id = NULL`, `raw_source = NULL`. Contributor hasn't researched this row yet — distinct from explicit UNKNOWN/CHECK. |
+
+When the value of Preset is `CHECK` but Source is known, the source links
+normally and `preset = 'CHECK'` verbatim — that's a contributor note that
+the preset needs verification, not that the product is unknown.
 
 When `raw_source` is set, `path_bank`, `preset`, and `notes` are still
 populated if the CSV has them (a row can have an unknown source AND known
@@ -80,8 +89,9 @@ Per CLAUDE.md the `category` CHECK accepts `main`, `unused`, `bonus`,
 
 | CSV section | category |
 |---|---|
-| `Section 1 - Main Game Music` (or any "Main") | `main` |
+| `Section 1 - Main Game Music` (or any "Main"), `Sequenced Soundbank`, `Streamed Tracks`, in-game tracks | `main` |
 | `Demo Samples` (prototype/dev rom samples) | `unused` |
+| `(OST Version only)` sub-headers — samples present on the OST release but not in the shipped game | `bonus` |
 | Explicit "Stuff to find" or "Unknowns to find" sub-section | `stuff_to_find` |
 | `Section N - Bonus Content`, soundtest-only, etc. | `bonus` |
 
@@ -114,6 +124,27 @@ came from.
 `position` is a 1-based counter incrementing through the file in CSV row
 order. Section 1 samples come first; Demo Samples follow. Skipped rows
 don't consume a position number.
+
+## Track context for streamed-section rows
+
+Streamed-track sections (e.g. FFT's `Streamed Tracks` block, FFXII:RW's
+`SEQ_08 (Giza Plains)`, FFTA2's individual numbered tracks) carry the
+track name as their natural grouping. Put the track name in `examples` so
+the game detail page can show "this sample appears in `<track name>`."
+
+Track header rows themselves (rows where only the description-column-as-
+section-label is populated and no Source / Sample # / Path) are dropped
+during ingestion. The next non-header row inherits the most recent track
+name as its `examples`.
+
+## Google Sheets date corruption
+
+Some contributor cells with `MM-NN` Sample # values have been auto-coerced
+by Google Sheets into ISO timestamps like `2025-05-01 00:00:00`. Per Rule 2
+("don't reinterpret"), preserve the corrupted value verbatim in
+`sample_ref` and call it out in the seed file header. A separate
+data-quality migration can canonicalize these once the source CSV is
+fixed upstream.
 
 ## Games row
 
