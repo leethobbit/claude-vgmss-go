@@ -41,10 +41,16 @@ func (a *App) showGame(w http.ResponseWriter, r *http.Request) {
 		a.serverError(w, r, err)
 		return
 	}
+	freq, err := queries.ProductFrequencyByGame(r.Context(), a.DB, id)
+	if err != nil {
+		a.serverError(w, r, err)
+		return
+	}
 	data := struct {
-		Game   queries.Game
-		Usages []queries.Usage
-	}{Game: g, Usages: usages}
+		Game        queries.Game
+		Usages      []queries.Usage
+		ProductFreq []queries.ProductFrequency
+	}{Game: g, Usages: usages, ProductFreq: freq}
 	a.render(w, r, http.StatusOK, "games_detail.html", data)
 }
 

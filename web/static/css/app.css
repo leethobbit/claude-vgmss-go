@@ -72,6 +72,15 @@ table.data.wide td { font-size: 0.93rem; }
 .cat-unused td { opacity: 0.6; }
 .cat-stuff_to_find td { font-style: italic; color: var(--muted); }
 
+table.freq { width: 100%; border-collapse: collapse; background: var(--panel); margin-bottom: 1.5rem; }
+table.freq th, table.freq td { padding: 0.4rem 0.75rem; border-bottom: 1px solid var(--border); text-align: left; font-size: 0.9rem; vertical-align: middle; }
+table.freq thead th { background: #1c2230; color: var(--muted); font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; }
+table.freq tbody tr:nth-child(even) { background: var(--row-alt); }
+table.freq td.bar-col { width: 45%; }
+table.freq td.count-col { width: 10rem; text-align: right; font-variant-numeric: tabular-nums; }
+table.freq td.count-col small { display: block; color: var(--muted); font-size: 0.78rem; margin-top: 0.1rem; }
+.bar { height: 0.65rem; background: var(--accent); border-radius: 2px; min-width: 2px; }
+
 .empty { color: var(--muted); font-style: italic; }
 
 .detail h1 { margin-bottom: 0.5rem; }

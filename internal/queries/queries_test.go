@@ -224,6 +224,73 @@ func TestUsageWithoutProduct(t *testing.T) {
 	}
 }
 
+func TestProductFrequencyByGame(t *testing.T) {
+	d := setupDB(t)
+	ctx := context.Background()
+
+	gID, _ := CreateGame(ctx, d, Game{Title: "Pokémon Ruby"})
+	other, _ := CreateGame(ctx, d, Game{Title: "Other"})
+	trinity, _ := CreateProduct(ctx, d, "KORG", Product{Name: "TRINITY Pro", Type: "Synth"})
+	sc88, _ := CreateProduct(ctx, d, "Roland", Product{Name: "SC-88 Pro", Type: "Hardware"})
+
+	// Trinity: 4 usages on game (3 main, 1 unused). Should be the max.
+	for i := 0; i < 3; i++ {
+		_, _ = CreateUsage(ctx, d, Usage{GameID: gID, ProductID: sql.NullInt64{Int64: trinity, Valid: true}, Category: "main"})
+	}
+	_, _ = CreateUsage(ctx, d, Usage{GameID: gID, ProductID: sql.NullInt64{Int64: trinity, Valid: true}, Category: "unused"})
+
+	// SC-88: 2 usages on game (both main).
+	_, _ = CreateUsage(ctx, d, Usage{GameID: gID, ProductID: sql.NullInt64{Int64: sc88, Valid: true}, Category: "main"})
+	_, _ = CreateUsage(ctx, d, Usage{GameID: gID, ProductID: sql.NullInt64{Int64: sc88, Valid: true}, Category: "main"})
+
+	// One raw_source-only usage on game.
+	_, _ = CreateUsage(ctx, d, Usage{GameID: gID, RawSource: "UNKNOWN — Famitracker module", Category: "main"})
+
+	// Noise: usages on a different game must not bleed in.
+	_, _ = CreateUsage(ctx, d, Usage{GameID: other, ProductID: sql.NullInt64{Int64: trinity, Valid: true}, Category: "main"})
+
+	got, err := ProductFrequencyByGame(ctx, d, gID)
+	if err != nil {
+		t.Fatalf("freq: %v", err)
+	}
+	if len(got) != 3 {
+		t.Fatalf("expected 3 rows (2 products + 1 raw), got %d: %+v", len(got), got)
+	}
+
+	// Ordering: total DESC.
+	if got[0].Label != "TRINITY Pro" || got[0].Total != 4 {
+		t.Errorf("row 0: want TRINITY Pro/4, got %s/%d", got[0].Label, got[0].Total)
+	}
+	if got[1].Label != "SC-88 Pro" || got[1].Total != 2 {
+		t.Errorf("row 1: want SC-88 Pro/2, got %s/%d", got[1].Label, got[1].Total)
+	}
+	if got[2].Label != "UNKNOWN — Famitracker module" || got[2].Total != 1 {
+		t.Errorf("row 2: want unknown/1, got %s/%d", got[2].Label, got[2].Total)
+	}
+
+	// BarPercent: relative to max (4), so 100 / 50 / 25.
+	if got[0].BarPercent != 100 || got[1].BarPercent != 50 || got[2].BarPercent != 25 {
+		t.Errorf("bar percents: want 100/50/25, got %d/%d/%d",
+			got[0].BarPercent, got[1].BarPercent, got[2].BarPercent)
+	}
+
+	// HasBreakdown only when categories diverge from all-main.
+	if !got[0].HasBreakdown() {
+		t.Errorf("Trinity row should report a breakdown (3 main + 1 unused)")
+	}
+	if got[1].HasBreakdown() {
+		t.Errorf("SC-88 row is pure main, should not report breakdown")
+	}
+	if bd := got[0].Breakdown(); !strings.Contains(bd, "3 main") || !strings.Contains(bd, "1 unused") {
+		t.Errorf("breakdown text wrong: %q", bd)
+	}
+
+	// raw_source row has no ProductID and is rendered with the raw string.
+	if got[2].ProductID.Valid {
+		t.Errorf("raw_source row should not have a ProductID")
+	}
+}
+
 func TestCheckConstraintCategoryRejectsGarbage(t *testing.T) {
 	d := setupDB(t)
 	ctx := context.Background()
