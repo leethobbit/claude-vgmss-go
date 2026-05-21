@@ -1,7 +1,7 @@
 {{define "title"}}{{.Product.Manufacturer}} {{.Product.Name}} — vgmss{{end}}
 {{define "content"}}
 <article class="detail">
-  <h1>{{.Product.Manufacturer}} <span class="subtle">/</span> {{.Product.Name}}</h1>
+  <h1><a href="/manufacturers/{{.Product.ManufacturerID}}">{{.Product.Manufacturer}}</a> <span class="subtle">/</span> {{.Product.Name}}</h1>
   <dl class="meta">
     {{if .Product.Type}}<dt>Type</dt><dd>{{.Product.Type}}</dd>{{end}}
     {{if .Product.SourceProof}}<dt>Source / proof</dt><dd>{{.Product.SourceProof}}</dd>{{end}}

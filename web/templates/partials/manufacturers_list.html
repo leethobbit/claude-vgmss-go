@@ -1,0 +1,18 @@
+{{define "manufacturers_list"}}
+{{if .Manufacturers}}
+<table class="data">
+  <thead><tr><th>Manufacturer</th></tr></thead>
+  <tbody>
+  {{range .Manufacturers}}
+    <tr>
+      <td><a href="/manufacturers/{{.ID}}">{{.Name}}</a></td>
+    </tr>
+  {{end}}
+  </tbody>
+</table>
+{{else}}
+<p class="empty">No manufacturers yet.</p>
+{{end}}
+{{end}}
+
+{{define "manufacturers_list.html"}}{{template "manufacturers_list" .}}{{end}}

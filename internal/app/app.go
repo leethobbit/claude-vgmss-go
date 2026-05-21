@@ -55,6 +55,14 @@ func (a *App) Routes() *http.ServeMux {
 	mux.HandleFunc("GET /equipment/{id}/usages/new", a.newUsageFromEquipmentForm)
 	mux.HandleFunc("POST /equipment/{id}/usages", a.createUsageFromEquipment)
 
+	mux.HandleFunc("GET /manufacturers", a.listManufacturers)
+	mux.HandleFunc("GET /manufacturers/new", a.newManufacturerForm)
+	mux.HandleFunc("POST /manufacturers", a.createManufacturer)
+	mux.HandleFunc("GET /manufacturers/{id}", a.showManufacturer)
+	mux.HandleFunc("GET /manufacturers/{id}/edit", a.editManufacturerForm)
+	mux.HandleFunc("POST /manufacturers/{id}", a.updateManufacturer)
+	mux.HandleFunc("POST /manufacturers/{id}/delete", a.deleteManufacturer)
+
 	mux.HandleFunc("GET /usages/{id}/edit", a.editUsageForm)
 	mux.HandleFunc("POST /usages/{id}", a.updateUsage)
 	mux.HandleFunc("POST /usages/{id}/delete", a.deleteUsage)

@@ -8,12 +8,13 @@ import (
 )
 
 type Usage struct {
-	ID           int64
-	GameID       int64
-	GameTitle    string
-	ProductID    sql.NullInt64
-	ProductName  string
-	Manufacturer string
+	ID             int64
+	GameID         int64
+	GameTitle      string
+	ProductID      sql.NullInt64
+	ProductName    string
+	ManufacturerID sql.NullInt64
+	Manufacturer   string
 	RawSource    string
 	PathBank     string
 	Preset       string
@@ -32,7 +33,7 @@ type Usage struct {
 const usageSelect = `
 SELECT u.id, u.game_id, g.title,
        u.product_id,
-       COALESCE(p.name,''), COALESCE(m.name,''),
+       COALESCE(p.name,''), m.id, COALESCE(m.name,''),
        COALESCE(u.raw_source,''), COALESCE(u.path_bank,''), COALESCE(u.preset,''),
        COALESCE(u.sample_label,''), COALESCE(u.sample_ref,''),
        COALESCE(u.notes,''), COALESCE(u.examples,''), COALESCE(u.demo_url,''),
@@ -48,7 +49,7 @@ func scanUsages(rows *sql.Rows) ([]Usage, error) {
 		var u Usage
 		if err := rows.Scan(&u.ID, &u.GameID, &u.GameTitle,
 			&u.ProductID,
-			&u.ProductName, &u.Manufacturer,
+			&u.ProductName, &u.ManufacturerID, &u.Manufacturer,
 			&u.RawSource, &u.PathBank, &u.Preset,
 			&u.SampleLabel, &u.SampleRef,
 			&u.Notes, &u.Examples, &u.DemoURL,
@@ -140,10 +141,11 @@ func UpdateUsage(ctx context.Context, db *sql.DB, u Usage) error {
 }
 
 type ProductFrequency struct {
-	ProductID    sql.NullInt64
-	Label        string
-	Manufacturer string
-	Total        int
+	ProductID      sql.NullInt64
+	Label          string
+	ManufacturerID sql.NullInt64
+	Manufacturer   string
+	Total          int
 	MainCount    int
 	UnusedCount  int
 	BonusCount   int
@@ -176,6 +178,7 @@ func ProductFrequencyByGame(ctx context.Context, db *sql.DB, gameID int64) ([]Pr
 	rows, err := db.QueryContext(ctx, `
 SELECT u.product_id,
        COALESCE(p.name, u.raw_source, '(unknown)')      AS label,
+       m.id                                             AS manufacturer_id,
        COALESCE(m.name, '')                             AS manufacturer,
        COUNT(*)                                         AS total,
        SUM(CASE WHEN u.category = 'main'          THEN 1 ELSE 0 END) AS main_count,
@@ -197,7 +200,7 @@ SELECT u.product_id,
 	max := 0
 	for rows.Next() {
 		var f ProductFrequency
-		if err := rows.Scan(&f.ProductID, &f.Label, &f.Manufacturer,
+		if err := rows.Scan(&f.ProductID, &f.Label, &f.ManufacturerID, &f.Manufacturer,
 			&f.Total, &f.MainCount, &f.UnusedCount, &f.BonusCount, &f.StuffCount); err != nil {
 			return nil, fmt.Errorf("scan product frequency: %w", err)
 		}

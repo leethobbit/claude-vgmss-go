@@ -20,6 +20,9 @@ func LoadTemplates(fs embed.FS) (*Templates, error) {
 		"equipment_index.html",
 		"equipment_detail.html",
 		"equipment_form.html",
+		"manufacturers_index.html",
+		"manufacturers_detail.html",
+		"manufacturers_form.html",
 		"usages_form.html",
 		"search.html",
 	}

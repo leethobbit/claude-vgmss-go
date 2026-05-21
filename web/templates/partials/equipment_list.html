@@ -5,7 +5,7 @@
   <tbody>
   {{range .Products}}
     <tr>
-      <td>{{.Manufacturer}}</td>
+      <td><a href="/manufacturers/{{.ManufacturerID}}">{{.Manufacturer}}</a></td>
       <td><a href="/equipment/{{.ID}}">{{.Name}}</a></td>
       <td>{{.Type}}</td>
       <td>{{.Notes}}</td>

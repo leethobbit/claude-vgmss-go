@@ -1,0 +1,38 @@
+{{define "title"}}{{.Manufacturer.Name}} — vgmss{{end}}
+{{define "content"}}
+<article class="detail">
+  <h1>{{.Manufacturer.Name}}</h1>
+  <div class="actions">
+    <a class="btn" href="/manufacturers/{{.Manufacturer.ID}}/edit">Edit</a>
+    <form method="post" action="/manufacturers/{{.Manufacturer.ID}}/delete" onsubmit="return confirm('Delete this manufacturer? (Blocked if products reference it.)');">
+      <button type="submit" class="btn danger">Delete</button>
+    </form>
+  </div>
+</article>
+
+<section>
+  <h2>Products from this manufacturer</h2>
+  {{if .Products}}
+  <table class="data wide">
+    <thead><tr>
+      <th>Product</th><th>Type</th><th>First recorded</th><th>Last recorded</th>
+      <th class="count-col">Games</th><th class="count-col">Usages</th>
+    </tr></thead>
+    <tbody>
+    {{range .Products}}
+      <tr>
+        <td><a href="/equipment/{{.ID}}">{{.Name}}</a></td>
+        <td>{{.Type}}</td>
+        <td>{{.FirstRecordedUsage}}</td>
+        <td>{{.LastRecordedUsage}}</td>
+        <td class="count-col">{{.GameCount}}</td>
+        <td class="count-col">{{.UsageCount}}</td>
+      </tr>
+    {{end}}
+    </tbody>
+  </table>
+  {{else}}
+  <p class="empty">No products recorded for this manufacturer yet.</p>
+  {{end}}
+</section>
+{{end}}

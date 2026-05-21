@@ -1,0 +1,11 @@
+{{define "title"}}{{if .Manufacturer.ID}}Edit {{.Manufacturer.Name}}{{else}}New manufacturer{{end}} — vgmss{{end}}
+{{define "content"}}
+<h1>{{if .Manufacturer.ID}}Edit manufacturer{{else}}New manufacturer{{end}}</h1>
+<form method="post" action="{{.Action}}" class="stacked">
+  <label>Name<input name="name" required value="{{.Manufacturer.Name}}" placeholder="Roland, Korg, Apple, ..."></label>
+  <div class="actions">
+    <button type="submit" class="btn primary">Save</button>
+    {{if .Manufacturer.ID}}<a class="btn" href="/manufacturers/{{.Manufacturer.ID}}">Cancel</a>{{else}}<a class="btn" href="/manufacturers">Cancel</a>{{end}}
+  </div>
+</form>
+{{end}}

@@ -3,6 +3,7 @@ package queries
 import (
 	"context"
 	"database/sql"
+	"errors"
 	"path/filepath"
 	"strings"
 	"testing"
@@ -288,6 +289,74 @@ func TestProductFrequencyByGame(t *testing.T) {
 	// raw_source row has no ProductID and is rendered with the raw string.
 	if got[2].ProductID.Valid {
 		t.Errorf("raw_source row should not have a ProductID")
+	}
+}
+
+func TestProductsByManufacturer(t *testing.T) {
+	d := setupDB(t)
+	ctx := context.Background()
+
+	g1, _ := CreateGame(ctx, d, Game{Title: "Game One"})
+	g2, _ := CreateGame(ctx, d, Game{Title: "Game Two"})
+	trinity, _ := CreateProduct(ctx, d, "KORG", Product{Name: "TRINITY Pro"})
+	_, _ = CreateProduct(ctx, d, "KORG", Product{Name: "M1"})
+
+	// TRINITY used in 2 games, 3 usages total. M1 not used at all.
+	_, _ = CreateUsage(ctx, d, Usage{GameID: g1, ProductID: sql.NullInt64{Int64: trinity, Valid: true}, Category: "main"})
+	_, _ = CreateUsage(ctx, d, Usage{GameID: g1, ProductID: sql.NullInt64{Int64: trinity, Valid: true}, Category: "main"})
+	_, _ = CreateUsage(ctx, d, Usage{GameID: g2, ProductID: sql.NullInt64{Int64: trinity, Valid: true}, Category: "main"})
+
+	var mfrID int64
+	if err := d.QueryRowContext(ctx,
+		`SELECT id FROM manufacturers WHERE name = 'KORG' COLLATE NOCASE`).Scan(&mfrID); err != nil {
+		t.Fatalf("lookup manufacturer: %v", err)
+	}
+
+	got, err := ProductsByManufacturer(ctx, d, mfrID)
+	if err != nil {
+		t.Fatalf("products by manufacturer: %v", err)
+	}
+	if len(got) != 2 {
+		t.Fatalf("expected 2 products, got %d: %+v", len(got), got)
+	}
+
+	// Alphabetical: M1 before TRINITY Pro.
+	if got[0].Name != "M1" || got[0].UsageCount != 0 || got[0].GameCount != 0 {
+		t.Errorf("row 0: want M1/0/0, got %s/%d/%d", got[0].Name, got[0].UsageCount, got[0].GameCount)
+	}
+	if got[1].Name != "TRINITY Pro" || got[1].UsageCount != 3 || got[1].GameCount != 2 {
+		t.Errorf("row 1: want TRINITY Pro/3/2 (distinct games), got %s/%d/%d",
+			got[1].Name, got[1].UsageCount, got[1].GameCount)
+	}
+}
+
+func TestDeleteManufacturer_RestrictedByProduct(t *testing.T) {
+	d := setupDB(t)
+	ctx := context.Background()
+
+	_, _ = CreateProduct(ctx, d, "Roland", Product{Name: "JV-1080"})
+
+	var mfrID int64
+	if err := d.QueryRowContext(ctx,
+		`SELECT id FROM manufacturers WHERE name = 'Roland' COLLATE NOCASE`).Scan(&mfrID); err != nil {
+		t.Fatalf("lookup: %v", err)
+	}
+
+	if err := DeleteManufacturer(ctx, d, mfrID); err == nil {
+		t.Errorf("expected RESTRICT to block manufacturer deletion while products reference it, got nil")
+	}
+}
+
+func TestCreateManufacturer_DuplicateName(t *testing.T) {
+	d := setupDB(t)
+	ctx := context.Background()
+
+	if _, err := CreateManufacturer(ctx, d, "Roland"); err != nil {
+		t.Fatalf("create: %v", err)
+	}
+	_, err := CreateManufacturer(ctx, d, "roland")
+	if !errors.Is(err, ErrManufacturerNameTaken) {
+		t.Errorf("expected ErrManufacturerNameTaken on case-insensitive duplicate, got %v", err)
 	}
 }
 

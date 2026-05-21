@@ -1,0 +1,15 @@
+{{define "title"}}Manufacturers — vgmss{{end}}
+{{define "content"}}
+<div class="index-header">
+  <h1>Manufacturers</h1>
+  <a class="btn" href="/manufacturers/new">+ New manufacturer</a>
+</div>
+
+<form class="search" hx-get="/manufacturers" hx-target="#manufacturers-list" hx-trigger="input changed delay:200ms, search">
+  <input type="search" name="q" value="{{.Query}}" placeholder="Search manufacturers" autofocus>
+</form>
+
+<div id="manufacturers-list">
+  {{template "manufacturers_list" .}}
+</div>
+{{end}}

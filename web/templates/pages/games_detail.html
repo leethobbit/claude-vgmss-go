@@ -31,7 +31,7 @@
     <tbody>
     {{range .ProductFreq}}
       <tr>
-        <td>{{.Manufacturer}}</td>
+        <td>{{if .ManufacturerID.Valid}}<a href="/manufacturers/{{.ManufacturerID.Int64}}">{{.Manufacturer}}</a>{{else}}{{.Manufacturer}}{{end}}</td>
         <td>
           {{if .ProductID.Valid}}<a href="/equipment/{{.ProductID.Int64}}">{{.Label}}</a>
           {{else}}<em>{{.Label}}</em>{{end}}
@@ -60,7 +60,7 @@
     {{range .Usages}}
       <tr class="cat-{{.Category}}">
         <td>{{.Category}}</td>
-        <td>{{.Manufacturer}}</td>
+        <td>{{if .ManufacturerID.Valid}}<a href="/manufacturers/{{.ManufacturerID.Int64}}">{{.Manufacturer}}</a>{{else}}{{.Manufacturer}}{{end}}</td>
         <td>
           {{if .ProductID.Valid}}<a href="/equipment/{{.ProductID.Int64}}">{{.ProductName}}</a>
           {{else}}<em>{{.RawSource}}</em>{{end}}
