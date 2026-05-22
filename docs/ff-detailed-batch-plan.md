@@ -14,11 +14,21 @@ finally get used here.
 
 ## CSV shape
 
-Header: `Sample Description | Sample # | Source | Path/Bank | Preset | Notes | Demo`
+Two header shapes have shown up so far:
 
-The first six columns map directly to `usages` fields. The Demo column is a
-URL field that's empty across all FF7 rows (sampled for the pilot); if any
-future game populates it, route it to `usages.demo_url`.
+**Per-sample (Sample # indexed)** — used by FF7, FFT, FFXII:RW (and FFTA2 partially):
+`Sample Description | Sample # | Source | Path/Bank | Preset | Notes | Demo`
+
+**Per-instrument (no Sample #)** — used by FFTA, FF7 Remake, FF7 Rebirth:
+`Instrument | Source | Path/Bank | Preset | Notes`
+
+For per-instrument CSVs, `sample_ref` stays NULL on every row and the
+instrument name fills `sample_label`. Track headers route to `examples`
+as before. Tracks with no sample data documented are simply omitted; no
+empty placeholder rows.
+
+The Demo column is a URL field empty across all FF Detailed rows ingested
+so far; if any future game populates it, route it to `usages.demo_url`.
 
 ## Column mapping
 
@@ -71,6 +81,8 @@ Five cases, in order of contributor intent:
 | `UNKNOWN, SAME SOURCE AS SAMPLES …` | `product_id = NULL`, `raw_source` = full string verbatim. |
 | `CHECK` exactly | `product_id = NULL`, `raw_source = 'CHECK'`. Contributor is unsure of the source — semantically distinct from UNKNOWN, preserved. |
 | `Possible source` or other free-form | `product_id = NULL`, `raw_source` = full value verbatim. |
+| `Live Recording` or `Live Recording (Performer)` | `product_id = NULL`, `raw_source` = full value verbatim. Performer credit kept in the same cell. |
+| `Stems: <Game Title>` — sample lifted from another title's stems | `product_id = NULL`, `raw_source` = full value verbatim. Overrides the split rule because the contributor's intent is data provenance, not vendor lookup. |
 | Empty (no value) | `product_id = NULL`, `raw_source = NULL`. Contributor hasn't researched this row yet — distinct from explicit UNKNOWN/CHECK. |
 
 When the value of Preset is `CHECK` but Source is known, the source links
