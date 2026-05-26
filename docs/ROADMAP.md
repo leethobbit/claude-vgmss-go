@@ -2,27 +2,92 @@
 
 What's in the database, what's pending, and where to look for batch plans.
 
-## Status snapshot (as of 2026-05-21)
+## Status snapshot (as of 2026-05-26)
 
-- **73 games loaded, ~5795 usages, ~470 equipment items, ~90 manufacturers**
-- FF Detailed family: FF7 pilot + Ivalice batch (FFT, FFTA, FFXII:RW, FFTA2) + FF7 Remake/Rebirth landed
+- **~106 games loaded, ~2192 usages, ~600+ equipment items, ~100+ manufacturers**
 - Container deploys via `docker compose up --build`; binds host 127.0.0.1:8220 by default (override `$env:VGMSS_PORT`)
+- Manufacturers and Products are first-class browsable resources via `/manufacturers` and `/equipment`
 
 ## CSV families — ingestion progress
 
 | Family | Files | Status | Notes |
 |---|---|---|---|
-| NEWER VGM | 13 game tabs + 2 catalog | Pokémon partial (20/26 mainline; 5 mainline + Sections 2-4 left) | Most-covered family. Schema designed against this shape first. |
-| SoundTeMP | 1 file (WIP-flagged source) | **Complete (46/46 games)** | Full Section 1 + Section 2 ingested. |
-| Final Fantasy Detailed | 31 files | **7 games landed (FF7, FFT, FFTA, FFXII:RW, FFTA2, FF7 Remake, FF7 Rebirth)** — 24 files / 1 deferred game (Vagrant Story) left | Per-sample granularity with `Sample #` (or per-instrument shape for streamed-era titles). First family to populate `usages.sample_label` and `usages.sample_ref`. Conventions: [docs/ff-detailed-batch-plan.md](ff-detailed-batch-plan.md). |
-| HOYO-MiX | 11 files | Genshin + HSR ingested (4 part-files for Genshin, 1 for HSR) | ZZZ, Honkai Impact 3rd, and 7 other titles remaining. |
-| G-Boy's V.I.S.S. | 1 file | Not started | Supplementary; can supplement existing Pokémon entries. |
+| NEWER VGM SEGA/Atlus | 1 file (3609 lines, 18 sections) | **Sections 1-14 done** (4 remaining) | See below — currently active family |
+| NEWER VGM Pokémon | 1 file | Partial — 20/26 mainline + Sections 2-4 left | Deferred while SEGA/Atlus is in progress |
+| SoundTeMP | 1 file | **Complete (46/46 games)** | Full Section 1 + Section 2 ingested |
+| Final Fantasy Detailed | 31 files | **8 games landed** (FF7, FFT, FFTA, FFXII:RW, FFTA2, FF7 Remake, FF7 Rebirth, FFX, FFX-2) | 22 files remaining. Conventions: [docs/ff-detailed-batch-plan.md](ff-detailed-batch-plan.md). |
+| HOYO-MiX | 11 files | Genshin + HSR ingested | ZZZ, Honkai Impact 3rd, and 7 other titles remaining |
+| G-Boy's V.I.S.S. | 1 file | Not started | Supplementary; can supplement existing Pokémon entries |
+
+## SEGA/Atlus ingestion — currently active
+
+The big push. CSV is `reference/NEWER VGM Sound Sources - SEGAAtlus.csv` (3609 lines, 18 numbered sections — sections 17 and "Other" both use the "Section 17" header in the CSV, contributor typo).
+
+### Done (Sections 1-14)
+
+| Batch | Section | Seed file | Games | Usage rows |
+|---|---|---|---|---|
+| 16 | 1 Megami Tensei | `0053_seed_newer_vgm_sega_atlus_section1.sql` | 21 | ~256 |
+| 17 | 2 Puyo Puyo | `0054_seed_newer_vgm_sega_atlus_section2.sql` | 10 | ~124 |
+| 18 | 3 Daytona USA | `0055_seed_newer_vgm_sega_atlus_section3.sql` | 5 | ~109 |
+| 19 | 4-6 Virtua + SEGA Rally + NiGHTS | `0056_seed_newer_vgm_sega_atlus_sections4-6.sql` | 11 | ~111 |
+| 20 | 7 Persona | `0057_seed_newer_vgm_sega_atlus_section7.sql` | 19 | ~216 |
+| 21 | 8 House of the Dead | `0058_seed_newer_vgm_sega_atlus_section8.sql` | 8 | ~164 |
+| 22 | 9 Space Channel 5 | `0059_seed_newer_vgm_sega_atlus_section9.sql` | 2 | ~194 |
+| 23 | 10a JSR + E3 Prototype | `0060_seed_newer_vgm_sega_atlus_section10a.sql` | 2 | ~219 |
+| 24 | 10b JSR Future | `0061_seed_newer_vgm_sega_atlus_section10b.sql` | 1 | ~274 |
+| 25 | 11 Super Monkey Ball | `0062_seed_newer_vgm_sega_atlus_section11.sql` | 10 | ~296 |
+| 26 | 12 Phantasy Star Online | `0063_seed_newer_vgm_sega_atlus_section12.sql` | 2 | ~93 |
+| 27 | 13 Yakuza | `0064_seed_newer_vgm_sega_atlus_section13.sql` | 12 | ~96 |
+| 28 | 14 Trauma Center | `0065_seed_newer_vgm_sega_atlus_section14.sql` | 3 | ~40 |
+
+Cumulative: **106 games, ~2192 usages** across 14 sections.
+
+### Pending (Sections 15-18)
+
+CSV line ranges below are approximate — re-check the CSV directly before sizing each batch.
+
+| Section | CSV lines (approx) | Span | Notes |
+|---|---|---|---|
+| 15 Etrian Odyssey | 2445-2508 | 64 | ~3-5 games. Composer credit: Yuzo Koshiro. EDIROL Hyper Canvas dominates the line 2447-2450 sample. |
+| 16 Valkyria Chronicles | 2509-2547 | 39 | ~1-2 games — small. |
+| 17 Rhythm Thief | 2548-2804 | 257 | ~1-2 games. Probably sample-heavy like Space Channel 5 / Jet Set Radio. |
+| "Section 17" (typo for 18) — Other | 2805-3609 | 805 | Catch-all section. Could be many smaller games. Survey before committing to file structure. |
+
+### Next batch instructions for the next agent
+
+Pick up at **Section 15 (Etrian Odyssey)**. Standard procedure:
+
+1. Read the CSV section by line range with the Read tool.
+2. Count games and rows. If a section is >250 rows or covers >15 games, consider splitting (see batches 10a/10b for the pattern).
+3. Write `internal/migrate/seed/0066_seed_newer_vgm_sega_atlus_section15.sql` following the established conventions:
+   - Per-game positions restart at 1
+   - "?,?" rows → product_id NULL, raw_source NULL, description in notes
+   - "Manufacturer,?" rows → product_id NULL, raw_source = 'Manufacturer - ?'
+   - "Sample: <artist> - <track>" / "Interpolation: <person> - <work>" cross-media references → raw_source
+   - "Live Recording: <name> (<instrument>)" → raw_source
+   - Japanese / accented international titles preserved verbatim in examples
+   - Track names with literal quotes ("title") preserved with SQL-doubled-quote escaping
+   - `INSERT OR IGNORE` for manufacturers and products
+4. `go build ./... && go test ./internal/migrate/...` to verify.
+5. Commit + push as Batch 29.
+
+### Conventions captured in earlier batches
+
+- Multiple naming variants for the same library are preserved verbatim per Rule 2. Examples:
+  - Sonic Foundry has FIVE manufacturer variants in the DB now (Sonic Foundry, Sonic Foundry/Sounds Good, Sonic Foundry & Sounds Good, Sonic Foundry & Hook Up, Sounds Good & Steinberg).
+  - Mellotron Archives exists both as a manufacturer (SMB Step & Roll) and as a product under Mike Pinder (JSRF).
+  - "Discovery Firm" and "Discovery FIrm" (capital I) merge via NOCASE.
+  - "EMU Systems" (no hyphen) is distinct from "E-MU Systems" — different strings, both preserved.
+  - "Trey Max Top Secret CD Beats Vol. 3" (SMB 3D) is distinct from "Trey Max - Top Secret CD Beats Vol. 3" (JSR) — same library, punctuation drift.
+- Composite uncertainty markers preserved as raw_source: "Roland - ? (Probably JV-1080 or XV-5080)", "? (UVI, MOTU or VSL product)", "KORG / Roland - ?", etc.
+- Cross-media samples (Hollywood films, jazz/lounge records, presidential debates, NASA broadcast tape, etc.) preserved as raw_source with the format 'Sample: <artist> - <track>'.
 
 ## NEWER VGM Pokémon — what's done and what's left
 
-### Done (5 commits, 20 games)
+Deferred while SEGA/Atlus is the active push. ~5 mainline + Sections 2-4 remaining.
 
-Each row is one seed migration file under `internal/migrate/seed/`.
+### Done (5 commits, 20 games)
 
 | Commit | Games | File range |
 |---|---|---|
@@ -44,57 +109,41 @@ CSV rows 4501-4965, ~465 source rows. Logical batch: all 5 in one or two passes.
 ### Pokémon CSV remaining sections
 
 - **Section 2 — Tie-in Games** (rows 4966-5210): Dream World, Dream Radar, Bank, GO, HOME, Champions (6 games, ~245 source rows)
-- **Section 3 — Misc** (rows 5211-5859): Pokémon Cries variants, Snap, Stadium, Stadium 2, Masters Arena, Dash, Rumble, Conquest, Duel, Rumble U, Rumble World, Picross, Quest, Masters EX, Ranger trilogy, Smile, Art Academy, Unite, Sleep, TCG Pocket, Pokopia (~25 games, ~650 source rows)
+- **Section 3 — Misc** (rows 5211-5859): Cries variants, Snap, Stadium, Stadium 2, Masters Arena, Dash, Rumble, Conquest, Duel, Picross, Quest, Masters EX, Ranger trilogy, Smile, Art Academy, Unite, Sleep, TCG Pocket, Pokopia (~25 games, ~650 source rows)
 - **Section 4 — Mystery Dungeon** (rows 5860-6637): Blue/Red Rescue Team, Explorers, Adventure Squad, Gates to Infinity, Super Mystery Dungeon, etc. (5+ games, ~780 source rows)
 
 ## SoundTeMP — complete
 
 All 46 games ingested across batches 6, 7, 8. Plan doc at [soundtemp-batch-plan.md](soundtemp-batch-plan.md) is now historical.
 
-| Commit | Games | File range |
+## Final Fantasy Detailed — pilot + Ivalice + FF7 family + FFX/X-2 complete
+
+8 games landed. Batch plan and column-mapping rules: [ff-detailed-batch-plan.md](ff-detailed-batch-plan.md). Remaining FF Detailed files:
+
+| Era | Games (CSV files) | Status |
 |---|---|---|
-| `6458de8` batch 6 | 4LEAF, Ragnarok Online, Fortress 3, Talesweaver, Seal Online, Corum Online, Flyff (+ schema migration 0002) | seed 0022-0024 |
-| `b00bfca` batch 7 | RF Online, Silkroad, Yogurting, Granado Espada, La Tale, Xenepic, Street Gears, G2, Neo Steam, Deep Deep, Monarch, Qurare, Mabinogi Duel, Tree of Savior, Destiny Child, Ragnarok M, Roll of Genesis, Spiritwish, Exos Heroes | seed 0025-0027 |
-| `e6ce4d2` batch 8 | Genocide 2, Astrocounter, Rhapsody of Zephyr, Princess Maker 3, Ant Man 2, Tempest, Merturl Wizard, Leithian, War of Genesis III, Arcturus, Magna Carta trilogy, Narsillion, Crazy Arcade BnB, AceSaga, War of Chunrang, MapleStory CC, RUNE, Stellar Blade | seed 0028-0030 |
+| SNES | FF4, FF5, FF6 | Not started |
+| PS1 | FF8, FF9, Chocobo spinoffs | Not started |
+| PS2 | FF11 | Not started (FF10/10-2 done) |
+| PS3+ streamed | FF12, FF13 family, FF14, FF15, FF16 | Not started |
 
 ## Schema / migration notes
 
-- `source_family` CHECK now allows `'newer_vgm','ff_detailed','hoyo_mix','g_boy_viss','soundtemp'`. Migration `0002_alter_source_family.sql` recreated the `usages` table via CREATE-COPY-DROP-RENAME (SQLite can't alter CHECK in place).
-- `temp_store=MEMORY` is set in [internal/db/open.go](../internal/db/open.go) so large seed migrations don't hit `SQLITE_IOERR_GETTEMPPATH` on the `FROM scratch` container.
-- Seed files apply via `migrate.Seed()`; schema files via `migrate.Run()`. Tracking key prefixes (`schema:` / `seed:`) live in `schema_migrations`.
+- `source_family` CHECK allows `'newer_vgm','ff_detailed','hoyo_mix','g_boy_viss','soundtemp'`.
+- `temp_store=MEMORY` set in [internal/db/open.go](../internal/db/open.go) so large seed migrations don't hit `SQLITE_IOERR_GETTEMPPATH` on the `FROM scratch` container.
 
 ## Known data quality items (deferred cleanup)
 
-- **Duplicate-by-spelling products across families.** SoundTeMP's `Roland / SC-88Pro` and NEWER VGM Pokémon's `Roland / SOUND Canvas SC-88 Pro` are the same hardware but distinct rows in the `products` table. Reverse lookup on equipment splits across these duplicates. Same issue may surface for `KORG TRINITY pro` vs `TRINITY Pro` (NOCASE collation dedupes case but not extra words). Worth a single rationalization pass once all families are in — possibly via a script that renames by canonical-name lookup table, or via UI-driven merges once we have an admin UX.
-- **Single-quoted composer aliases** like `'NieN'`, `'Chihiro'`, `'seibin'` are preserved verbatim in `composers`. They'd disambiguate from regular names in a future composer index but require explicit handling there.
-- **Trailing parenthetical notes** in some SoundTeMP composers field (e.g. `Sungwoon Jang, Roh Hyoung Woo (See note for live performers)`) are kept verbatim. These could be split into `notes` if we ever do a composer-entity refactor.
+- **Duplicate-by-spelling products and manufacturers across families.** Multiple `SC-88 Pro` / `SC-88Pro` variants, "Sounds Good" 5-way naming variants, "Mellotron Archives" both as manufacturer and as product under Mike Pinder. Worth a single rationalization pass once all families are in.
+- **Single-quoted composer aliases** like `'NieN'`, `'Chihiro'`, `'seibin'` preserved verbatim.
+- **CSV mangling artifacts** preserved per Rule 2: "Sample: Gorillaz - 2023-04-05 00:00:00" (SMB 3D — Excel date-formatting damage), "Presidental" (JSRF Bob Dole), embedded newlines in some product names, etc.
 
 ## Conventions captured in CLAUDE.md and memory
 
 - **One commit per batch.** Seed files commit together at end of batch.
 - **Agents must not script.** Subagents converting CSV-to-SQL use only Read/Write/Edit tools — no Python, awk, sed, jq, etc.
-- **Verification per batch**: rebuild docker compose stack, hit a few game detail pages, confirm category counts match agent reports.
-
-## Final Fantasy Detailed — pilot complete, family roadmap
-
-FF7 pilot landed in `0037_seed_ff_detailed_ff7.sql` (106 usages from 93 main + 13 demo samples; 15 new manufacturers, 22 new products). Batch plan and column-mapping rules live in [ff-detailed-batch-plan.md](ff-detailed-batch-plan.md).
-
-**Known UX gap surfaced by the pilot:** the games detail template doesn't yet render the `sample_label` / `sample_ref` columns. FF7's per-sample data is queryable via SQL but not visible per-sample on the game detail page — every row currently shows blank Path/Bank/Preset columns where they were unknown, and the Sample # / Sample Description aren't surfaced at all. Fixing this is a separate small change to `games_detail.html` (and possibly a conditional render keyed off `source_family = 'ff_detailed'`).
-
-### Remaining FF Detailed work
-
-1. ~~**Ivalice Alliance**~~ — done (FFT, FFTA, FFXII:RW, FFTA2 landed; Vagrant Story deferred).
-2. ~~**FF7 Remake Trilogy**~~ — done (Remake + Rebirth landed; the third Remake game has no CSV section yet).
-3. **SNES era** (FF4, FF5, FF6) — small files; candidate grouping.
-4. **PS1 era** (FF8, FF9, plus Chocobo spinoffs) — pair with FF7 conventions.
-5. **PS2 era** (FF10, FF10-2, FF11) — own conventions per Rules.csv ("List by OST placement, then sample").
-6. **PS3+ streamed** (FF12, FF13 family, FF14, FF15, FF16) — different style ("List ALL instruments heard in track"), more sourced rows.
+- **Verification per batch**: `go build ./... && go test ./internal/migrate/...` must pass. Optionally rebuild docker compose stack, hit a few game detail pages, confirm category counts match agent reports.
 
 ## Next likely move
 
-Pick one:
-
-1. **Continue FF Detailed** — Ivalice Alliance is the natural next batch (the original three-CSV ask). Mapping rules are now locked in.
-2. **Patch the UI gap first** — surface `sample_label` / `sample_ref` on `games_detail.html` before more FF Detailed data lands, so the data we ingested is actually visible.
-3. **Finish Pokémon mainline Section 1** (~5 small games left, ~465 source rows). One small batch.
-4. **Pause ingestion, work on data quality** — the SC-88 Pro duplication problem will only get worse as more families land. Could write a one-shot SQL cleanup migration that renames products to canonical names.
+**Section 15 (Etrian Odyssey)** — see the "Next batch instructions" subsection above for the procedure.
