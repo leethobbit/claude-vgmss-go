@@ -4,7 +4,7 @@ What's in the database, what's pending, and where to look for batch plans.
 
 ## Status snapshot (as of 2026-05-26)
 
-- **~106 games loaded, ~2192 usages, ~600+ equipment items, ~100+ manufacturers**
+- **~111 games loaded, ~2245 usages, ~610+ equipment items, ~100+ manufacturers**
 - Container deploys via `docker compose up --build`; binds host 127.0.0.1:8220 by default (override `$env:VGMSS_PORT`)
 - Manufacturers and Products are first-class browsable resources via `/manufacturers` and `/equipment`
 
@@ -12,7 +12,7 @@ What's in the database, what's pending, and where to look for batch plans.
 
 | Family | Files | Status | Notes |
 |---|---|---|---|
-| NEWER VGM SEGA/Atlus | 1 file (3609 lines, 18 sections) | **Sections 1-14 done** (4 remaining) | See below — currently active family |
+| NEWER VGM SEGA/Atlus | 1 file (3609 lines, 18 sections) | **Sections 1-15 done** (3 remaining) | See below — currently active family |
 | NEWER VGM Pokémon | 1 file | Partial — 20/26 mainline + Sections 2-4 left | Deferred while SEGA/Atlus is in progress |
 | SoundTeMP | 1 file | **Complete (46/46 games)** | Full Section 1 + Section 2 ingested |
 | Final Fantasy Detailed | 31 files | **8 games landed** (FF7, FFT, FFTA, FFXII:RW, FFTA2, FF7 Remake, FF7 Rebirth, FFX, FFX-2) | 22 files remaining. Conventions: [docs/ff-detailed-batch-plan.md](ff-detailed-batch-plan.md). |
@@ -23,7 +23,7 @@ What's in the database, what's pending, and where to look for batch plans.
 
 The big push. CSV is `reference/NEWER VGM Sound Sources - SEGAAtlus.csv` (3609 lines, 18 numbered sections — sections 17 and "Other" both use the "Section 17" header in the CSV, contributor typo).
 
-### Done (Sections 1-14)
+### Done (Sections 1-15)
 
 | Batch | Section | Seed file | Games | Usage rows |
 |---|---|---|---|---|
@@ -40,27 +40,27 @@ The big push. CSV is `reference/NEWER VGM Sound Sources - SEGAAtlus.csv` (3609 l
 | 26 | 12 Phantasy Star Online | `0063_seed_newer_vgm_sega_atlus_section12.sql` | 2 | ~93 |
 | 27 | 13 Yakuza | `0064_seed_newer_vgm_sega_atlus_section13.sql` | 12 | ~96 |
 | 28 | 14 Trauma Center | `0065_seed_newer_vgm_sega_atlus_section14.sql` | 3 | ~40 |
+| 29 | 15 Etrian Odyssey | `0066_seed_newer_vgm_sega_atlus_section15.sql` | 5 | ~53 |
 
-Cumulative: **106 games, ~2192 usages** across 14 sections.
+Cumulative: **111 games, ~2245 usages** across 15 sections.
 
-### Pending (Sections 15-18)
+### Pending (Sections 16-18)
 
 CSV line ranges below are approximate — re-check the CSV directly before sizing each batch.
 
 | Section | CSV lines (approx) | Span | Notes |
 |---|---|---|---|
-| 15 Etrian Odyssey | 2445-2508 | 64 | ~3-5 games. Composer credit: Yuzo Koshiro. EDIROL Hyper Canvas dominates the line 2447-2450 sample. |
 | 16 Valkyria Chronicles | 2509-2547 | 39 | ~1-2 games — small. |
 | 17 Rhythm Thief | 2548-2804 | 257 | ~1-2 games. Probably sample-heavy like Space Channel 5 / Jet Set Radio. |
 | "Section 17" (typo for 18) — Other | 2805-3609 | 805 | Catch-all section. Could be many smaller games. Survey before committing to file structure. |
 
 ### Next batch instructions for the next agent
 
-Pick up at **Section 15 (Etrian Odyssey)**. Standard procedure:
+Pick up at **Section 16 (Valkyria Chronicles)**. Standard procedure:
 
 1. Read the CSV section by line range with the Read tool.
 2. Count games and rows. If a section is >250 rows or covers >15 games, consider splitting (see batches 10a/10b for the pattern).
-3. Write `internal/migrate/seed/0066_seed_newer_vgm_sega_atlus_section15.sql` following the established conventions:
+3. Write `internal/migrate/seed/0067_seed_newer_vgm_sega_atlus_section16.sql` following the established conventions:
    - Per-game positions restart at 1
    - "?,?" rows → product_id NULL, raw_source NULL, description in notes
    - "Manufacturer,?" rows → product_id NULL, raw_source = 'Manufacturer - ?'
@@ -70,7 +70,7 @@ Pick up at **Section 15 (Etrian Odyssey)**. Standard procedure:
    - Track names with literal quotes ("title") preserved with SQL-doubled-quote escaping
    - `INSERT OR IGNORE` for manufacturers and products
 4. `go build ./... && go test ./internal/migrate/...` to verify.
-5. Commit + push as Batch 29.
+5. Commit + push as Batch 30.
 
 ### Conventions captured in earlier batches
 
@@ -146,4 +146,4 @@ All 46 games ingested across batches 6, 7, 8. Plan doc at [soundtemp-batch-plan.
 
 ## Next likely move
 
-**Section 15 (Etrian Odyssey)** — see the "Next batch instructions" subsection above for the procedure.
+**Section 16 (Valkyria Chronicles)** — see the "Next batch instructions" subsection above for the procedure.
