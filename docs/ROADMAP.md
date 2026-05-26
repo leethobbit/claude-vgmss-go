@@ -4,7 +4,7 @@ What's in the database, what's pending, and where to look for batch plans.
 
 ## Status snapshot (as of 2026-05-26)
 
-- **~113 games loaded, ~2273 usages, ~615+ equipment items, ~100+ manufacturers**
+- **~137 games loaded, ~2398 usages, ~660+ equipment items, ~115+ manufacturers**
 - Container deploys via `docker compose up --build`; binds host 127.0.0.1:8220 by default (override `$env:VGMSS_PORT`)
 - Manufacturers and Products are first-class browsable resources via `/manufacturers` and `/equipment`
 
@@ -12,7 +12,7 @@ What's in the database, what's pending, and where to look for batch plans.
 
 | Family | Files | Status | Notes |
 |---|---|---|---|
-| NEWER VGM SEGA/Atlus | 1 file (3609 lines, 18 sections) | **Sections 1-16 done** (2 remaining) | See below — currently active family |
+| NEWER VGM SEGA/Atlus | 1 file (3609 lines, 18 sections) | **Sections 1-16 done + Section 17 "Other" sub-batch A done** (Section 17 Rhythm Thief + Other-b/c remain) | See below — currently active family |
 | NEWER VGM Pokémon | 1 file | Partial — 20/26 mainline + Sections 2-4 left | Deferred while SEGA/Atlus is in progress |
 | SoundTeMP | 1 file | **Complete (46/46 games)** | Full Section 1 + Section 2 ingested |
 | Final Fantasy Detailed | 31 files | **8 games landed** (FF7, FFT, FFTA, FFXII:RW, FFTA2, FF7 Remake, FF7 Rebirth, FFX, FFX-2) | 22 files remaining. Conventions: [docs/ff-detailed-batch-plan.md](ff-detailed-batch-plan.md). |
@@ -23,7 +23,7 @@ What's in the database, what's pending, and where to look for batch plans.
 
 The big push. CSV is `reference/NEWER VGM Sound Sources - SEGAAtlus.csv` (3609 lines, 18 numbered sections — sections 17 and "Other" both use the "Section 17" header in the CSV, contributor typo).
 
-### Done (Sections 1-16)
+### Done (Sections 1-16 + "Other" sub-batch A)
 
 | Batch | Section | Seed file | Games | Usage rows |
 |---|---|---|---|---|
@@ -42,25 +42,27 @@ The big push. CSV is `reference/NEWER VGM Sound Sources - SEGAAtlus.csv` (3609 l
 | 28 | 14 Trauma Center | `0065_seed_newer_vgm_sega_atlus_section14.sql` | 3 | ~40 |
 | 29 | 15 Etrian Odyssey | `0066_seed_newer_vgm_sega_atlus_section15.sql` | 5 | ~53 |
 | 30 | 16 Valkyria Chronicles | `0067_seed_newer_vgm_sega_atlus_section16.sql` | 2 | ~28 |
+| 31 | Other-a (1986-1999 arcade/console) | `0068_seed_newer_vgm_sega_atlus_section17_other_a.sql` | 24 | ~125 |
 
-Cumulative: **113 games, ~2273 usages** across 16 sections.
+Cumulative: **137 games, ~2398 usages** across 16 sections + first "Other" sub-batch.
 
-### Pending (Sections 17-18)
+### Pending (Section 17 Rhythm Thief + Other-b/c)
 
-CSV line ranges below are approximate — re-check the CSV directly before sizing each batch.
+The CSV's "Section 17 - Other" (3609 file actually contains two "Section 17" headers per contributor typo — Rhythm Thief is the first; "Other" is the second/last) is being split across multiple sub-batches because of its size.
 
-| Section | CSV lines (approx) | Span | Notes |
+| Sub-batch | CSV lines (approx) | Games | Notes |
 |---|---|---|---|
-| 17 Rhythm Thief | 2548-2804 | 257 | ~1-2 games. Probably sample-heavy like Space Channel 5 / Jet Set Radio. CSV row 2551 begins with "Sample: Afrique - Slow Motion" pattern, confirming cross-media sample heavy. |
-| "Section 17" (typo for 18) — Other | 2805-3609 | 805 | Catch-all section. Could be many smaller games. Survey before committing to file structure. |
+| 17 Rhythm Thief (deferred) | 2548-2804 | ~1-2 | Sample-heavy like Space Channel 5 / Jet Set Radio. CSV row 2551 begins with "Sample: Afrique - Slow Motion" pattern. |
+| Other-b (1999-2003 + Billy Hatcher + Ollie King) | 2979-3341 | ~15 | Includes Billy Hatcher and Ollie King — two largest single-game source lists in the CSV (130+ and 150+ rows each). |
+| Other-c (mid-2000s DS through 2024) | 3342-3602 | ~14 | SEGA Superstars, Feel the Magic, Rub Rabbits, Stuart Little 3, Luminous Arc 1-2, Odin Sphere, Thunder Force VI, Blazer Drive, Let's Tap, Shining Force Feather, Radiant Historia, Dengeki Bunko, Stella Glow, Tokyo Mirage Sessions, Catherine: Full Body, Metaphor: ReFantazio. |
 
 ### Next batch instructions for the next agent
 
-Pick up at **Section 17 (Rhythm Thief)**. Standard procedure:
+Pick up at **Other-b**. Standard procedure:
 
 1. Read the CSV section by line range with the Read tool.
 2. Count games and rows. If a section is >250 rows or covers >15 games, consider splitting (see batches 10a/10b for the pattern).
-3. Write `internal/migrate/seed/0068_seed_newer_vgm_sega_atlus_section17.sql` following the established conventions:
+3. Write `internal/migrate/seed/0069_seed_newer_vgm_sega_atlus_section17_other_b.sql` following the established conventions:
    - Per-game positions restart at 1
    - "?,?" rows → product_id NULL, raw_source NULL, description in notes
    - "Manufacturer,?" rows → product_id NULL, raw_source = 'Manufacturer - ?'
@@ -70,7 +72,7 @@ Pick up at **Section 17 (Rhythm Thief)**. Standard procedure:
    - Track names with literal quotes ("title") preserved with SQL-doubled-quote escaping
    - `INSERT OR IGNORE` for manufacturers and products
 4. `go build ./... && go test ./internal/migrate/...` to verify.
-5. Commit + push as Batch 31.
+5. Commit + push as Batch 32.
 
 ### Conventions captured in earlier batches
 
@@ -146,4 +148,4 @@ All 46 games ingested across batches 6, 7, 8. Plan doc at [soundtemp-batch-plan.
 
 ## Next likely move
 
-**Section 17 (Rhythm Thief)** — see the "Next batch instructions" subsection above for the procedure.
+**Other-b** (1999-2003 + Billy Hatcher + Ollie King) — see the "Next batch instructions" subsection above. Section 17 Rhythm Thief is intentionally deferred until after the Other-b/c push completes, since both Rhythm Thief and the Billy Hatcher / Ollie King chunks are heavy.
