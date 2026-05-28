@@ -4,7 +4,7 @@ What's in the database, what's pending, and where to look for batch plans.
 
 ## Status snapshot (as of 2026-05-26)
 
-- **~211 games loaded, ~3853 usages, ~825+ equipment items, ~129+ manufacturers**
+- **~253 games loaded, ~4350 usages, ~895+ equipment items, ~150+ manufacturers**
 - Container deploys via `docker compose up --build`; binds host 127.0.0.1:8220 by default (override `$env:VGMSS_PORT`)
 - Manufacturers and Products are first-class browsable resources via `/manufacturers` and `/equipment`
 
@@ -13,7 +13,7 @@ What's in the database, what's pending, and where to look for batch plans.
 | Family | Files | Status | Notes |
 |---|---|---|---|
 | NEWER VGM SEGA/Atlus | 1 file (3609 lines, 18 sections) | **COMPLETE — all 18 sections ingested** | Done; see closeout note below |
-| NEWER VGM Other Games | 1 file (27801 lines, 47 publisher sections) | Started — Rare + Intelligent Systems done (2/47) | Massive catch-all; ingesting opportunistically by publisher section |
+| NEWER VGM Other Games | 1 file (27801 lines, 47 publisher sections) | Started — Rare + Intelligent Systems + Activision/Sierra done (3/47) | Massive catch-all; ingesting opportunistically by publisher section |
 | NEWER VGM Pokémon | 1 file | Partial — 20/26 mainline + Sections 2-4 left | Deferred while SEGA/Atlus is in progress |
 | SoundTeMP | 1 file | **Complete (46/46 games)** | Full Section 1 + Section 2 ingested |
 | Final Fantasy Detailed | 31 files | **8 games landed** (FF7, FFT, FFTA, FFXII:RW, FFTA2, FF7 Remake, FF7 Rebirth, FFX, FFX-2) | 22 files remaining. Conventions: [docs/ff-detailed-batch-plan.md](ff-detailed-batch-plan.md). |
@@ -143,6 +143,7 @@ Massive catch-all CSV (27801 lines, 729 games, 47 publisher sections). Ingesting
 |---|---|---|---|---|
 | 35 | Rare | `0072_seed_newer_vgm_other_rare.sql` | 18 | ~260 |
 | 36 | Intelligent Systems | `0073_seed_newer_vgm_other_intelligent_systems.sql` | 21 | ~380 |
+| 37 | Activision/Sierra | `0074_seed_newer_vgm_other_activision.sql` | 42 | ~497 |
 
 ### Suggested next moves (planned sequence)
 
