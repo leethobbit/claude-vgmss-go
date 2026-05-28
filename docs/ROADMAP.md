@@ -4,7 +4,7 @@ What's in the database, what's pending, and where to look for batch plans.
 
 ## Status snapshot (as of 2026-05-26)
 
-- **~190 games loaded, ~3473 usages, ~785+ equipment items, ~126+ manufacturers**
+- **~211 games loaded, ~3853 usages, ~825+ equipment items, ~129+ manufacturers**
 - Container deploys via `docker compose up --build`; binds host 127.0.0.1:8220 by default (override `$env:VGMSS_PORT`)
 - Manufacturers and Products are first-class browsable resources via `/manufacturers` and `/equipment`
 
@@ -13,7 +13,7 @@ What's in the database, what's pending, and where to look for batch plans.
 | Family | Files | Status | Notes |
 |---|---|---|---|
 | NEWER VGM SEGA/Atlus | 1 file (3609 lines, 18 sections) | **COMPLETE — all 18 sections ingested** | Done; see closeout note below |
-| NEWER VGM Other Games | 1 file (27801 lines, 47 publisher sections) | Started — Rare section done (1/47) | Massive catch-all; ingesting opportunistically by publisher section |
+| NEWER VGM Other Games | 1 file (27801 lines, 47 publisher sections) | Started — Rare + Intelligent Systems done (2/47) | Massive catch-all; ingesting opportunistically by publisher section |
 | NEWER VGM Pokémon | 1 file | Partial — 20/26 mainline + Sections 2-4 left | Deferred while SEGA/Atlus is in progress |
 | SoundTeMP | 1 file | **Complete (46/46 games)** | Full Section 1 + Section 2 ingested |
 | Final Fantasy Detailed | 31 files | **8 games landed** (FF7, FFT, FFTA, FFXII:RW, FFTA2, FF7 Remake, FF7 Rebirth, FFX, FFX-2) | 22 files remaining. Conventions: [docs/ff-detailed-batch-plan.md](ff-detailed-batch-plan.md). |
@@ -142,14 +142,22 @@ Massive catch-all CSV (27801 lines, 729 games, 47 publisher sections). Ingesting
 | Batch | Publisher section | Seed file | Games | Usage rows |
 |---|---|---|---|---|
 | 35 | Rare | `0072_seed_newer_vgm_other_rare.sql` | 18 | ~260 |
+| 36 | Intelligent Systems | `0073_seed_newer_vgm_other_intelligent_systems.sql` | 21 | ~380 |
 
-### Suggested next moves
+### Suggested next moves (planned sequence)
 
-- **Team Shanghai Alice (Touhou Project)** — 1408 CSV lines, 29 games (Touhou 06-20 + all fighters/spinoffs). Single composer/series — clean batch candidate.
-- **PlatinumGames** — 130 CSV lines, ~5 games (Bayonetta, NieR:Automata, Metal Gear Rising). Tight scope.
+Per user request, next three batches are queued: Activision/Sierra, Sony, Microsoft.
+
+- **Activision/Sierra** — 544 CSV lines, ~28 games (Diablo, Tony Hawk's Pro Skater 1-3, Spider-Man trilogy, Crash Bandicoot Wrath of Cortex / Huge / Nitro Kart / Tag Team / Titans, Spyro Dragonfly / Orange / Hero's Tail / Legend trilogy, Simpsons Hit & Run, Futurama, WoW, X-Men Legends, Call of Duty: Black Ops I/II/III). Composer-dense.
+- **Sony** — 1286 CSV lines, ~33 games — largest planned. Crash Bandicoot PS1 ~130 rows alone. Gran Turismo 1-5, Spyro trilogy, PaRappa 1-2, Wild Arms 1/3/4/5, Jak 1-3 + Daxter, Ratchet & Clank x4, Sly Cooper x3, MediEvil, vib-ribbon, Patapon, LBP 1-3, Horizon: Forbidden West.
+- **Microsoft / Xbox** — 592 CSV lines, ~19 games. Halo CE + Reach, Age of Empires II, Fable, Psychonauts, Blue Dragon, Fuzion Frenzy, Project Gotham Racing, BLiNX, Minecraft (8 update sub-records), Ori.
+
+### Other suggested moves
+
+- **Team Shanghai Alice (Touhou Project)** — 1408 CSV lines, 29 games. Single composer/series.
+- **PlatinumGames** — 130 CSV lines, ~5 games (Bayonetta, NieR:Automata, Metal Gear Rising).
 - **FromSoftware** — 267 CSV lines. Dark Souls, Bloodborne, Armored Core.
 - **Valve Software** — 712 CSV lines. Half-Life, Portal, TF2, CS, L4D.
-- **Intelligent Systems** — 428 CSV lines. Fire Emblem, Paper Mario, WarioWare.
 
 ## Other major families (deferred)
 
