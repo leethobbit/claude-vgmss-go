@@ -4,7 +4,7 @@ What's in the database, what's pending, and where to look for batch plans.
 
 ## Status snapshot (as of 2026-05-26)
 
-- **~172 games loaded, ~3213 usages, ~735+ equipment items, ~120+ manufacturers**
+- **~190 games loaded, ~3473 usages, ~785+ equipment items, ~126+ manufacturers**
 - Container deploys via `docker compose up --build`; binds host 127.0.0.1:8220 by default (override `$env:VGMSS_PORT`)
 - Manufacturers and Products are first-class browsable resources via `/manufacturers` and `/equipment`
 
@@ -13,6 +13,7 @@ What's in the database, what's pending, and where to look for batch plans.
 | Family | Files | Status | Notes |
 |---|---|---|---|
 | NEWER VGM SEGA/Atlus | 1 file (3609 lines, 18 sections) | **COMPLETE — all 18 sections ingested** | Done; see closeout note below |
+| NEWER VGM Other Games | 1 file (27801 lines, 47 publisher sections) | Started — Rare section done (1/47) | Massive catch-all; ingesting opportunistically by publisher section |
 | NEWER VGM Pokémon | 1 file | Partial — 20/26 mainline + Sections 2-4 left | Deferred while SEGA/Atlus is in progress |
 | SoundTeMP | 1 file | **Complete (46/46 games)** | Full Section 1 + Section 2 ingested |
 | Final Fantasy Detailed | 31 files | **8 games landed** (FF7, FFT, FFTA, FFXII:RW, FFTA2, FF7 Remake, FF7 Rebirth, FFX, FFX-2) | 22 files remaining. Conventions: [docs/ff-detailed-batch-plan.md](ff-detailed-batch-plan.md). |
@@ -132,11 +133,27 @@ All 46 games ingested across batches 6, 7, 8. Plan doc at [soundtemp-batch-plan.
 - **Agents must not script.** Subagents converting CSV-to-SQL use only Read/Write/Edit tools — no Python, awk, sed, jq, etc.
 - **Verification per batch**: `go build ./... && go test ./internal/migrate/...` must pass. Optionally rebuild docker compose stack, hit a few game detail pages, confirm category counts match agent reports.
 
-## Next likely move
+## NEWER VGM Other Games — currently active
 
-SEGA/Atlus is done. The next major family to pick up depends on user priorities:
+Massive catch-all CSV (27801 lines, 729 games, 47 publisher sections). Ingesting opportunistically by publisher section, not in any fixed order.
 
-- **NEWER VGM Pokémon** — 5 mainline games + 3 supplementary sections (~1700 source rows) deferred while SEGA/Atlus was active. Closest in style to what we just finished.
-- **HOYO-MiX** — 9 remaining titles (ZZZ, Honkai Impact 3rd, etc.) following the Genshin + HSR pattern.
-- **Final Fantasy Detailed** — 22 remaining FF files (FF4-6 SNES, FF8/9 PS1, FF11-16) with the Ivalice / FF7 / FFX templates.
+### Done (Other Games)
+
+| Batch | Publisher section | Seed file | Games | Usage rows |
+|---|---|---|---|---|
+| 35 | Rare | `0072_seed_newer_vgm_other_rare.sql` | 18 | ~260 |
+
+### Suggested next moves
+
+- **Team Shanghai Alice (Touhou Project)** — 1408 CSV lines, 29 games (Touhou 06-20 + all fighters/spinoffs). Single composer/series — clean batch candidate.
+- **PlatinumGames** — 130 CSV lines, ~5 games (Bayonetta, NieR:Automata, Metal Gear Rising). Tight scope.
+- **FromSoftware** — 267 CSV lines. Dark Souls, Bloodborne, Armored Core.
+- **Valve Software** — 712 CSV lines. Half-Life, Portal, TF2, CS, L4D.
+- **Intelligent Systems** — 428 CSV lines. Fire Emblem, Paper Mario, WarioWare.
+
+## Other major families (deferred)
+
+- **NEWER VGM Pokémon** — 5 mainline games + 3 supplementary sections (~1700 source rows).
+- **HOYO-MiX** — 9 remaining titles (ZZZ, Honkai Impact 3rd, etc.).
+- **Final Fantasy Detailed** — 22 remaining FF files (FF4-6 SNES, FF8/9 PS1, FF11-16).
 - **G-Boy's V.I.S.S.** — Single small file, can supplement existing Pokémon entries.
