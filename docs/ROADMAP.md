@@ -4,7 +4,7 @@ What's in the database, what's pending, and where to look for batch plans.
 
 ## Status snapshot (as of 2026-05-26)
 
-- **~170 games loaded, ~2963 usages, ~720+ equipment items, ~119+ manufacturers**
+- **~172 games loaded, ~3213 usages, ~735+ equipment items, ~120+ manufacturers**
 - Container deploys via `docker compose up --build`; binds host 127.0.0.1:8220 by default (override `$env:VGMSS_PORT`)
 - Manufacturers and Products are first-class browsable resources via `/manufacturers` and `/equipment`
 
@@ -12,18 +12,18 @@ What's in the database, what's pending, and where to look for batch plans.
 
 | Family | Files | Status | Notes |
 |---|---|---|---|
-| NEWER VGM SEGA/Atlus | 1 file (3609 lines, 18 sections) | **Sections 1-16 + Section 17 "Other" all done** (only Section 17 Rhythm Thief remains) | See below — currently active family |
+| NEWER VGM SEGA/Atlus | 1 file (3609 lines, 18 sections) | **COMPLETE — all 18 sections ingested** | Done; see closeout note below |
 | NEWER VGM Pokémon | 1 file | Partial — 20/26 mainline + Sections 2-4 left | Deferred while SEGA/Atlus is in progress |
 | SoundTeMP | 1 file | **Complete (46/46 games)** | Full Section 1 + Section 2 ingested |
 | Final Fantasy Detailed | 31 files | **8 games landed** (FF7, FFT, FFTA, FFXII:RW, FFTA2, FF7 Remake, FF7 Rebirth, FFX, FFX-2) | 22 files remaining. Conventions: [docs/ff-detailed-batch-plan.md](ff-detailed-batch-plan.md). |
 | HOYO-MiX | 11 files | Genshin + HSR ingested | ZZZ, Honkai Impact 3rd, and 7 other titles remaining |
 | G-Boy's V.I.S.S. | 1 file | Not started | Supplementary; can supplement existing Pokémon entries |
 
-## SEGA/Atlus ingestion — currently active
+## SEGA/Atlus ingestion — COMPLETE
 
-The big push. CSV is `reference/NEWER VGM Sound Sources - SEGAAtlus.csv` (3609 lines, 18 numbered sections — sections 17 and "Other" both use the "Section 17" header in the CSV, contributor typo).
+The big push is done. CSV is `reference/NEWER VGM Sound Sources - SEGAAtlus.csv` (3609 lines, 18 numbered sections — sections 17 and "Other" both use the "Section 17" header in the CSV, contributor typo). All 18 sections ingested across 19 commits (batches 16-34), spanning 172 games and ~3213 usage rows.
 
-### Done (Sections 1-16 + entire "Other" catch-all)
+### Done (all sections)
 
 | Batch | Section | Seed file | Games | Usage rows |
 |---|---|---|---|---|
@@ -45,32 +45,20 @@ The big push. CSV is `reference/NEWER VGM Sound Sources - SEGAAtlus.csv` (3609 l
 | 31 | Other-a (1986-1999 arcade/console) | `0068_seed_newer_vgm_sega_atlus_section17_other_a.sql` | 24 | ~125 |
 | 32 | Other-b (1999-2003 + Billy Hatcher + Ollie King) | `0069_seed_newer_vgm_sega_atlus_section17_other_b.sql` | 15 | ~340 |
 | 33 | Other-c (mid-2000s DS through Metaphor 2024) | `0070_seed_newer_vgm_sega_atlus_section17_other_c.sql` | 18 | ~225 |
+| 34 | 17 Rhythm Thief | `0071_seed_newer_vgm_sega_atlus_rhythm_thief.sql` | 2 | ~250 |
 
-Cumulative: **170 games, ~2963 usages** across 16 sections + complete "Other" catch-all.
+Cumulative: **172 games, ~3213 usages** across all 18 SEGA/Atlus sections.
 
-### Pending (Section 17 Rhythm Thief only)
+### SEGA/Atlus closeout
 
-| Sub-batch | CSV lines (approx) | Games | Notes |
-|---|---|---|---|
-| 17 Rhythm Thief | 2548-2804 | ~1-2 | Sample-heavy like Space Channel 5 / Jet Set Radio. CSV row 2551 begins with "Sample: Afrique - Slow Motion" pattern. |
-
-### Next batch instructions for the next agent
-
-Pick up at **Section 17 (Rhythm Thief)**. Standard procedure:
-
-1. Read the CSV section by line range with the Read tool.
-2. Count games and rows. If a section is >250 rows or covers >15 games, consider splitting (see batches 10a/10b for the pattern).
-3. Write `internal/migrate/seed/0071_seed_newer_vgm_sega_atlus_rhythm_thief.sql` following the established conventions:
-   - Per-game positions restart at 1
-   - "?,?" rows → product_id NULL, raw_source NULL, description in notes
-   - "Manufacturer,?" rows → product_id NULL, raw_source = 'Manufacturer - ?'
-   - "Sample: <artist> - <track>" / "Interpolation: <person> - <work>" cross-media references → raw_source
-   - "Live Recording: <name> (<instrument>)" → raw_source
-   - Japanese / accented international titles preserved verbatim in examples
-   - Track names with literal quotes ("title") preserved with SQL-doubled-quote escaping
-   - `INSERT OR IGNORE` for manufacturers and products
-4. `go build ./... && go test ./internal/migrate/...` to verify.
-5. Commit + push as Batch 34.
+The 3609-line community CSV is fully ingested. Conventions captured for future families:
+- Per-game positions start at 1, monotonic across main + stuff_to_find categories.
+- "?,?" rows → product_id NULL, raw_source NULL, description in notes.
+- "Manufacturer,?" rows → product_id NULL, raw_source = 'Manufacturer - ?'.
+- Cross-media references ("Sample: <artist> - <track>", "Interpolation: <person> - <work>", "Live Recording: <name> (<instrument>)") → raw_source.
+- Sub-sections like "Music Jingles" or "Album Release" → separate game records.
+- Variant spellings (Hip-Hop / Hip Hop, eLAB / e-LAB, Sonic Implant / Sonic Implants) → distinct rows per Rule 2.
+- CSV mangling artifacts preserved verbatim with notes flagging the issue (Rule 11).
 
 ### Conventions captured in earlier batches
 
@@ -146,4 +134,9 @@ All 46 games ingested across batches 6, 7, 8. Plan doc at [soundtemp-batch-plan.
 
 ## Next likely move
 
-**Section 17 (Rhythm Thief)** — the only remaining SEGA/Atlus section. Heavy on cross-media samples (Afrique, Berto Pisano, etc.) likely modeled the same way as Billy Hatcher and Space Channel 5 — Sample: row pattern with timestamps.
+SEGA/Atlus is done. The next major family to pick up depends on user priorities:
+
+- **NEWER VGM Pokémon** — 5 mainline games + 3 supplementary sections (~1700 source rows) deferred while SEGA/Atlus was active. Closest in style to what we just finished.
+- **HOYO-MiX** — 9 remaining titles (ZZZ, Honkai Impact 3rd, etc.) following the Genshin + HSR pattern.
+- **Final Fantasy Detailed** — 22 remaining FF files (FF4-6 SNES, FF8/9 PS1, FF11-16) with the Ivalice / FF7 / FFX templates.
+- **G-Boy's V.I.S.S.** — Single small file, can supplement existing Pokémon entries.
