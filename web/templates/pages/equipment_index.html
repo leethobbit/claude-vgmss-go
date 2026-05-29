@@ -5,6 +5,33 @@
   <a class="btn" href="/equipment/new">+ New equipment</a>
 </div>
 
+{{if .TopProducts}}
+<section>
+  <h2>Top 25 most-used products</h2>
+  <table class="freq">
+    <thead><tr>
+      <th>Manufacturer</th>
+      <th>Product</th>
+      <th class="bar-col"></th>
+      <th class="count-col">Usages</th>
+    </tr></thead>
+    <tbody>
+    {{range .TopProducts}}
+      <tr>
+        <td>{{if .ManufacturerID.Valid}}<a href="/manufacturers/{{.ManufacturerID.Int64}}">{{.Manufacturer}}</a>{{else}}{{.Manufacturer}}{{end}}</td>
+        <td><a href="/equipment/{{.ProductID.Int64}}">{{.Label}}</a></td>
+        <td class="bar-col"><div class="bar" style="width: {{.BarPercent}}%"></div></td>
+        <td class="count-col">
+          {{.Total}}
+          {{if .HasBreakdown}}<small>{{.Breakdown}}</small>{{end}}
+        </td>
+      </tr>
+    {{end}}
+    </tbody>
+  </table>
+</section>
+{{end}}
+
 <form class="search" hx-get="/equipment" hx-target="#equipment-list" hx-trigger="input changed delay:200ms, search">
   <input type="search" name="q" value="{{.Query}}" placeholder="Search equipment, manufacturers" autofocus>
 </form>

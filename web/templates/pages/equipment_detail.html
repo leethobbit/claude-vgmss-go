@@ -18,6 +18,31 @@
   </div>
 </article>
 
+{{if .TopGames}}
+<section>
+  <h2>Top 25 games by usage</h2>
+  <table class="freq">
+    <thead><tr>
+      <th>Game</th>
+      <th class="bar-col"></th>
+      <th class="count-col">Usages</th>
+    </tr></thead>
+    <tbody>
+    {{range .TopGames}}
+      <tr>
+        <td><a href="/games/{{.GameID}}">{{.Title}}</a></td>
+        <td class="bar-col"><div class="bar" style="width: {{.BarPercent}}%"></div></td>
+        <td class="count-col">
+          {{.Total}}
+          {{if .HasBreakdown}}<small>{{.Breakdown}}</small>{{end}}
+        </td>
+      </tr>
+    {{end}}
+    </tbody>
+  </table>
+</section>
+{{end}}
+
 <section>
   <h2>Games that used this</h2>
   {{if .Usages}}

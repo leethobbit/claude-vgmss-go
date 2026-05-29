@@ -220,6 +220,140 @@ SELECT u.product_id,
 	return out, nil
 }
 
+// TopProductFrequency aggregates usage counts per catalog product across all
+// games, returning the most-used products first. Rows whose source was never
+// linked to a product (raw_source only) are excluded — a "top products" list
+// is only meaningful for real catalog entries.
+func TopProductFrequency(ctx context.Context, db *sql.DB, limit int) ([]ProductFrequency, error) {
+	if limit <= 0 {
+		limit = 25
+	}
+	rows, err := db.QueryContext(ctx, `
+SELECT u.product_id,
+       p.name                                           AS label,
+       m.id                                             AS manufacturer_id,
+       COALESCE(m.name, '')                             AS manufacturer,
+       COUNT(*)                                         AS total,
+       SUM(CASE WHEN u.category = 'main'          THEN 1 ELSE 0 END) AS main_count,
+       SUM(CASE WHEN u.category = 'unused'        THEN 1 ELSE 0 END) AS unused_count,
+       SUM(CASE WHEN u.category = 'bonus'         THEN 1 ELSE 0 END) AS bonus_count,
+       SUM(CASE WHEN u.category = 'stuff_to_find' THEN 1 ELSE 0 END) AS stuff_count
+  FROM usages u
+  JOIN products p           ON p.id = u.product_id
+  LEFT JOIN manufacturers m ON m.id = p.manufacturer_id
+ GROUP BY u.product_id
+ ORDER BY total DESC, label COLLATE NOCASE
+ LIMIT ?`, limit)
+	if err != nil {
+		return nil, fmt.Errorf("top product frequency: %w", err)
+	}
+	defer rows.Close()
+
+	var out []ProductFrequency
+	max := 0
+	for rows.Next() {
+		var f ProductFrequency
+		if err := rows.Scan(&f.ProductID, &f.Label, &f.ManufacturerID, &f.Manufacturer,
+			&f.Total, &f.MainCount, &f.UnusedCount, &f.BonusCount, &f.StuffCount); err != nil {
+			return nil, fmt.Errorf("scan top product frequency: %w", err)
+		}
+		if f.Total > max {
+			max = f.Total
+		}
+		out = append(out, f)
+	}
+	if err := rows.Err(); err != nil {
+		return nil, err
+	}
+	if max > 0 {
+		for i := range out {
+			out[i].BarPercent = (out[i].Total * 100) / max
+		}
+	}
+	return out, nil
+}
+
+type GameFrequency struct {
+	GameID      int64
+	Title       string
+	Total       int
+	MainCount   int
+	UnusedCount int
+	BonusCount  int
+	StuffCount  int
+	BarPercent  int
+}
+
+func (f GameFrequency) HasBreakdown() bool {
+	return f.MainCount != f.Total
+}
+
+func (f GameFrequency) Breakdown() string {
+	parts := make([]string, 0, 4)
+	if f.MainCount > 0 {
+		parts = append(parts, fmt.Sprintf("%d main", f.MainCount))
+	}
+	if f.UnusedCount > 0 {
+		parts = append(parts, fmt.Sprintf("%d unused", f.UnusedCount))
+	}
+	if f.BonusCount > 0 {
+		parts = append(parts, fmt.Sprintf("%d bonus", f.BonusCount))
+	}
+	if f.StuffCount > 0 {
+		parts = append(parts, fmt.Sprintf("%d stuff to find", f.StuffCount))
+	}
+	return strings.Join(parts, ", ")
+}
+
+// TopGameFrequencyByProduct aggregates usage counts per game for a single
+// product, returning the games that use it most heavily first.
+func TopGameFrequencyByProduct(ctx context.Context, db *sql.DB, productID int64, limit int) ([]GameFrequency, error) {
+	if limit <= 0 {
+		limit = 25
+	}
+	rows, err := db.QueryContext(ctx, `
+SELECT u.game_id,
+       g.title                                          AS title,
+       COUNT(*)                                         AS total,
+       SUM(CASE WHEN u.category = 'main'          THEN 1 ELSE 0 END) AS main_count,
+       SUM(CASE WHEN u.category = 'unused'        THEN 1 ELSE 0 END) AS unused_count,
+       SUM(CASE WHEN u.category = 'bonus'         THEN 1 ELSE 0 END) AS bonus_count,
+       SUM(CASE WHEN u.category = 'stuff_to_find' THEN 1 ELSE 0 END) AS stuff_count
+  FROM usages u
+  JOIN games g ON g.id = u.game_id
+ WHERE u.product_id = ?
+ GROUP BY u.game_id
+ ORDER BY total DESC, title COLLATE NOCASE
+ LIMIT ?`, productID, limit)
+	if err != nil {
+		return nil, fmt.Errorf("top game frequency by product %d: %w", productID, err)
+	}
+	defer rows.Close()
+
+	var out []GameFrequency
+	max := 0
+	for rows.Next() {
+		var f GameFrequency
+		if err := rows.Scan(&f.GameID, &f.Title,
+			&f.Total, &f.MainCount, &f.UnusedCount, &f.BonusCount, &f.StuffCount); err != nil {
+			return nil, fmt.Errorf("scan game frequency: %w", err)
+		}
+		if f.Total > max {
+			max = f.Total
+		}
+		out = append(out, f)
+	}
+	if err := rows.Err(); err != nil {
+		return nil, err
+	}
+	if max > 0 {
+		for i := range out {
+			out[i].BarPercent = (out[i].Total * 100) / max
+		}
+	}
+	return out, nil
+}
+
 func DeleteUsage(ctx context.Context, db *sql.DB, id int64) error {
 	if _, err := db.ExecContext(ctx, `DELETE FROM usages WHERE id = ?`, id); err != nil {
 		return fmt.Errorf("delete usage %d: %w", id, err)

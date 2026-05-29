@@ -14,14 +14,23 @@ func (a *App) listEquipment(w http.ResponseWriter, r *http.Request) {
 		a.serverError(w, r, err)
 		return
 	}
-	data := struct {
-		Query    string
-		Products []queries.Product
-	}{Query: q, Products: products}
 	if r.Header.Get("HX-Request") == "true" {
-		a.renderPartial(w, "equipment_list.html", data)
+		a.renderPartial(w, "equipment_list.html", struct {
+			Query    string
+			Products []queries.Product
+		}{Query: q, Products: products})
 		return
 	}
+	top, err := queries.TopProductFrequency(r.Context(), a.DB, 25)
+	if err != nil {
+		a.serverError(w, r, err)
+		return
+	}
+	data := struct {
+		Query       string
+		Products    []queries.Product
+		TopProducts []queries.ProductFrequency
+	}{Query: q, Products: products, TopProducts: top}
 	a.render(w, r, http.StatusOK, "equipment_index.html", data)
 }
 
@@ -41,11 +50,17 @@ func (a *App) showEquipment(w http.ResponseWriter, r *http.Request) {
 		a.serverError(w, r, err)
 		return
 	}
+	topGames, err := queries.TopGameFrequencyByProduct(r.Context(), a.DB, id, 25)
+	if err != nil {
+		a.serverError(w, r, err)
+		return
+	}
 	data := struct {
 		Product    queries.Product
 		Usages     []queries.Usage
+		TopGames   []queries.GameFrequency
 		HasSamples bool
-	}{Product: p, Usages: usages, HasSamples: anyUsageHasSample(usages)}
+	}{Product: p, Usages: usages, TopGames: topGames, HasSamples: anyUsageHasSample(usages)}
 	a.render(w, r, http.StatusOK, "equipment_detail.html", data)
 }
 
